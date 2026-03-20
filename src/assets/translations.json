@@ -87,7 +87,35 @@
       ]
     },
     "footer": {
-      "support": "For technical support of this website, please contact: claritleonelmnicol@gmail.com"
+      "support": "For technical support of this website, please contact: claritleonelmnicol@gmail.com",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookie_settings": "Cookie Settings"
+    },
+    "compliance": {
+      "cookie": {
+        "title": "Cookie Notice",
+        "description": "We use cookies to improve your browsing experience and analyze site traffic.",
+        "agree": "I Agree",
+        "settings": "Settings"
+      },
+      "settings": {
+        "title": "Cookie Settings",
+        "necessary": "Necessary Cookies",
+        "necessary_desc": "Essential for the website to function correctly.",
+        "analytics": "Analytics Cookies",
+        "analytics_desc": "Help us understand how visitors interact with the website.",
+        "save": "Save Settings",
+        "accept_all": "Accept All"
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "content": "### 1. Data Collection\nWe collect minimal data such as IP addresses and browsing behavior to improve our service.\n\n### 2. Purpose of Use\nData is used for site analytics and providing a personalized experience.\n\n### 3. Data Storage\nData is stored for a limited period necessary for the purposes outlined.\n\n### 4. Your Rights\nYou have the right to access, correct, or delete your personal data.\n\n### 5. Third-Party Sharing\nWe do not share your data with third parties except for essential service providers.\n\n### 6. Cookie Policy\nSee our Cookie Settings for detailed information on how we use cookies."
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "content": "### 1. Service Rules\nUsers must use the service in compliance with all applicable laws.\n\n### 2. Prohibited Behavior\nUnauthorized data mining or attempts to disrupt the service are prohibited.\n\n### 3. Disclaimer\nThe service is provided 'as is' without warranties of any kind.\n\n### 4. Intellectual Property\nAll content on this site is the property of the site owner.\n\n### 5. Limitation of Liability\nWe are not liable for any damages arising from the use of this service."
+      }
     }
   },
   "fr": {
@@ -178,7 +206,35 @@
       ]
     },
     "footer": {
-      "support": "Pour le support technique, contactez : claritleonelmnicol@gmail.com"
+      "support": "Pour le support technique, contactez : claritleonelmnicol@gmail.com",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "cookie_settings": "Paramètres des Cookies"
+    },
+    "compliance": {
+      "cookie": {
+        "title": "Avis sur les Cookies",
+        "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser le trafic du site.",
+        "agree": "J'accepte",
+        "settings": "Paramètres"
+      },
+      "settings": {
+        "title": "Paramètres des Cookies",
+        "necessary": "Cookies Nécessaires",
+        "necessary_desc": "Essentiels au bon fonctionnement du site.",
+        "analytics": "Cookies Analytiques",
+        "analytics_desc": "Nous aident à comprendre comment les visiteurs interagissent avec le site.",
+        "save": "Enregistrer",
+        "accept_all": "Tout Accepter"
+      },
+      "privacy": {
+        "title": "Politique de Confidentialité",
+        "content": "### 1. Collecte de Données\nNous collectons des données minimales telles que les adresses IP et le comportement de navigation pour améliorer notre service.\n\n### 2. Finalité de l'Utilisation\nLes données sont utilisées pour l'analyse du site et pour fournir une expérience personnalisée.\n\n### 3. Stockage des Données\nLes données sont stockées pendant une période limitée nécessaire aux fins décrites.\n\n### 4. Vos Droits\nVous avez le droit d'accéder, de corriger ou de supprimer vos données personnelles.\n\n### 5. Partage avec des Tiers\nNous ne partageons pas vos données avec des tiers, sauf avec les prestataires de services essentiels.\n\n### 6. Politique de Cookies\nConsultez nos Paramètres de Cookies pour des informations détaillées sur notre utilisation des cookies."
+      },
+      "terms": {
+        "title": "Conditions d'Utilisation",
+        "content": "### 1. Règles du Service\nLes utilisateurs doivent utiliser le service conformément à toutes les lois applicables.\n\n### 2. Comportement Interdit\nL'extraction de données non autorisée ou les tentatives de perturbation du service sont interdites.\n\n### 3. Clause de Non-responsabilité\nLe service est fourni 'en l'état' sans garantie d'aucune sorte.\n\n### 4. Propriété Intellectuelle\nTout le contenu de ce site est la propriété du propriétaire du site.\n\n### 5. Limitation de Responsabilité\nNous ne sommes pas responsables des dommages résultant de l'utilisation de ce service."
+      }
     }
   },
   "ja": {
@@ -269,7 +325,511 @@
       ]
     },
     "footer": {
-      "support": "テクニカルサポートについては、claritleonelmnicol@gmail.com までお問い合わせください。"
+      "support": "テクニカルサポートについては、claritleonelmnicol@gmail.com までお問い合わせください。",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "cookie_settings": "Cookie設定"
+    },
+    "compliance": {
+      "cookie": {
+        "title": "Cookieのお知らせ",
+        "description": "当サイトでは、閲覧体験の向上およびトラフィック分析のためにCookieを使用しています。",
+        "agree": "同意する",
+        "settings": "設定"
+      },
+      "settings": {
+        "title": "Cookie設定",
+        "necessary": "必須Cookie",
+        "necessary_desc": "ウェブサイトが正常に機能するために不可欠です。",
+        "analytics": "分析用Cookie",
+        "analytics_desc": "訪問者がサイトとどのように対話しているかを理解するのに役立ちます。",
+        "save": "設定を保存",
+        "accept_all": "すべて同意"
+      },
+      "privacy": {
+        "title": "プライバシーポリシー",
+        "content": "### 1. データ収集\nサービス向上のため、IPアドレスや閲覧行動などの最小限のデータを収集します。\n\n### 2. 利用目的\nデータはサイト分析およびパーソナライズされた体験の提供に使用されます。\n\n### 3. データ保存\nデータは、概説された目的のために必要な期間限定で保存されます。\n\n### 4. ユーザーの権利\nユーザーは自身の個人データへのアクセス、訂正、削除を求める権利があります。\n\n### 5. 第三者との共有\n不可欠なサービスプロバイダーを除き、データを第三者と共有することはありません。\n\n### 6. Cookieポリシー\nCookieの使用詳細については、Cookie設定をご確認ください。"
+      },
+      "terms": {
+        "title": "利用規約",
+        "content": "### 1. サービス利用規則\nユーザーは、適用されるすべての法律を遵守してサービスを利用する必要があります。\n\n### 2. 禁止行為\n許可のないデータマイニングやサービスの妨害行為は禁止されています。\n\n### 3. 免責事項\nサービスは「現状有姿」で提供され、いかなる種類の保証もいたしません。\n\n### 4. 知的財産権\n当サイトのすべてのコンテンツは、サイト所有者に帰属します。\n\n### 5. 責任の制限\n当サービスの利用から生じるいかなる損害についても、当社は責任を負いません。"
+      }
+    }
+  },
+  "es": {
+    "title": "Falaises de Cassis",
+    "subtitle": "Acantilados de Cassis · Sur de Francia",
+    "nav": {
+      "routes": "Rutas",
+      "map": "Mapa",
+      "reviews": "Reseñas",
+      "blog": "Blog"
+    },
+    "hero": {
+      "badges": ["Mirador", "Costa Mediterránea", "Senderismo / Coche"],
+      "title": "Caliza Blanca Encuentra el Mar Azul\nViento en el Borde del Acantilado",
+      "description": "Falaises de Cassis no es solo 'un punto', sino un cinturón continuo de paisajes costeros. Los mejores adjetivos no son 'popular', sino - capas, sonido del viento y el mar parpadeante.",
+      "google_maps_stats": "{count} reseñas",
+      "cta_routes": "Ver las rutas",
+      "cta_map": "Abrir ubicación en el mapa",
+      "features": ["Paisajes costeros vírgenes", "Tranquilo en temporada baja", "Ventoso pero fotogénico"]
+    },
+    "quick": {
+      "title": "Entender en 30s",
+      "description": "No es solo un 'mirador'. Es una extensión continua de acantilados: cada pocos pasos, la luz y el color del mar cambian.",
+      "suitable": "Adecuado para: Aquellos que buscan paisajes costeros vírgenes, cómodos con caminatas moderadas.",
+      "unsuitable": "No adecuado para: Aquellos que solo quieren fotos rápidas o tienen miedo a los vientos fuertes.",
+      "cards": [
+        {
+          "title": "Qué verás",
+          "text": "Mediterráneo de azul profundo a azul menta + caliza blanca + paredes de roca ocre; viento, luz y perspectiva cambiando constantemente."
+        },
+        {
+          "title": "Cómo disfrutar mejor",
+          "text": "Ruta de senderismo por la mañana (buen ambiente matutino) + ruta de mirador por carretera por la tarde (atardecer)."
+        },
+        {
+          "title": "Estrategia en una frase",
+          "text": "Trátalo como una 'línea' en lugar de un 'punto': reserva al menos 2–3 horas, camina despacio."
+        }
+      ]
+    },
+    "routes": {
+      "title": "Planificación de Rutas Principales",
+      "subtitle": "Bucle de Senderismo A (Inmersivo) y Mirador de Carretera B (Fácil), se pueden hacer por separado o combinados.",
+      "a": {
+        "title": "Ruta A · Bucle de Senderismo Virgen",
+        "badge": "Senderismo",
+        "description": "Pueblo de Cassis → Port Miou → Port Pin → Mirador del Acantilado → Regreso a Cassis.",
+        "suitable": "Adecuado para: Amantes del senderismo y experiencias inmersivas.",
+        "warning": "Recordatorio: Sin puntos de suministro en el camino, lleve agua y energía."
+      },
+      "b": {
+        "title": "Ruta B · Mirador de Carretera",
+        "badge": "Coche/Ciclismo",
+        "description": "Pueblo de Cassis → Route des Crêtes → Segmento central de acantilados. Vista amplia.",
+        "suitable": "Adecuado para: Quienes quieren ver el panorama rápidamente.",
+        "warning": "Recordatorio: Cerrado a vehículos privados en algunos períodos o domingos."
+      }
+    },
+    "map": {
+      "title": "Mapa y Ubicación",
+      "description": "Mapa de Google Maps integrado abajo. Verifique cierres de carreteras y riesgos de incendio antes de salir.",
+      "links": "Enlaces Rápidos",
+      "open_google_maps": "Abrir Google Maps",
+      "source": "Fuente de Reseñas y Fotos"
+    },
+    "reviews": {
+      "title": "Reseñas y Fotos Reales",
+      "description": "Textos y fotos de reseñas reales de usuarios de Google Maps (abreviados para el diseño).",
+      "view_source": "Ver fuente: {name} · {place}",
+      "click_to_enlarge": "Click para ampliar"
+    },
+    "blog": {
+      "title": "Blog de Guía",
+      "description": "Guía detallada: transporte, rutas, temporadas, riesgos y presupuesto.",
+      "back_to_top": "Volver arriba",
+      "toc": "Tabla de Contenidos",
+      "toc_items": [
+        "Entender en 30s",
+        "Guía de Transporte",
+        "Rutas Principales",
+        "Guía Estacional",
+        "Riesgos y Restricciones",
+        "Presupuesto",
+        "Miradores Ocultos",
+        "Consejos Prácticos",
+        "Fuentes Oficiales",
+        "Resumen de Experiencias"
+      ]
+    },
+    "footer": {
+      "support": "Para soporte técnico, contacte a: claritleonelmnicol@gmail.com",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "cookie_settings": "Configuración de Cookies"
+    },
+    "compliance": {
+      "cookie": {
+        "title": "Aviso de Cookies",
+        "description": "Usamos cookies para mejorar su experiencia y analizar el tráfico del sitio.",
+        "agree": "Acepto",
+        "settings": "Configuración"
+      },
+      "settings": {
+        "title": "Configuración de Cookies",
+        "necessary": "Cookies Necesarias",
+        "necessary_desc": "Esenciales para que el sitio funcione correctamente.",
+        "analytics": "Cookies de Análisis",
+        "analytics_desc": "Nos ayudan a entender cómo los visitantes interactúan con el sitio.",
+        "save": "Guardar",
+        "accept_all": "Aceptar Todo"
+      },
+      "privacy": {
+        "title": "Política de Privacidad",
+        "content": "### 1. Recopilación de Datos\nRecopilamos datos mínimos como IP y comportamiento de navegación.\n\n### 2. Propósito de Uso\nLos datos se usan para análisis y personalización.\n\n### 3. Almacenamiento\nLos datos se guardan por el período necesario.\n\n### 4. Sus Derechos\nTiene derecho a acceder, corregir o eliminar sus datos.\n\n### 5. Compartir con Terceros\nNo compartimos datos excepto con proveedores esenciales.\n\n### 6. Política de Cookies\nConsulte la Configuración de Cookies para más detalles."
+      },
+      "terms": {
+        "title": "Términos de Servicio",
+        "content": "### 1. Reglas del Servicio\nCumpla con todas las leyes aplicables.\n\n### 2. Comportamiento Prohibido\nProhibido el minado de datos o intentos de interrupción.\n\n### 3. Descargo de Responsabilidad\nServicio proporcionado 'tal cual' sin garantías.\n\n### 4. Propiedad Intelectual\nTodo el contenido es propiedad del dueño del sitio.\n\n### 5. Limitación de Responsabilidad\nNo somos responsables de daños por el uso del servicio."
+      }
+    }
+  },
+  "de": {
+    "title": "Falaises de Cassis",
+    "subtitle": "Klippen von Cassis · Südfrankreich",
+    "nav": {
+      "routes": "Routen",
+      "map": "Karte",
+      "reviews": "Bewertungen",
+      "blog": "Blog"
+    },
+    "hero": {
+      "badges": ["Aussichtspunkt", "Mittelmeerküste", "Wandern / Autofahren"],
+      "title": "Weißer Kalkstein trifft auf tiefblaues Meer\nWind am Rande der Klippe",
+      "description": "Die Falaises de Cassis sind nicht nur 'ein Punkt', sondern ein durchgehender Gürtel von Küstenlandschaften. Die besten Adjektive sind nicht 'beliebt', sondern - Schichten, Klang des Windes und das glitzernde Meer.",
+      "google_maps_stats": "{count} Bewertungen",
+      "cta_routes": "Routen ansehen",
+      "cta_map": "Standort auf Karte öffnen",
+      "features": ["Unberührte Küstenlandschaften", "Ruhig in der Nebensaison", "Windig aber fotogen"]
+    },
+    "quick": {
+      "title": "In 30s verstehen",
+      "description": "Es ist nicht nur ein 'Aussichtspunkt'. Es ist ein durchgehender Abschnitt von Klippen: Jeder Schritt verändert Licht und Meeresfarbe.",
+      "suitable": "Geeignet für: Liebhaber unberührter Natur, die gerne moderat wandern.",
+      "unsuitable": "Nicht geeignet für: Leute, die nur schnelle Fotos wollen oder Angst vor Wind haben.",
+      "cards": [
+        {
+          "title": "Was Sie sehen werden",
+          "text": "Mittelmeer von Tiefblau bis Mintblau + weißer Kalkstein + ockerfarbene Felswände; Wind, Licht und Perspektive ändern sich ständig."
+        },
+        {
+          "title": "Bestes Erlebnis",
+          "text": "Wandertour am Morgen (frische Morgenluft) + Panorama-Fahrt am Abend (Sonnenuntergang)."
+        },
+        {
+          "title": "Strategie in einem Satz",
+          "text": "Betrachten Sie es als 'Linie' statt als 'Punkt': Planen Sie mindestens 2–3 Stunden ein, gehen Sie langsam."
+        }
+      ]
+    },
+    "routes": {
+      "title": "Kernroutenplanung",
+      "subtitle": "Wanderschleife A (Intensiv) und Panoramastraße B (Einfach), separat oder kombiniert möglich.",
+      "a": {
+        "title": "Route A · Unberührte Wanderschleife",
+        "badge": "Wandern",
+        "description": "Cassis Stadt → Port Miou → Port Pin → Klippenaussichtspunkt → Zurück nach Cassis.",
+        "suitable": "Geeignet für: Wanderfreunde und Naturerlebnisse.",
+        "warning": "Hinweis: Keine Verpflegung unterwegs, Wasser und Proviant mitbringen."
+      },
+      "b": {
+        "title": "Route B · Panoramastraße",
+        "badge": "Auto/Rad",
+        "description": "Cassis Stadt → Route des Crêtes → Klippenabschnitt. Weite Sicht.",
+        "suitable": "Geeignet für: Schnelles Panorama ohne langes Wandern.",
+        "warning": "Hinweis: Teilweise für Privatfahrzeuge gesperrt (z.B. sonntags)."
+      }
+    },
+    "map": {
+      "title": "Karte & Standort",
+      "description": "Eingebettete Karte unten. Prüfen Sie Straßensperrungen und Brandgefahr vor der Abfahrt.",
+      "links": "Schnelllinks",
+      "open_google_maps": "Google Maps öffnen",
+      "source": "Quelle für Bewertungen & Fotos"
+    },
+    "reviews": {
+      "title": "Echte Bewertungen & Fotos",
+      "description": "Texte und Fotos aus echten Google Maps Bewertungen (für das Layout gekürzt).",
+      "view_source": "Quelle: {name} · {place}",
+      "click_to_enlarge": "Zum Vergrößern klicken"
+    },
+    "blog": {
+      "title": "Leitfaden-Blog",
+      "description": "Ausführlicher Guide: Verkehr, Routen, Saison, Risiken und Budget.",
+      "back_to_top": "Nach oben",
+      "toc": "Inhaltsverzeichnis",
+      "toc_items": [
+        "In 30s verstehen",
+        "Verkehrsleitfaden",
+        "Kernrouten",
+        "Saison-Guide",
+        "Risiken & Regeln",
+        "Budgetplanung",
+        "Geheime Fotospots",
+        "Praktische Tipps",
+        "Offizielle Quellen",
+        "Erfahrungsbericht"
+      ]
+    },
+    "footer": {
+      "support": "Technischer Support: claritleonelmnicol@gmail.com",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen",
+      "cookie_settings": "Cookie-Einstellungen"
+    },
+    "compliance": {
+      "cookie": {
+        "title": "Cookie-Hinweis",
+        "description": "Wir nutzen Cookies für ein besseres Erlebnis und zur Analyse des Datenverkehrs.",
+        "agree": "Akzeptieren",
+        "settings": "Einstellungen"
+      },
+      "settings": {
+        "title": "Cookie-Einstellungen",
+        "necessary": "Notwendige Cookies",
+        "necessary_desc": "Erforderlich für die Grundfunktionen der Website.",
+        "analytics": "Analyse-Cookies",
+        "analytics_desc": "Helfen uns zu verstehen, wie Besucher die Website nutzen.",
+        "save": "Speichern",
+        "accept_all": "Alle akzeptieren"
+      },
+      "privacy": {
+        "title": "Datenschutzerklärung",
+        "content": "### 1. Datenerfassung\nWir erfassen minimale Daten wie IP-Adressen und Browsing-Verhalten.\n\n### 2. Verwendungszweck\nDaten dienen der Analyse und Personalisierung.\n\n### 3. Datenspeicherung\nDaten werden nur so lange wie nötig gespeichert.\n\n### 4. Ihre Rechte\nSie haben Recht auf Auskunft, Korrektur oder Löschung Ihrer Daten.\n\n### 5. Weitergabe an Dritte\nKeine Weitergabe außer an essenzielle Dienstleister.\n\n### 6. Cookie-Richtlinie\nDetails finden Sie in den Cookie-Einstellungen."
+      },
+      "terms": {
+        "title": "Nutzungsbedingungen",
+        "content": "### 1. Regeln\nNutzung gemäß geltendem Recht.\n\n### 2. Verbotenes Verhalten\nKein Data Mining oder Störungsversuche.\n\n### 3. Haftungsausschluss\nService wird 'wie besehen' ohne Gewährleistung bereitgestellt.\n\n### 4. Geistiges Eigentum\nInhalte sind Eigentum des Website-Besitzers.\n\n### 5. Haftungsbeschränkung\nKeine Haftung für Schäden aus der Nutzung."
+      }
+    }
+  },
+  "zh-TW": {
+    "title": "卡西斯懸崖",
+    "subtitle": "卡西斯懸崖 · 法國南部",
+    "nav": {
+      "routes": "路線",
+      "map": "地圖",
+      "reviews": "評價",
+      "blog": "部落格"
+    },
+    "hero": {
+      "badges": ["觀景點", "地中海海岸線", "徒步 / 自駕"],
+      "title": "奶白石灰岩與深藍海\n在懸崖邊撞上風",
+      "description": "Falaises de Cassis 不是“一個點”，而是一段連續的懸崖海岸風景帶。最像它的形容詞不是“熱門”，而是——層次、風聲、與忽明忽暗的海。",
+      "google_maps_stats": "{count} 條評價",
+      "cta_routes": "查看路線",
+      "cta_map": "在地圖中開啟",
+      "features": ["原生態海岸風景", "淡季人少靜謐", "風大但好拍"]
+    },
+    "quick": {
+      "title": "30秒速懂",
+      "description": "它不是一個“觀景台打卡點”。它是一段連續的懸崖海岸：每走幾步，光線與海色都在變化。",
+      "suitable": "適合：想要原生態海岸、能接受適度徒步的人。",
+      "unsuitable": "不適合：只想輕鬆拍照、不願走路的人。",
+      "cards": [
+        {
+          "title": "你會看到什麼",
+          "text": "深藍到薄荷藍的地中海 + 奶白石灰岩 + 赭色岩壁；風、光線、視角持續變化。"
+        },
+        {
+          "title": "怎麼玩最划算",
+          "text": "上午徒步線（清晨體感好） + 傍晚公路觀景線（蹲日落）。"
+        },
+        {
+          "title": "一句話攻略",
+          "text": "把它當“線”而不是“點”：預留至少 2–3 小時，慢慢走。"
+        }
+      ]
+    },
+    "routes": {
+      "title": "核心路線規劃",
+      "subtitle": "A 徒步環線（沉浸）與 B 山脊公路觀景線（輕鬆），可單獨玩也可組合。",
+      "a": {
+        "title": "路線 A · 原生態徒步環線",
+        "badge": "徒步",
+        "description": "卡西斯小鎮 → Port Miou → Port Pin → 懸崖觀景台 → 返回卡西斯。",
+        "suitable": "適合：喜歡徒步、想沉浸式體驗的人。",
+        "warning": "提醒：全程無補給，請自備水和食物。"
+      },
+      "b": {
+        "title": "路線 B · 山脊公路觀景線",
+        "badge": "自駕/單車",
+        "description": "卡西斯小鎮 → Route des Crêtes → 核心懸崖段。視野開闊。",
+        "suitable": "適合：想快速看全景、行程輕鬆的人。",
+        "warning": "提醒：部分時段或週日可能對私家車關閉。"
+      }
+    },
+    "map": {
+      "title": "地圖與定位",
+      "description": "下方提供 Google Maps 嵌入。出發前請核對：道路封閉、火險與天氣。",
+      "links": "快速連結",
+      "open_google_maps": "開啟 Google Maps",
+      "source": "評價與照片來源"
+    },
+    "reviews": {
+      "title": "真實評價與照片",
+      "description": "來自 Google Maps 的真實用戶評價（為排版做了精簡）。",
+      "view_source": "查看來源：{name} · {place}",
+      "click_to_enlarge": "點擊放大"
+    },
+    "blog": {
+      "title": "攻略部落格",
+      "description": "長文攻略：交通、路線、季節、風險與預算。",
+      "back_to_top": "回到頂部",
+      "toc": "目錄（快速跳轉）",
+      "toc_items": [
+        "30秒速懂",
+        "交通全攻略",
+        "核心路線規劃",
+        "季節玩法指南",
+        "風險與限制",
+        "預算拆分",
+        "小眾打卡點",
+        "實測避坑指南",
+        "權威信息來源",
+        "體驗總結"
+      ]
+    },
+    "footer": {
+      "support": "技術支持：claritleonelmnicol@gmail.com",
+      "privacy": "隱私政策",
+      "terms": "使用條款",
+      "cookie_settings": "Cookie 設定"
+    },
+    "compliance": {
+      "cookie": {
+        "title": "Cookie 提示",
+        "description": "我們使用 Cookie 來優化您的瀏覽體驗並分析流量。",
+        "agree": "我同意",
+        "settings": "設定"
+      },
+      "settings": {
+        "title": "Cookie 設定",
+        "necessary": "必要 Cookie",
+        "necessary_desc": "網站正常運作所必需的 Cookie。",
+        "analytics": "分析 Cookie",
+        "analytics_desc": "幫助我們了解訪客如何與網站互動。",
+        "save": "儲存設定",
+        "accept_all": "全部接受"
+      },
+      "privacy": {
+        "title": "隱私政策",
+        "content": "### 1. 數據收集\n我們收集極少量的數據，如 IP 地址和瀏覽行為。\n\n### 2. 使用目的\n數據用於分析和提供個性化體驗。\n\n### 3. 數據存儲\n數據僅在必要期間內存儲。\n\n### 4. 您的權利\n您有權訪問、更正或刪除您的個人數據。\n\n### 5. 第三方共享\n除必要服務商外，我們不與第三方共享數據。\n\n### 6. Cookie 政策\n詳情請參閱 Cookie 設定。"
+      },
+      "terms": {
+        "title": "使用條款",
+        "content": "### 1. 服務規則\n用戶必須遵守所有適用法律。\n\n### 2. 禁止行為\n禁止未經授權的數據挖掘或干擾服務。\n\n### 3. 免責聲明\n服務按“現狀”提供，不提供任何形式的保證。\n\n### 4. 知識產權\n本站所有內容均為站長財產。\n\n### 5. 責任限制\n我們不對使用本服務產生的任何損害負責。"
+      }
+    }
+  },
+  "ko": {
+    "title": "카시스 절벽",
+    "subtitle": "카시스 절벽 · 프랑스 남부",
+    "nav": {
+      "routes": "경로",
+      "map": "지도",
+      "reviews": "리뷰",
+      "blog": "블로그"
+    },
+    "hero": {
+      "badges": ["전망대", "지중해 해안선", "하이킹 / 드라이브"],
+      "title": "유백색 석회암과 진한 파란 바다\n절벽 끝에서 바람을 맞다",
+      "description": "Falaises de Cassis는 단순한 '지점'이 아니라 연속된 해안 풍경대입니다. 가장 잘 어울리는 형용사는 '인기'가 아니라 - 층, 바람 소리, 그리고 반짝이는 바다입니다.",
+      "google_maps_stats": "{count}개의 리뷰",
+      "cta_routes": "경로 보기",
+      "cta_map": "지도에서 위치 열기",
+      "features": ["태고의 해안 풍경", "비수기의 고요함", "바람이 불지만 사진 찍기 좋은"]
+    },
+    "quick": {
+      "title": "30초 만에 이해하기",
+      "description": "단순한 '전망대'가 아닙니다. 연속된 절벽 구간입니다. 몇 걸음마다 빛과 바다 색깔이 바뀝니다.",
+      "suitable": "추천: 태고의 해안 풍경을 원하고 적당한 하이킹을 즐기는 분.",
+      "unsuitable": "비추천: 편하게 사진만 찍고 싶거나 걷기 싫어하는 분.",
+      "cards": [
+        {
+          "title": "무엇을 보게 될까요",
+          "text": "진한 파랑에서 민트 블루까지의 지중해 + 유백색 석회암 + 황토색 암벽; 바람, 빛, 시점이 계속 바뀝니다."
+        },
+        {
+          "title": "가장 잘 즐기는 법",
+          "text": "오전 하이킹 코스 (상쾌한 아침 공기) + 저녁 도로 전망 코스 (일몰 감상)."
+        },
+        {
+          "title": "한 줄 전략",
+          "text": "'점'이 아닌 '선'으로 즐기세요: 최소 2~3시간을 잡고 천천히 걸으세요."
+        }
+      ]
+    },
+    "routes": {
+      "title": "핵심 경로 계획",
+      "subtitle": "A 하이킹 루프(몰입형)와 B 능선 도로 전망대(편안한 형), 따로 또는 같이 즐길 수 있습니다.",
+      "a": {
+        "title": "경로 A · 태고의 하이킹 루프",
+        "badge": "하이킹",
+        "description": "카시스 마을 → Port Miou → Port Pin → 절벽 전망대 → 카시스 복귀.",
+        "suitable": "추천: 하이킹을 좋아하고 몰입감 있는 경험을 원하는 분.",
+        "warning": "주의: 경로 중에 보급소가 없으니 물과 간식을 챙기세요."
+      },
+      "b": {
+        "title": "경로 B · 능선 도로 전망대",
+        "badge": "드라이브/자전거",
+        "description": "카시스 마을 → Route des Crêtes → 핵심 절벽 구간. 탁 트인 시야.",
+        "suitable": "추천: 파노라마를 빠르게 보고 싶거나 편한 일정을 원하는 분.",
+        "warning": "주의: 특정 기간이나 일요일에는 일반 차량 통행이 제한될 수 있습니다."
+      }
+    },
+    "map": {
+      "title": "지도 및 위치",
+      "description": "아래에 Google Maps가 포함되어 있습니다. 출발 전 도로 통제, 화재 위험, 날씨를 확인하세요.",
+      "links": "빠른 링크",
+      "open_google_maps": "Google Maps 열기",
+      "source": "리뷰 및 사진 출처"
+    },
+    "reviews": {
+      "title": "실제 리뷰 및 사진",
+      "description": "Google Maps 실제 사용자 리뷰의 텍스트와 사진 (레이아웃을 위해 요약됨).",
+      "view_source": "출처 보기: {name} · {place}",
+      "click_to_enlarge": "클릭하여 확대"
+    },
+    "blog": {
+      "title": "가이드 블로그",
+      "description": "상세 가이드: 교통, 경로, 시즌, 위험 및 예산.",
+      "back_to_top": "맨 위로",
+      "toc": "목차 (빠른 이동)",
+      "toc_items": [
+        "30초 이해하기",
+        "교통 가이드",
+        "핵심 경로",
+        "시즌별 가이드",
+        "위험 및 제한",
+        "예산 분석",
+        "숨겨진 명소",
+        "실전 팁",
+        "공식 정보원",
+        "경험 요약"
+      ]
+    },
+    "footer": {
+      "support": "기술 지원: claritleonelmnicol@gmail.com",
+      "privacy": "개인정보 처리방침",
+      "terms": "이용약관",
+      "cookie_settings": "쿠키 설정"
+    },
+    "compliance": {
+      "cookie": {
+        "title": "쿠키 안내",
+        "description": "사용자 경험 개선 및 사이트 트래픽 분석을 위해 쿠키를 사용합니다.",
+        "agree": "동의함",
+        "settings": "설정"
+      },
+      "settings": {
+        "title": "쿠키 설정",
+        "necessary": "필수 쿠키",
+        "necessary_desc": "웹사이트의 정상적인 작동을 위해 필수적입니다.",
+        "analytics": "분석 쿠키",
+        "analytics_desc": "방문자가 웹사이트와 어떻게 상호작용하는지 이해하는 데 도움이 됩니다.",
+        "save": "설정 저장",
+        "accept_all": "모두 동의"
+      },
+      "privacy": {
+        "title": "개인정보 처리방침",
+        "content": "### 1. 데이터 수집\nIP 주소 및 탐색 행동과 같은 최소한의 데이터를 수집합니다.\n\n### 2. 사용 목적\n데이터는 사이트 분석 및 맞춤형 경험 제공에 사용됩니다.\n\n### 3. 데이터 보관\n데이터는 목적 달성에 필요한 기간 동안만 보관됩니다.\n\n### 4. 사용자의 권리\n귀하는 개인정보에 대한 액세스, 수정 또는 삭제를 요청할 권리가 있습니다.\n\n### 5. 제3자 공유\n필수 서비스 제공업체를 제외하고 제3자와 데이터를 공유하지 않습니다.\n\n### 6. 쿠키 정책\n자세한 내용은 쿠키 설정을 참조하세요."
+      },
+      "terms": {
+        "title": "이용약관",
+        "content": "### 1. 서비스 규칙\n사용자는 모든 관련 법규를 준수하여 서비스를 이용해야 합니다.\n\n### 2. 금지 행위\n무단 데이터 마이닝 또는 서비스 방해 시도는 금지됩니다.\n\n### 3. 면책 조항\n서비스는 어떠한 보증 없이 '있는 그대로' 제공됩니다.\n\n### 4. 지적 재산권\n이 사이트의 모든 콘텐츠는 사이트 소유자의 자산입니다.\n\n### 5. 책임의 제한\n서비스 이용으로 발생하는 어떠한 손해에 대해서도 책임을 지지 않습니다."
+      }
     }
   }
 }

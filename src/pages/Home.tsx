@@ -7,17 +7,19 @@ Design system reminder:
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Streamdown } from "streamdown";
-import { Moon, Sun, Languages } from "lucide-react";
+import { Moon, Sun, Languages, X, Shield, ScrollText, Cookie } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import {
   DropdownMenu,
@@ -31,6 +33,10 @@ import heroImg from "@/assets/hero_google.jpg";
 import blogEn from "@/assets/blog_en.md?raw";
 import blogFr from "@/assets/blog_fr.md?raw";
 import blogJa from "@/assets/blog_ja.md?raw";
+import blogEs from "@/assets/blog_es.md?raw";
+import blogDe from "@/assets/blog_de.md?raw";
+import blogZhTw from "@/assets/blog_zh_tw.md?raw";
+import blogKo from "@/assets/blog_ko.md?raw";
 import featuredImg from "@/assets/image.jpg";
 import translations from "@/assets/translations.json";
 import reviewsData from "@/assets/reviews-data.json";
@@ -94,10 +100,30 @@ function Stars({ rating }: { rating: number }) {
 export default function Home({ targetSection }: HomeProps) {
   const section = hashToSectionId(targetSection);
   const { theme, toggleTheme } = useTheme();
-  const [lang, setLang] = useState<"en" | "fr" | "ja">("en");
+  
+  // Initialize language from localStorage or default to "en"
+  const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
+    const saved = localStorage.getItem("app-lang");
+    return (saved as any) || "en";
+  });
 
   const t = (translations as any)[lang];
-  const blogMd = lang === "fr" ? blogFr : lang === "ja" ? blogJa : blogEn;
+  
+  const blogMd = useMemo(() => {
+    switch (lang) {
+      case "fr": return blogFr;
+      case "ja": return blogJa;
+      case "es": return blogEs;
+      case "de": return blogDe;
+      case "zh-TW": return blogZhTw;
+      case "ko": return blogKo;
+      default: return blogEn;
+    }
+  }, [lang]);
+
+  useEffect(() => {
+    localStorage.setItem("app-lang", lang);
+  }, [lang]);
 
   useEffect(() => {
     if (section) {
@@ -122,6 +148,36 @@ export default function Home({ targetSection }: HomeProps) {
   );
 
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
+  // Compliance States
+  const [showCookieNotice, setShowCookieNotice] = useState(false);
+  const [complianceModal, setComplianceModal] = useState<"privacy" | "terms" | "cookie-settings" | null>(null);
+  const [cookieSettings, setCookieSettings] = useState({
+    necessary: true,
+    analytics: true,
+  });
+
+  useEffect(() => {
+    const consent = localStorage.getItem("cookie-consent");
+    if (!consent) {
+      setShowCookieNotice(true);
+    } else {
+      setCookieSettings(JSON.parse(consent));
+    }
+  }, []);
+
+  const handleAcceptAll = () => {
+    const consent = { necessary: true, analytics: true };
+    setCookieSettings(consent);
+    localStorage.setItem("cookie-consent", JSON.stringify(consent));
+    setShowCookieNotice(false);
+  };
+
+  const handleSaveSettings = () => {
+    localStorage.setItem("cookie-consent", JSON.stringify(cookieSettings));
+    setShowCookieNotice(false);
+    setComplianceModal(null);
+  };
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -160,6 +216,10 @@ export default function Home({ targetSection }: HomeProps) {
                 <DropdownMenuItem onClick={() => setLang("en")}>English</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setLang("fr")}>Français</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setLang("ja")}>日本語</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLang("es")}>Español</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLang("de")}>Deutsch</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLang("zh-TW")}>繁體中文</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLang("ko")}>한국어</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -519,7 +579,13 @@ export default function Home({ targetSection }: HomeProps) {
                   className="w-full h-auto object-cover aspect-[16/9]"
                 />
                 <div className="bg-background/40 p-4 text-center text-sm italic text-muted-foreground">
-                  {lang === 'fr' ? 'Une vue imprenable sur les falaises de Cassis' : lang === 'ja' ? 'カシスの懸崖の素晴らしい眺め' : 'A breathtaking view of the Cassis cliffs'}
+                  {lang === 'fr' ? 'Une vue imprenable sur les falaises de Cassis' : 
+                   lang === 'ja' ? 'カシスの懸崖の素晴らしい眺め' : 
+                   lang === 'es' ? 'Una vista impresionante de los acantilados de Cassis' :
+                   lang === 'de' ? 'Ein atemberaubender Blick auf die Klippen von Cassis' :
+                   lang === 'zh-TW' ? '卡西斯懸崖的壯麗景色' :
+                   lang === 'ko' ? '카시스 절벽의 숨막히는 전경' :
+                   'A breathtaking view of the Cassis cliffs'}
                 </div>
               </div>
 
@@ -535,10 +601,56 @@ export default function Home({ targetSection }: HomeProps) {
 
       {/* FOOTER */}
       <footer className="border-t border-border/70 bg-background py-10">
-        <div className="mx-auto max-w-6xl px-4 text-center text-xs text-muted-foreground">
-          {t.footer.support}
+        <div className="mx-auto max-w-6xl px-4 text-center">
+          <div className="text-xs text-muted-foreground">
+            {t.footer.support}
+          </div>
+          <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground/80">
+            <button 
+              className="hover:text-foreground transition-colors"
+              onClick={() => setComplianceModal("privacy")}
+            >
+              {t.footer.privacy}
+            </button>
+            <button 
+              className="hover:text-foreground transition-colors"
+              onClick={() => setComplianceModal("terms")}
+            >
+              {t.footer.terms}
+            </button>
+            <button 
+              className="hover:text-foreground transition-colors"
+              onClick={() => setComplianceModal("cookie-settings")}
+            >
+              {t.footer.cookie_settings}
+            </button>
+          </div>
         </div>
       </footer>
+
+      {/* Floating Language Switcher */}
+      <div className="fixed right-6 top-20 z-50 hidden md:block">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button 
+              variant="outline" 
+              size="icon" 
+              className="h-10 w-10 rounded-full border-border/70 bg-background/80 shadow-lg backdrop-blur hover:bg-background"
+            >
+              <Languages className="h-5 w-5 text-[oklch(var(--accent))]" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-40 grain">
+            <DropdownMenuItem className={lang === "en" ? "bg-accent/10 font-bold" : ""} onClick={() => setLang("en")}>English</DropdownMenuItem>
+            <DropdownMenuItem className={lang === "fr" ? "bg-accent/10 font-bold" : ""} onClick={() => setLang("fr")}>Français</DropdownMenuItem>
+            <DropdownMenuItem className={lang === "ja" ? "bg-accent/10 font-bold" : ""} onClick={() => setLang("ja")}>日本語</DropdownMenuItem>
+            <DropdownMenuItem className={lang === "es" ? "bg-accent/10 font-bold" : ""} onClick={() => setLang("es")}>Español</DropdownMenuItem>
+            <DropdownMenuItem className={lang === "de" ? "bg-accent/10 font-bold" : ""} onClick={() => setLang("de")}>Deutsch</DropdownMenuItem>
+            <DropdownMenuItem className={lang === "zh-TW" ? "bg-accent/10 font-bold" : ""} onClick={() => setLang("zh-TW")}>繁體中文</DropdownMenuItem>
+            <DropdownMenuItem className={lang === "ko" ? "bg-accent/10 font-bold" : ""} onClick={() => setLang("ko")}>한국어</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
 
       <Dialog open={!!lightbox} onOpenChange={(v) => (!v ? setLightbox(null) : undefined)}>
         <DialogContent className="max-w-4xl border-border/70 bg-background text-foreground">
@@ -554,6 +666,113 @@ export default function Home({ targetSection }: HomeProps) {
           ) : null}
         </DialogContent>
       </Dialog>
+
+      {/* Compliance Modals */}
+      <Dialog open={!!complianceModal} onOpenChange={(v) => !v && setComplianceModal(null)}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto border-border/70 bg-background text-foreground grain">
+          <DialogHeader className="flex flex-row items-center gap-3 space-y-0">
+            {complianceModal === "privacy" && <Shield className="h-6 w-6 text-[oklch(var(--accent))]" />}
+            {complianceModal === "terms" && <ScrollText className="h-6 w-6 text-[oklch(var(--accent))]" />}
+            {complianceModal === "cookie-settings" && <Cookie className="h-6 w-6 text-[oklch(var(--accent))]" />}
+            <div>
+              <DialogTitle className="text-xl">
+                {complianceModal === "privacy" && t.compliance.privacy.title}
+                {complianceModal === "terms" && t.compliance.terms.title}
+                {complianceModal === "cookie-settings" && t.compliance.settings.title}
+              </DialogTitle>
+              {complianceModal === "cookie-settings" && (
+                <DialogDescription className="text-xs">
+                  {t.compliance.cookie.description}
+                </DialogDescription>
+              )}
+            </div>
+          </DialogHeader>
+          
+          <Separator className="my-4" />
+
+          {complianceModal === "cookie-settings" ? (
+            <div className="space-y-6 py-2">
+              <div className="flex items-center justify-between gap-4">
+                <div className="space-y-0.5">
+                  <div className="text-sm font-semibold">{t.compliance.settings.necessary}</div>
+                  <div className="text-xs text-muted-foreground">{t.compliance.settings.necessary_desc}</div>
+                </div>
+                <Switch checked={cookieSettings.necessary} disabled />
+              </div>
+              <div className="flex items-center justify-between gap-4">
+                <div className="space-y-0.5">
+                  <div className="text-sm font-semibold">{t.compliance.settings.analytics}</div>
+                  <div className="text-xs text-muted-foreground">{t.compliance.settings.analytics_desc}</div>
+                </div>
+                <Switch 
+                  checked={cookieSettings.analytics} 
+                  onCheckedChange={(checked) => setCookieSettings(prev => ({ ...prev, analytics: checked }))} 
+                />
+              </div>
+              <div className="flex justify-end gap-3 pt-4">
+                <Button variant="outline" onClick={handleAcceptAll}>
+                  {t.compliance.settings.accept_all}
+                </Button>
+                <Button onClick={handleSaveSettings}>
+                  {t.compliance.settings.save}
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <div className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-sm prose-headings:mb-4 prose-p:leading-relaxed`}>
+              <Streamdown>
+                {complianceModal === "privacy" ? t.compliance.privacy.content : t.compliance.terms.content}
+              </Streamdown>
+              <div className="flex justify-end pt-6">
+                <Button onClick={() => setComplianceModal(null)}>Close</Button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Cookie Notice Banner */}
+      {showCookieNotice && (
+        <motion.div 
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
+        >
+          <div className="mx-auto max-w-4xl rounded-2xl border border-border/70 bg-background/95 p-4 shadow-2xl backdrop-blur-md grain md:p-6">
+            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+              <div className="flex items-center gap-4 text-center md:text-left">
+                <div className="hidden rounded-full bg-accent/10 p-3 text-[oklch(var(--accent))] md:block">
+                  <Cookie className="h-6 w-6" />
+                </div>
+                <div className="space-y-1">
+                  <div className="text-sm font-bold">{t.compliance.cookie.title}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {t.compliance.cookie.description}
+                  </div>
+                </div>
+              </div>
+              <div className="flex w-full items-center justify-center gap-3 md:w-auto">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="text-xs"
+                  onClick={() => setComplianceModal("cookie-settings")}
+                >
+                  {t.compliance.cookie.settings}
+                </Button>
+                <Button 
+                  size="sm" 
+                  className="bg-primary text-primary-foreground text-xs px-6"
+                  onClick={handleAcceptAll}
+                >
+                  {t.compliance.cookie.agree}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </main>
   );
 }
