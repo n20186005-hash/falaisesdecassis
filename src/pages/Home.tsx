@@ -6,20 +6,19 @@ Design system reminder:
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Streamdown } from "streamdown";
-import { Moon, Sun, Languages, X, Shield, ScrollText, Cookie } from "lucide-react";
+import { Moon, Sun, Languages, Cookie } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
 import {
   DropdownMenu,
@@ -151,32 +150,18 @@ export default function Home({ targetSection }: HomeProps) {
 
   // Compliance States
   const [showCookieNotice, setShowCookieNotice] = useState(false);
-  const [complianceModal, setComplianceModal] = useState<"privacy" | "terms" | "cookie-settings" | null>(null);
-  const [cookieSettings, setCookieSettings] = useState({
-    necessary: true,
-    analytics: true,
-  });
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
     if (!consent) {
       setShowCookieNotice(true);
-    } else {
-      setCookieSettings(JSON.parse(consent));
     }
   }, []);
 
   const handleAcceptAll = () => {
     const consent = { necessary: true, analytics: true };
-    setCookieSettings(consent);
     localStorage.setItem("cookie-consent", JSON.stringify(consent));
     setShowCookieNotice(false);
-  };
-
-  const handleSaveSettings = () => {
-    localStorage.setItem("cookie-consent", JSON.stringify(cookieSettings));
-    setShowCookieNotice(false);
-    setComplianceModal(null);
   };
 
   return (
@@ -606,24 +591,15 @@ export default function Home({ targetSection }: HomeProps) {
             {t.footer.support}
           </div>
           <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground/80">
-            <button 
-              className="hover:text-foreground transition-colors"
-              onClick={() => setComplianceModal("privacy")}
-            >
+            <Link href="/privacy" className="hover:text-foreground transition-colors">
               {t.footer.privacy}
-            </button>
-            <button 
-              className="hover:text-foreground transition-colors"
-              onClick={() => setComplianceModal("terms")}
-            >
+            </Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors">
               {t.footer.terms}
-            </button>
-            <button 
-              className="hover:text-foreground transition-colors"
-              onClick={() => setComplianceModal("cookie-settings")}
-            >
+            </Link>
+            <Link href="/cookie-settings" className="hover:text-foreground transition-colors">
               {t.footer.cookie_settings}
-            </button>
+            </Link>
           </div>
         </div>
       </footer>
@@ -667,70 +643,6 @@ export default function Home({ targetSection }: HomeProps) {
         </DialogContent>
       </Dialog>
 
-      {/* Compliance Modals */}
-      <Dialog open={!!complianceModal} onOpenChange={(v) => !v && setComplianceModal(null)}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto border-border/70 bg-background text-foreground grain">
-          <DialogHeader className="flex flex-row items-center gap-3 space-y-0">
-            {complianceModal === "privacy" && <Shield className="h-6 w-6 text-[oklch(var(--accent))]" />}
-            {complianceModal === "terms" && <ScrollText className="h-6 w-6 text-[oklch(var(--accent))]" />}
-            {complianceModal === "cookie-settings" && <Cookie className="h-6 w-6 text-[oklch(var(--accent))]" />}
-            <div>
-              <DialogTitle className="text-xl">
-                {complianceModal === "privacy" && t.compliance.privacy.title}
-                {complianceModal === "terms" && t.compliance.terms.title}
-                {complianceModal === "cookie-settings" && t.compliance.settings.title}
-              </DialogTitle>
-              {complianceModal === "cookie-settings" && (
-                <DialogDescription className="text-xs">
-                  {t.compliance.cookie.description}
-                </DialogDescription>
-              )}
-            </div>
-          </DialogHeader>
-          
-          <Separator className="my-4" />
-
-          {complianceModal === "cookie-settings" ? (
-            <div className="space-y-6 py-2">
-              <div className="flex items-center justify-between gap-4">
-                <div className="space-y-0.5">
-                  <div className="text-sm font-semibold">{t.compliance.settings.necessary}</div>
-                  <div className="text-xs text-muted-foreground">{t.compliance.settings.necessary_desc}</div>
-                </div>
-                <Switch checked={cookieSettings.necessary} disabled />
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <div className="space-y-0.5">
-                  <div className="text-sm font-semibold">{t.compliance.settings.analytics}</div>
-                  <div className="text-xs text-muted-foreground">{t.compliance.settings.analytics_desc}</div>
-                </div>
-                <Switch 
-                  checked={cookieSettings.analytics} 
-                  onCheckedChange={(checked) => setCookieSettings(prev => ({ ...prev, analytics: checked }))} 
-                />
-              </div>
-              <div className="flex justify-end gap-3 pt-4">
-                <Button variant="outline" onClick={handleAcceptAll}>
-                  {t.compliance.settings.accept_all}
-                </Button>
-                <Button onClick={handleSaveSettings}>
-                  {t.compliance.settings.save}
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <div className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-sm prose-headings:mb-4 prose-p:leading-relaxed`}>
-              <Streamdown>
-                {complianceModal === "privacy" ? t.compliance.privacy.content : t.compliance.terms.content}
-              </Streamdown>
-              <div className="flex justify-end pt-6">
-                <Button onClick={() => setComplianceModal(null)}>Close</Button>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
-
       {/* Cookie Notice Banner */}
       {showCookieNotice && (
         <motion.div 
@@ -753,14 +665,15 @@ export default function Home({ targetSection }: HomeProps) {
                 </div>
               </div>
               <div className="flex w-full items-center justify-center gap-3 md:w-auto">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  className="text-xs"
-                  onClick={() => setComplianceModal("cookie-settings")}
-                >
-                  {t.compliance.cookie.settings}
-                </Button>
+                <Link href="/cookie-settings">
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="text-xs"
+                  >
+                    {t.compliance.cookie.settings}
+                  </Button>
+                </Link>
                 <Button 
                   size="sm" 
                   className="bg-primary text-primary-foreground text-xs px-6"
