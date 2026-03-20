@@ -1,0 +1,275 @@
+{
+  "en": {
+    "title": "Falaises de Cassis",
+    "subtitle": "Cassis Cliffs · South of France",
+    "nav": {
+      "routes": "Routes",
+      "map": "Map",
+      "reviews": "Reviews",
+      "blog": "Blog"
+    },
+    "hero": {
+      "badges": ["Viewpoint", "Mediterranean Coastline", "Hiking / Driving"],
+      "title": "Milk-white Limestone Meets Deep Blue Sea\nWind at the Edge of the Cliff",
+      "description": "Falaises de Cassis is not just 'a point', but a continuous belt of coastal scenery. The best adjectives are not 'popular', but - layers, sound of the wind, and the flickering sea.",
+      "google_maps_stats": "{count} reviews",
+      "cta_routes": "See the routes",
+      "cta_map": "Open map location",
+      "features": ["Pristine coastal scenery", "Quiet and peaceful in off-season", "Windy but photogenic"]
+    },
+    "quick": {
+      "title": "Understand in 30s",
+      "description": "It's not just a 'viewpoint'. It's a continuous stretch of cliffs: every few steps, the light and sea color change.",
+      "suitable": "Suitable for: Those seeking pristine coastal scenery, comfortable with moderate hiking, and cliff views.",
+      "unsuitable": "Unsuitable for: Those only wanting quick photos, unwilling to walk, or afraid of strong winds.",
+      "cards": [
+        {
+          "title": "What you'll see",
+          "text": "Deep blue to mint blue Mediterranean + milk-white limestone + ochre rock walls; wind, light, and perspective constantly changing."
+        },
+        {
+          "title": "How to play best",
+          "text": "Morning hiking line (good morning feel) + evening highway viewpoint line (sunset), two segments connected smoothly."
+        },
+        {
+          "title": "One-sentence strategy",
+          "text": "Treat it as a 'line' rather than a 'point': reserve at least 2–3 hours, walk slowly, the scenery will open up piece by piece."
+        }
+      ]
+    },
+    "routes": {
+      "title": "Core Route Planning",
+      "subtitle": "A Hiking Loop (Immersive) and B Ridge Road Viewpoint (Easy), can be played separately or combined.",
+      "a": {
+        "title": "Route A · Pristine Hiking Loop",
+        "badge": "Hiking",
+        "description": "Cassis Town → Port Miou → Port Pin → Cliff Viewpoint → Return to Cassis. Close contact with coastal rock walls and small bays.",
+        "suitable": "Suitable for: Those who like hiking and want an immersive experience.",
+        "warning": "Reminder: No supply points along the way, water and energy must be brought."
+      },
+      "b": {
+        "title": "Route B · Ridge Road Viewpoint",
+        "badge": "Driving/Cycling",
+        "description": "Cassis Town → Route des Crêtes → Falaises de Cassis core cliff segment. Wide view, moving viewpoint.",
+        "suitable": "Suitable for: Those who want to see the panorama quickly and more easily.",
+        "warning": "Reminder: Closed to private vehicles during some periods or Sundays."
+      }
+    },
+    "map": {
+      "title": "Map & Location",
+      "description": "Google Maps embed provided below. Please check road closures, fire risks, and weather before departure.",
+      "links": "Quick Links",
+      "open_google_maps": "Open Google Maps",
+      "source": "Review & Photo Source"
+    },
+    "reviews": {
+      "title": "Real Reviews & Photos",
+      "description": "Texts and photos from real Google Maps user reviews (shortened/simplified for layout).",
+      "view_source": "View source: {name} · {place}",
+      "click_to_enlarge": "Click to enlarge"
+    },
+    "blog": {
+      "title": "Guide Blog",
+      "description": "Long-form guide: transport, routes, seasons, risks, and budget. Save to your travel notes.",
+      "back_to_top": "Back to Top",
+      "toc": "Table of Contents (Quick Jump)",
+      "toc_items": [
+        "30s Quick Understand",
+        "Transport Guide",
+        "Core Route Planning",
+        "Seasonal Guide",
+        "Risks & Restrictions",
+        "Budget Breakdown",
+        "Hidden Photo Spots",
+        "Practical Tips",
+        "Official Sources",
+        "Summary of Experiences"
+      ]
+    },
+    "footer": {
+      "support": "For technical support of this website, please contact: claritleonelmnicol@gmail.com"
+    }
+  },
+  "fr": {
+    "title": "Falaises de Cassis",
+    "subtitle": "Falaises de Cassis · Sud de la France",
+    "nav": {
+      "routes": "Itinéraires",
+      "map": "Carte",
+      "reviews": "Avis",
+      "blog": "Blog"
+    },
+    "hero": {
+      "badges": ["Point de vue", "Littoral méditerranéen", "Randonnée / Voiture"],
+      "title": "Le calcaire blanc rencontre la mer bleue\nLe vent au bord de la falaise",
+      "description": "Les Falaises de Cassis ne sont pas seulement 'un point', mais une ceinture continue de paysages côtiers. Les meilleurs adjectifs ne sont pas 'populaires', mais - couches, bruit du vent et mer scintillante.",
+      "google_maps_stats": "{count} avis",
+      "cta_routes": "Voir les itinéraires",
+      "cta_map": "Ouvrir la carte",
+      "features": ["Paysages côtiers vierges", "Calme en basse saison", "Venteux mais photogénique"]
+    },
+    "quick": {
+      "title": "Comprendre en 30s",
+      "description": "Ce n'est pas seulement un 'point de vue'. C'est une étendue continue de falaises : à chaque pas, la lumière et la couleur de la mer changent.",
+      "suitable": "Convient pour : Ceux qui recherchent des paysages côtiers vierges, à l'aise avec une randonnée modérée.",
+      "unsuitable": "À éviter pour : Ceux qui veulent seulement des photos rapides ou ont peur du vent.",
+      "cards": [
+        {
+          "title": "Ce que vous verrez",
+          "text": "Méditerranée bleu profond à bleu menthe + calcaire blanc + parois rocheuses ocre; vent, lumière et perspective changeant constamment."
+        },
+        {
+          "title": "Comment mieux profiter",
+          "text": "Ligne de randonnée le matin (bonne sensation matinale) + ligne de point de vue sur la route le soir (coucher du soleil)."
+        },
+        {
+          "title": "Stratégie en une phrase",
+          "text": "Considérez-le comme une 'ligne' plutôt qu'un 'point' : réservez au moins 2-3 heures, marchez lentement."
+        }
+      ]
+    },
+    "routes": {
+      "title": "Planification des itinéraires",
+      "subtitle": "Boucle A (Immersive) et Point de vue B (Facile), jouables séparément ou combinées.",
+      "a": {
+        "title": "Route A · Boucle de randonnée",
+        "badge": "Randonnée",
+        "description": "Ville de Cassis → Port Miou → Port Pin → Point de vue → Retour à Cassis. Contact étroit avec le littoral.",
+        "suitable": "Convient pour : Amateurs de randonnée et d'immersion.",
+        "warning": "Rappel : Pas de ravitaillement, apportez votre eau et énergie."
+      },
+      "b": {
+        "title": "Route B · Point de vue sur la crête",
+        "badge": "Voiture/Vélo",
+        "description": "Ville de Cassis → Route des Crêtes → Segment central. Vue panoramique.",
+        "suitable": "Convient pour : Ceux qui veulent voir le panorama rapidement.",
+        "warning": "Rappel : Fermé aux véhicules certains jours ou dimanches."
+      }
+    },
+    "map": {
+      "title": "Carte & Localisation",
+      "description": "Carte Google Maps intégrée ci-dessous. Vérifiez les fermetures et risques d'incendie avant de partir.",
+      "links": "Liens rapides",
+      "open_google_maps": "Ouvrir Google Maps",
+      "source": "Source des avis et photos"
+    },
+    "reviews": {
+      "title": "Avis réels & Photos",
+      "description": "Textes et photos d'utilisateurs réels de Google Maps (simplifiés pour la mise en page).",
+      "view_source": "Source : {name} · {place}",
+      "click_to_enlarge": "Cliquer pour agrandir"
+    },
+    "blog": {
+      "title": "Blog Guide",
+      "description": "Guide complet : transport, itinéraires, saisons, risques et budget.",
+      "back_to_top": "Retour en haut",
+      "toc": "Table des matières",
+      "toc_items": [
+        "Comprendre en 30s",
+        "Guide de transport",
+        "Itinéraires",
+        "Guide saisonnier",
+        "Risques & Restrictions",
+        "Budget",
+        "Coins photos secrets",
+        "Conseils pratiques",
+        "Sources officielles",
+        "Résumé"
+      ]
+    },
+    "footer": {
+      "support": "Pour le support technique, contactez : claritleonelmnicol@gmail.com"
+    }
+  },
+  "ja": {
+    "title": "カシスの懸崖",
+    "subtitle": "カシスの懸崖 · 南フランス",
+    "nav": {
+      "routes": "ルート",
+      "map": "地図",
+      "reviews": "レビュー",
+      "blog": "ブログ"
+    },
+    "hero": {
+      "badges": ["展望台", "地中海海岸線", "ハイキング / ドライブ"],
+      "title": "乳白色の石灰岩と深青の海\n断崖絶壁で風に吹かれて",
+      "description": "カシスの懸崖は単なる「スポット」ではなく、連続する海岸風景のベルトです。最もふさわしい形容詞は「人気」ではなく、層、風の音、そしてきらめく海です。",
+      "google_maps_stats": "{count} 件のレビュー",
+      "cta_routes": "ルートを見る",
+      "cta_map": "地図で場所を開く",
+      "features": ["手つかずの海岸風景", "オフシーズンの静けさ", "風は強いがフォトジェニック"]
+    },
+    "quick": {
+      "title": "30秒でわかる",
+      "description": "単なる「展望スポット」ではありません。連続する断崖絶壁です。数歩進むごとに、光と海の色が変わります。",
+      "suitable": "向いている人: 手つかずの海岸風景を求め、適度なハイキングや断崖の景色を楽しめる方。",
+      "unsuitable": "向いていない人: 手軽に写真を撮りたいだけの方、歩きたくない方、強風が苦手な方。",
+      "cards": [
+        {
+          "title": "何が見えるか",
+          "text": "深青からミントブルーの地中海 + 乳白色の石灰岩 + 黄土色の岩壁。風、光、視点が常に変化します。"
+        },
+        {
+          "title": "楽しみ方",
+          "text": "午前中のハイキングルート（清々しい空気）+ 夕方の山道展望ルート（夕日）。2つのセグメントをスムーズに繋げられます。"
+        },
+        {
+          "title": "一言で言うと",
+          "text": "「点」ではなく「線」として捉えてください。少なくとも2〜3時間を確保し、ゆっくり歩くことで、景色が一段ずつ開けていきます。"
+        }
+      ]
+    },
+    "routes": {
+      "title": "コア・ルート計画",
+      "subtitle": "A ハイキングループ（没入型）と B リッジロード展望台（手軽型）は、個別に楽しむことも、組み合わせることも可能です。",
+      "a": {
+        "title": "ルート A · 原生のハイキングループ",
+        "badge": "ハイキング",
+        "description": "カシスの町 → ポール・ミウ → ポール・パン → 断崖展望台 → カシスの町へ戻る。海岸の岩壁や小さな入り江を間近に感じられます。",
+        "suitable": "向いている人: ハイキングが好きで、没入感のある体験を求める方。",
+        "warning": "注意: 途中に補給地点はありません。水とエネルギー源は必ず持参してください。"
+      },
+      "b": {
+        "title": "ルート B · リッジロード展望台",
+        "badge": "ドライブ/サイクリング",
+        "description": "カシスの町 → ルート・デ・クレット → カシスの懸崖コア区間。広大な視界、移動する展望台。",
+        "suitable": "向いている人: パノラマを手早く、より手軽に見たい方。",
+        "warning": "注意: 特定の期間や日曜日は一般車両が通行禁止になる場合があります。"
+      }
+    },
+    "map": {
+      "title": "地図と場所",
+      "description": "下にGoogleマップを埋め込んでいます。出発前に道路の閉鎖、火災リスク、天候を確認してください。",
+      "links": "クイックリンク",
+      "open_google_maps": "Googleマップを開く",
+      "source": "レビューと写真のソース"
+    },
+    "reviews": {
+      "title": "実際のレビューと写真",
+      "description": "Googleマップの実際のユーザーレビューからのテキストと写真（レイアウトのために短縮/簡略化されています）。",
+      "view_source": "ソースを表示: {name} · {place}",
+      "click_to_enlarge": "クリックして拡大"
+    },
+    "blog": {
+      "title": "ガイドブログ",
+      "description": "詳細ガイド: 交通、ルート、季節、リスク、予算。旅行ノートに保存してください。",
+      "back_to_top": "トップに戻る",
+      "toc": "目次（クイックジャンプ）",
+      "toc_items": [
+        "30秒でわかる",
+        "交通ガイド",
+        "ルート計画",
+        "季節別ガイド",
+        "リスクと制限",
+        "予算内訳",
+        "穴場のフォトスポット",
+        "実用的なヒント",
+        "公式情報源",
+        "体験まとめ"
+      ]
+    },
+    "footer": {
+      "support": "テクニカルサポートについては、claritleonelmnicol@gmail.com までお問い合わせください。"
+    }
+  }
+}

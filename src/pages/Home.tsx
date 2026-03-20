@@ -7,6 +7,7 @@ Design system reminder:
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Streamdown } from "streamdown";
+import { Moon, Sun, Languages } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -18,9 +19,20 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTheme } from "@/contexts/ThemeContext";
 
 import heroImg from "@/assets/hero_google.jpg";
-import blogMd from "@/assets/blog.md?raw";
+import blogEn from "@/assets/blog_en.md?raw";
+import blogFr from "@/assets/blog_fr.md?raw";
+import blogJa from "@/assets/blog_ja.md?raw";
+import featuredImg from "@/assets/image.jpg";
+import translations from "@/assets/translations.json";
 import reviewsData from "@/assets/reviews-data.json";
 
 import review01 from "@/assets/reviews/review_01.jpg";
@@ -81,6 +93,11 @@ function Stars({ rating }: { rating: number }) {
 
 export default function Home({ targetSection }: HomeProps) {
   const section = hashToSectionId(targetSection);
+  const { theme, toggleTheme } = useTheme();
+  const [lang, setLang] = useState<"en" | "fr" | "ja">("en");
+
+  const t = (translations as any)[lang];
+  const blogMd = lang === "fr" ? blogFr : lang === "ja" ? blogJa : blogEn;
 
   useEffect(() => {
     if (section) {
@@ -92,14 +109,14 @@ export default function Home({ targetSection }: HomeProps) {
 
   const imagePool = useMemo(
     () => [
-      { src: review01, alt: "Google Maps 晒图 1" },
-      { src: review02, alt: "Google Maps 晒图 2" },
-      { src: review03, alt: "Google Maps 晒图 3" },
-      { src: review04, alt: "Google Maps 晒图 4" },
-      { src: review05, alt: "Google Maps 晒图 5" },
-      { src: review06, alt: "Google Maps 晒图 6" },
-      { src: review07, alt: "Google Maps 晒图 7" },
-      { src: review08, alt: "Google Maps 晒图 8" },
+      { src: review01, alt: "Google Maps Photo 1" },
+      { src: review02, alt: "Google Maps Photo 2" },
+      { src: review03, alt: "Google Maps Photo 3" },
+      { src: review04, alt: "Google Maps Photo 4" },
+      { src: review05, alt: "Google Maps Photo 5" },
+      { src: review06, alt: "Google Maps Photo 6" },
+      { src: review07, alt: "Google Maps Photo 7" },
+      { src: review08, alt: "Google Maps Photo 8" },
     ],
     [],
   );
@@ -107,37 +124,58 @@ export default function Home({ targetSection }: HomeProps) {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Top nav */}
-      <div className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur grain">
+      <header className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur grain">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-baseline gap-3">
-            <div className="text-lg font-semibold tracking-tight">Falaises de Cassis</div>
-            <div className="hidden text-xs text-muted-foreground md:block">卡西斯悬崖海岸 · 法国南部</div>
+            <div className="text-lg font-semibold tracking-tight">{t.title}</div>
+            <div className="hidden text-xs text-muted-foreground md:block">{t.subtitle}</div>
           </div>
-          <div className="hidden items-center gap-2 md:flex">
-            <Button variant="ghost" size="sm" onClick={() => document.getElementById("routes")?.scrollIntoView({ behavior: "smooth" })}>
-              路线
-            </Button>
-            <Button variant="ghost" size="sm" onClick={() => document.getElementById("map")?.scrollIntoView({ behavior: "smooth" })}>
-              地图
-            </Button>
-            <Button variant="ghost" size="sm" onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" })}>
-              真实评价
-            </Button>
-            <Button variant="ghost" size="sm" onClick={() => document.getElementById("blog")?.scrollIntoView({ behavior: "smooth" })}>
-              攻略博客
+          <div className="flex items-center gap-2">
+            <div className="hidden items-center gap-2 md:flex">
+              <Button variant="ghost" size="sm" onClick={() => document.getElementById("routes")?.scrollIntoView({ behavior: "smooth" })}>
+                {t.nav.routes}
+              </Button>
+              <Button variant="ghost" size="sm" onClick={() => document.getElementById("map")?.scrollIntoView({ behavior: "smooth" })}>
+                {t.nav.map}
+              </Button>
+              <Button variant="ghost" size="sm" onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" })}>
+                {t.nav.reviews}
+              </Button>
+              <Button variant="ghost" size="sm" onClick={() => document.getElementById("blog")?.scrollIntoView({ behavior: "smooth" })}>
+                {t.nav.blog}
+              </Button>
+            </div>
+            
+            <Separator orientation="vertical" className="mx-2 h-6 hidden md:block" />
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <Languages className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLang("en")}>English</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLang("fr")}>Français</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLang("ja")}>日本語</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Button variant="ghost" size="icon" className="h-8 w-8" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImg}
-            alt="Falaises de Cassis 海岸悬崖（来自 Google Maps 评价晒图）"
+            alt="Falaises de Cassis Coastal Cliffs"
             className="h-full w-full object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-[linear-gradient(120deg,oklch(0.12_0.03_240)_10%,transparent_55%),linear-gradient(0deg,oklch(0.12_0.03_240)_0%,transparent_55%)]" />
@@ -152,22 +190,19 @@ export default function Home({ targetSection }: HomeProps) {
             className="max-w-2xl"
           >
             <div className="mb-4 flex flex-wrap gap-2">
-              <Badge className="bg-primary text-primary-foreground">观景台</Badge>
-              <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-                地中海海岸线
-              </Badge>
-              <Badge className="bg-accent text-accent-foreground">徒步 / 自驾</Badge>
+              {t.hero.badges.map((badge: string, i: number) => (
+                <Badge key={i} variant={i === 1 ? "secondary" : i === 2 ? "outline" : "default"} className={i === 2 ? "bg-accent text-accent-foreground" : ""}>
+                  {badge}
+                </Badge>
+              ))}
             </div>
 
-            <h1 className="text-4xl font-extrabold leading-[0.95] tracking-tight md:text-6xl">
-              奶白石灰岩与深蓝海
-              <br />
-              在悬崖边撞上风
+            <h1 className="text-4xl font-extrabold whitespace-pre-line leading-[0.95] tracking-tight md:text-6xl">
+              {t.hero.title}
             </h1>
 
             <p className="font-editorial mt-5 text-base leading-relaxed text-foreground/90 md:text-lg">
-              Falaises de Cassis 不是“一个点”，而是一段连续的悬崖海岸风景带。最像它的形容词不是“热门”，
-              而是——层次、风声、与忽明忽暗的海。
+              {t.hero.description}
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -175,7 +210,7 @@ export default function Home({ targetSection }: HomeProps) {
                 <div className="text-xs text-muted-foreground">Google Maps</div>
                 <div className="mt-1 flex items-center gap-3">
                   <Stars rating={4.9} />
-                  <span className="text-xs text-muted-foreground">2,382 条评价</span>
+                  <span className="text-xs text-muted-foreground">{t.hero.google_maps_stats.replace("{count}", "2,382")}</span>
                 </div>
               </div>
 
@@ -183,25 +218,25 @@ export default function Home({ targetSection }: HomeProps) {
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={() => document.getElementById("routes")?.scrollIntoView({ behavior: "smooth" })}
               >
-                直接看路线怎么走
+                {t.hero.cta_routes}
               </Button>
               <Button
                 variant="outline"
                 className="border-primary/40 bg-background/60 hover:bg-background"
                 onClick={() => document.getElementById("map")?.scrollIntoView({ behavior: "smooth" })}
               >
-                打开地图定位
+                {t.hero.cta_map}
               </Button>
             </div>
 
             <div className="mt-8 grid gap-3 md:grid-cols-3">
-              {["原生态海岸风景", "淡季人少静谧", "风大但出片"].map((t) => (
+              {t.hero.features.map((feature: string) => (
                 <div
-                  key={t}
+                  key={feature}
                   className="rounded-2xl border border-border/60 bg-background/55 px-4 py-3 text-sm backdrop-blur"
                 >
                   <div className="text-[oklch(var(--accent))]">▍</div>
-                  <div className="mt-1 font-medium">{t}</div>
+                  <div className="mt-1 font-medium">{feature}</div>
                 </div>
               ))}
             </div>
@@ -214,19 +249,19 @@ export default function Home({ targetSection }: HomeProps) {
         <div className="mx-auto max-w-6xl px-4 pb-2">
           <div className="grid gap-8 py-10 md:grid-cols-12">
             <div className="md:col-span-5">
-              <h2 className="text-3xl font-bold tracking-tight">30 秒速懂</h2>
+              <h2 className="text-3xl font-bold tracking-tight">{t.quick.title}</h2>
               <p className="mt-3 font-editorial text-muted-foreground">
-                它不是一个“观景台打卡点”。它是一段连续的悬崖海岸：每走几步，光线与海色都在变化。
+                {t.quick.description}
               </p>
               <Separator className="my-5" />
               <div className="space-y-3 text-sm leading-relaxed text-foreground/90">
                 <div>
-                  <span className="text-[oklch(var(--accent))]">适合：</span>
-                  想要原生态海岸风景、能接受适度徒步、喜欢悬崖观景、追求小众静谧感的旅行者。
+                  <span className="text-[oklch(var(--accent))] font-bold">{t.quick.suitable.split(":")[0]}:</span>
+                  {t.quick.suitable.split(":")[1]}
                 </div>
                 <div>
-                  <span className="text-[oklch(var(--accent))]">慎去：</span>
-                  只想轻松拍照、不愿走路、怕晒怕大风、完全不想消耗体力的人群。
+                  <span className="text-[oklch(var(--accent))] font-bold">{t.quick.unsuitable.split(":")[0]}:</span>
+                  {t.quick.unsuitable.split(":")[1]}
                 </div>
               </div>
             </div>
@@ -234,21 +269,21 @@ export default function Home({ targetSection }: HomeProps) {
             <div className="md:col-span-7">
               <div className="grid gap-4 md:grid-cols-2">
                 <Card className="border-border/70 bg-background/40 p-5">
-                  <div className="text-sm font-semibold">你会看到什么</div>
+                  <div className="text-sm font-semibold">{t.quick.cards[0].title}</div>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    深蓝到薄荷蓝的地中海 + 奶白石灰岩 + 赭色岩壁；风、光线、视角持续变化。
+                    {t.quick.cards[0].text}
                   </p>
                 </Card>
                 <Card className="border-border/70 bg-background/40 p-5">
-                  <div className="text-sm font-semibold">怎么玩最不亏</div>
+                  <div className="text-sm font-semibold">{t.quick.cards[1].title}</div>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    上午徒步线（清晨体感好） + 傍晚公路观景线（蹲日落），两段衔接顺畅不绕路。
+                    {t.quick.cards[1].text}
                   </p>
                 </Card>
                 <Card className="border-border/70 bg-background/40 p-5 md:col-span-2">
-                  <div className="text-sm font-semibold">一句话策略</div>
+                  <div className="text-sm font-semibold">{t.quick.cards[2].title}</div>
                   <p className="mt-2 font-editorial text-sm leading-relaxed text-foreground/90">
-                    把它当“线”而不是“点”：至少预留 2–3 小时，慢慢走，风景才会一段段“打开”。
+                    {t.quick.cards[2].text}
                   </p>
                 </Card>
               </div>
@@ -262,54 +297,56 @@ export default function Home({ targetSection }: HomeProps) {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">核心路线规划</h2>
+              <h2 className="text-3xl font-bold tracking-tight">{t.routes.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                A 徒步环线（沉浸）与 B 山脊公路观景线（轻松），可单独玩，也可同天组合。
+                {t.routes.subtitle}
               </p>
             </div>
             <div className="flex gap-2">
-              <Badge className="bg-secondary text-secondary-foreground">A：体力款</Badge>
-              <Badge className="bg-primary text-primary-foreground">B：轻松款</Badge>
+              <Badge className="bg-secondary text-secondary-foreground">{t.routes.a.badge}</Badge>
+              <Badge className="bg-primary text-primary-foreground">{t.routes.b.badge}</Badge>
             </div>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <Card className="border-border/70 bg-card p-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-bold">A 线 · 原生态徒步环线</h3>
-                <Badge className="bg-accent text-accent-foreground">徒步</Badge>
+                <h3 className="text-2xl font-bold">{t.routes.a.title}</h3>
+                <Badge className="bg-accent text-accent-foreground">{t.routes.a.badge}</Badge>
               </div>
               <p className="mt-3 font-editorial text-sm leading-relaxed text-muted-foreground">
-                卡西斯小镇 → Port Miou → Port Pin → 悬崖观景台 → 返回卡西斯。
-                近距离感受海岸岩壁与小众海湾。
+                {t.routes.a.description}
               </p>
               <Separator className="my-5" />
               <ul className="space-y-2 text-sm">
                 <li>
-                  <span className="text-[oklch(var(--accent))]">适合：</span>喜欢徒步、想沉浸式体验的人
+                  <span className="text-[oklch(var(--accent))]">{t.routes.a.suitable.split(":")[0]}:</span>
+                  {t.routes.a.suitable.split(":")[1]}
                 </li>
                 <li>
-                  <span className="text-[oklch(var(--accent))]">提醒：</span>全程无补给点，水和能量必须自带
+                  <span className="text-[oklch(var(--accent))]">{t.routes.a.warning.split(":")[0]}:</span>
+                  {t.routes.a.warning.split(":")[1]}
                 </li>
               </ul>
             </Card>
 
             <Card className="border-border/70 bg-card p-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-bold">B 线 · 山脊公路观景线</h3>
-                <Badge className="bg-primary text-primary-foreground">自驾/骑行</Badge>
+                <h3 className="text-2xl font-bold">{t.routes.b.title}</h3>
+                <Badge className="bg-primary text-primary-foreground">{t.routes.b.badge}</Badge>
               </div>
               <p className="mt-3 font-editorial text-sm leading-relaxed text-muted-foreground">
-                卡西斯小镇 → Route des Crêtes → Falaises de Cassis 核心悬崖段。
-                视野开阔，移动观景台。
+                {t.routes.b.description}
               </p>
               <Separator className="my-5" />
               <ul className="space-y-2 text-sm">
                 <li>
-                  <span className="text-[oklch(var(--accent))]">适合：</span>想快速看全景、行程更轻松的人
+                  <span className="text-[oklch(var(--accent))]">{t.routes.b.suitable.split(":")[0]}:</span>
+                  {t.routes.b.suitable.split(":")[1]}
                 </li>
                 <li>
-                  <span className="text-[oklch(var(--accent))]">提醒：</span>部分时段/周日可能对社会车辆关闭
+                  <span className="text-[oklch(var(--accent))]">{t.routes.b.warning.split(":")[0]}:</span>
+                  {t.routes.b.warning.split(":")[1]}
                 </li>
               </ul>
             </Card>
@@ -322,12 +359,12 @@ export default function Home({ targetSection }: HomeProps) {
         <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="grid gap-8 md:grid-cols-12">
             <div className="md:col-span-5">
-              <h2 className="text-3xl font-bold tracking-tight">地图与定位</h2>
+              <h2 className="text-3xl font-bold tracking-tight">{t.map.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                下面为你提供的 Google Maps 嵌入。建议在出发前再核对：道路封闭、火险管制与天气。
+                {t.map.description}
               </p>
               <div className="mt-5 space-y-2 text-sm">
-                <div className="text-muted-foreground">快捷链接</div>
+                <div className="text-muted-foreground">{t.map.links}</div>
                 <div className="flex flex-wrap gap-2">
                   <a
                     className="inline-flex items-center rounded-lg border border-border/70 bg-background/40 px-3 py-2 text-xs hover:bg-background/60"
@@ -335,7 +372,7 @@ export default function Home({ targetSection }: HomeProps) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    打开 Google Maps（分享链接）
+                    {t.map.open_google_maps}
                   </a>
                   <a
                     className="inline-flex items-center rounded-lg border border-border/70 bg-background/40 px-3 py-2 text-xs hover:bg-background/60"
@@ -343,7 +380,7 @@ export default function Home({ targetSection }: HomeProps) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    评价与晒图来源
+                    {t.map.source}
                   </a>
                 </div>
               </div>
@@ -371,9 +408,9 @@ export default function Home({ targetSection }: HomeProps) {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">真实评价与晒图</h2>
+              <h2 className="text-3xl font-bold tracking-tight">{t.reviews.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                文案与图片来自 Google Maps 的真实用户评价（为排版做了截断/精简）。
+                {t.reviews.description}
               </p>
             </div>
             <a
@@ -382,7 +419,7 @@ export default function Home({ targetSection }: HomeProps) {
               target="_blank"
               rel="noreferrer"
             >
-              查看来源：{payload.source.name} · {payload.source.place}
+              {t.reviews.view_source.replace("{name}", payload.source.name).replace("{place}", payload.source.place)}
             </a>
           </div>
 
@@ -420,7 +457,7 @@ export default function Home({ targetSection }: HomeProps) {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(0deg,oklch(0.12_0.03_240)_0%,transparent_60%)] opacity-0 transition group-hover:opacity-100" />
                 <div className="absolute bottom-2 left-2 rounded-lg bg-background/70 px-2 py-1 text-[10px] text-muted-foreground backdrop-blur">
-                  点击放大
+                  {t.reviews.click_to_enlarge}
                 </div>
               </button>
             ))}
@@ -433,9 +470,9 @@ export default function Home({ targetSection }: HomeProps) {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">攻略博客（预留位置）</h2>
+              <h2 className="text-3xl font-bold tracking-tight">{t.blog.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                这部分为长文攻略：交通、路线、淡旺季、风险与预算。可直接复制保存到自己的行程笔记里。
+                {t.blog.description}
               </p>
             </div>
             <Button
@@ -443,7 +480,7 @@ export default function Home({ targetSection }: HomeProps) {
               className="w-fit border-primary/40 bg-background/40"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              回到顶部
+              {t.blog.back_to_top}
             </Button>
           </div>
 
@@ -452,24 +489,21 @@ export default function Home({ targetSection }: HomeProps) {
           <div className="grid gap-8 md:grid-cols-12">
             <aside className="md:col-span-4">
               <div className="sticky top-20 rounded-2xl border border-border/70 bg-background/35 p-5">
-                <div className="text-sm font-semibold">目录（快速跳转）</div>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  点击可在页面内快速定位章节（基于文章标题）。
-                </p>
+                <div className="text-sm font-semibold">{t.blog.toc}</div>
                 <Separator className="my-4" />
                 <div className="space-y-2 text-sm">
-                  {["30 秒速懂", "交通全攻略", "核心路线规划", "分季节玩法指南", "风险与限制", "精准预算拆分", "小众打卡点位", "实测避坑指南", "权威信息来源", "不同人群真实体验总结"].map(
-                    (t) => (
+                  {t.blog.toc_items.map(
+                    (item: string) => (
                       <button
-                        key={t}
+                        key={item}
                         className="w-full rounded-lg px-2 py-2 text-left text-sm text-muted-foreground hover:bg-background/40 hover:text-foreground"
                         onClick={() => {
                           const hs = Array.from(document.querySelectorAll("#blog h2"));
-                          const target = hs.find((h) => (h.textContent || "").includes(t));
+                          const target = hs.find((h) => (h.textContent || "").toLowerCase().includes(item.toLowerCase().substring(0, 10)));
                           target?.scrollIntoView({ behavior: "smooth", block: "start" });
                         }}
                       >
-                        {t}
+                        {item}
                       </button>
                     ),
                   )}
@@ -477,13 +511,24 @@ export default function Home({ targetSection }: HomeProps) {
               </div>
             </aside>
 
-            <div className="md:col-span-8">
-              <div className="rounded-2xl border border-border/70 bg-background/20 p-6 md:p-8">
-                <div className="prose prose-invert max-w-none prose-headings:scroll-mt-24 prose-a:text-[oklch(var(--accent))] prose-a:underline-offset-4 prose-strong:text-foreground">
+            <article className="md:col-span-8 mx-auto max-w-2xl">
+              <div className="mb-10 overflow-hidden rounded-3xl border border-border/70">
+                <img 
+                  src={featuredImg} 
+                  alt="Featured view of Falaises de Cassis" 
+                  className="w-full h-auto object-cover aspect-[16/9]"
+                />
+                <div className="bg-background/40 p-4 text-center text-sm italic text-muted-foreground">
+                  {lang === 'fr' ? 'Une vue imprenable sur les falaises de Cassis' : lang === 'ja' ? 'カシスの懸崖の素晴らしい眺め' : 'A breathtaking view of the Cassis cliffs'}
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border/70 bg-background/20 p-6 md:p-8 shadow-sm">
+                <div className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:scroll-mt-24 prose-a:text-[oklch(var(--accent))] prose-a:underline-offset-4 prose-strong:text-foreground prose-h1:text-center prose-h1:mb-8`}>
                   <Streamdown>{blogMd}</Streamdown>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -491,7 +536,7 @@ export default function Home({ targetSection }: HomeProps) {
       {/* FOOTER */}
       <footer className="border-t border-border/70 bg-background py-10">
         <div className="mx-auto max-w-6xl px-4 text-center text-xs text-muted-foreground">
-          For technical support of this website, please contact: claritleonelmnicol@gmail.com
+          {t.footer.support}
         </div>
       </footer>
 
@@ -509,6 +554,7 @@ export default function Home({ targetSection }: HomeProps) {
           ) : null}
         </DialogContent>
       </Dialog>
-    </div>
+    </main>
   );
 }
+
