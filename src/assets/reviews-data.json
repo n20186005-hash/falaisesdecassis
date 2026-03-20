@@ -1,0 +1,41 @@
+{
+  "source": {
+    "name": "Google Maps",
+    "place": "Falaises de Cassis",
+    "url": "https://www.google.com/maps/place/Falaises+de+Cassis/@43.1972214,5.5521301,17z/data=!4m8!3m7!1s0x12c9baa863b8078f:0xd793ddf66db198d8!8m2!3d43.1972214!4d5.5521301!9m1!1b1"
+  },
+  "reviews": [
+    {
+      "author": "Mark Tobin",
+      "time": "4 年前",
+      "rating": 5,
+      "text": "A short steep and winding drive from Cassis brings you to this beautiful Mediterranean panorama.",
+      "images": [
+        "@/assets/reviews/review_01.jpg",
+        "@/assets/reviews/review_02.jpg",
+        "@/assets/reviews/review_03.jpg",
+        "@/assets/reviews/review_04.jpg"
+      ]
+    },
+    {
+      "author": "Barry Belford",
+      "time": "3 年前",
+      "rating": 5,
+      "text": "Incredible panoramic view of Cassis. On a sunny day the blues are spectacular.",
+      "images": [
+        "@/assets/reviews/review_05.jpg",
+        "@/assets/reviews/review_06.jpg",
+        "@/assets/reviews/review_07.jpg"
+      ]
+    },
+    {
+      "author": "MAXIME LE PAPE",
+      "time": "7 个月前",
+      "rating": 5,
+      "text": "卡西斯悬崖气势磅礴，景色令人叹为观止。“山脊公路”（Route des Crêtes）视野极佳，尤其是在日落时分，更是美不胜收。这里是散步和欣赏壮丽自然风光的绝佳去处。",
+      "images": [
+        "@/assets/reviews/review_08.jpg"
+      ]
+    }
+  ]
+}

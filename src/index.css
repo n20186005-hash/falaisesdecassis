@@ -1,0 +1,154 @@
+/*
+Design system reminder (commit fully):
+- Design movement: Mediterranean Coastal Brutalism
+- Core: deep-sea dark UI + limestone light accents, sharp typography contrast, diagonal cuts, grain texture
+- Typography: Fraunces (display), Newsreader (editorial), Spline Sans (UI)
+- Motion: dramatic reveals + subtle parallax; hover feels tactile
+*/
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Dark by default (ThemeProvider uses dark) */
+  --background: oklch(0.135 0.03 240);
+  --foreground: oklch(0.98 0.01 95);
+
+  --card: oklch(0.16 0.03 240);
+  --card-foreground: oklch(0.98 0.01 95);
+
+  --popover: oklch(0.16 0.03 240);
+  --popover-foreground: oklch(0.98 0.01 95);
+
+  /* Primary: limestone */
+  --primary: oklch(0.95 0.02 95);
+  --primary-foreground: oklch(0.16 0.03 240);
+
+  /* Secondary: sea-glass */
+  --secondary: oklch(0.28 0.05 210);
+  --secondary-foreground: oklch(0.98 0.01 95);
+
+  --muted: oklch(0.22 0.03 240);
+  --muted-foreground: oklch(0.78 0.02 95);
+
+  /* Accent: sunset rust */
+  --accent: oklch(0.68 0.16 35);
+  --accent-foreground: oklch(0.12 0.02 240);
+
+  --destructive: oklch(0.62 0.22 26);
+
+  --border: oklch(0.28 0.03 240);
+  --input: oklch(0.28 0.03 240);
+  --ring: oklch(0.75 0.05 95);
+
+  --chart-1: oklch(0.78 0.14 55);
+  --chart-2: oklch(0.72 0.12 210);
+  --chart-3: oklch(0.68 0.16 35);
+  --chart-4: oklch(0.82 0.12 120);
+  --chart-5: oklch(0.62 0.22 26);
+
+  --sidebar: oklch(0.16 0.03 240);
+  --sidebar-foreground: oklch(0.98 0.01 95);
+  --sidebar-primary: oklch(0.95 0.02 95);
+  --sidebar-primary-foreground: oklch(0.16 0.03 240);
+  --sidebar-accent: oklch(0.28 0.05 210);
+  --sidebar-accent-foreground: oklch(0.98 0.01 95);
+  --sidebar-border: oklch(0.28 0.03 240);
+  --sidebar-ring: oklch(0.75 0.05 95);
+}
+
+.dark {
+  /* Kept for compatibility; values already dark above */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    font-family: "Spline Sans", ui-sans-serif, system-ui;
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Fraunces", ui-serif, Georgia;
+  }
+
+  .font-editorial {
+    font-family: "Newsreader", ui-serif, Georgia;
+  }
+}
+
+@layer utilities {
+  .grain {
+    position: relative;
+  }
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.13;
+    mix-blend-mode: overlay;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+    background-size: 260px 260px;
+  }
+
+  .diagonal-top {
+    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -5rem;
+    padding-top: 8rem;
+  }
+
+  .diagonal-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+    margin-bottom: -5rem;
+    padding-bottom: 8rem;
+  }
+}
