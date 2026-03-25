@@ -601,8 +601,13 @@ export default function Home({ targetSection }: HomeProps) {
               {t.footer.cookie_settings}
             </Link>
           </div>
-          <div className="mx-auto mt-6 max-w-3xl rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 px-4 py-3 text-center text-xs leading-relaxed text-muted-foreground/90">
-            {t.footer.disclaimer}
+          <div className="mx-auto mt-6 max-w-3xl space-y-3">
+            <div className="rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 px-4 py-3 text-center text-xs leading-relaxed text-muted-foreground/90">
+              {t.footer.disclaimer}
+            </div>
+            <div className="text-center text-xs text-muted-foreground/70 italic">
+              {t.footer.source_info}
+            </div>
           </div>
         </div>
       </footer>

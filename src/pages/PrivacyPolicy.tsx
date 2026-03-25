@@ -99,8 +99,13 @@ export default function PrivacyPolicy() {
         <div className="mx-auto max-w-3xl px-4 text-xs text-muted-foreground">
           {t.footer.support}
         </div>
-        <div className="mx-auto mt-4 max-w-3xl px-4 rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 py-3 text-center text-xs leading-relaxed text-muted-foreground/90">
-          {t.footer.disclaimer}
+        <div className="mx-auto mt-4 max-w-3xl px-4 space-y-3">
+          <div className="rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 py-3 px-4 text-center text-xs leading-relaxed text-muted-foreground/90">
+            {t.footer.disclaimer}
+          </div>
+          <div className="text-center text-xs text-muted-foreground/70 italic">
+            {t.footer.source_info}
+          </div>
         </div>
       </footer>
     </main>
