@@ -95,8 +95,13 @@ export default function TermsOfService() {
         </div>
       </div>
 
-      <footer className="border-t border-border/70 py-10 text-center text-xs text-muted-foreground">
-        {t.footer.support}
+      <footer className="border-t border-border/70 py-10 text-center">
+        <div className="mx-auto max-w-3xl px-4 text-xs text-muted-foreground">
+          {t.footer.support}
+        </div>
+        <div className="mx-auto mt-4 max-w-3xl px-4 rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 py-3 text-center text-xs leading-relaxed text-muted-foreground/90">
+          {t.footer.disclaimer}
+        </div>
       </footer>
     </main>
   );

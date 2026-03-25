@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Cookie, ArrowLeft, Languages, Sun, Moon, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Card } from "@/components/ui/card";
@@ -152,8 +153,13 @@ export default function CookieSettings() {
         </div>
       </div>
 
-      <footer className="border-t border-border/70 py-10 text-center text-xs text-muted-foreground">
-        {t.footer.support}
+      <footer className="border-t border-border/70 py-10 text-center">
+        <div className="mx-auto max-w-3xl px-4 text-xs text-muted-foreground">
+          {t.footer.support}
+        </div>
+        <div className="mx-auto mt-4 max-w-3xl px-4 rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 py-3 text-center text-xs leading-relaxed text-muted-foreground/90">
+          {t.footer.disclaimer}
+        </div>
       </footer>
     </main>
   );
