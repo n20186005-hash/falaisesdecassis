@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/contexts/ThemeContext";
+import { SEO } from "@/components/SEO";
 import translations from "@/assets/translations.json";
 
 export default function TermsOfService() {
@@ -28,6 +29,7 @@ export default function TermsOfService() {
 
   return (
     <main className="min-h-screen bg-background text-foreground grain">
+      <SEO currentLang={lang} path="/terms" />
       {/* Mini Nav */}
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">

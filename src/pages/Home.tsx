@@ -27,6 +27,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/contexts/ThemeContext";
+import { SEO } from "@/components/SEO";
 
 import heroImg from "@/assets/hero_google.jpg";
 import blogEn from "@/assets/blog_en.md?raw";
@@ -166,6 +167,7 @@ export default function Home({ targetSection }: HomeProps) {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <SEO currentLang={lang} path="/" />
       {/* Top nav */}
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur grain">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
