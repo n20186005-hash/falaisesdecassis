@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import translations from "@/assets/translations.json";
 
 interface SEOProps {
   currentLang: string;
@@ -13,22 +14,26 @@ export function SEO({ currentLang, path }: SEOProps) {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const cleanPath = normalizedPath === "/" ? "" : normalizedPath;
 
-  // Construct URLs
-  // For standard languages, we might use query params or assume the client routing handles it via state.
-  // However, for SEO hreflang to work perfectly, usually each language needs a distinct URL path.
-  // Since this app uses a single page with localStorage for language, true SEO indexing of multiple languages 
-  // requires distinct URLs.
-  // Let's implement URL structure assuming query parameter ?lang=xx is supported or using URL hashes.
-  // But wait, the user asked for structure like:
-  // <link rel="alternate" hreflang="en" href="https://*****.com/en/页面路径" />
-  // We need to generate these links. Even if the current app routing doesn't fully support /en/ routing yet,
-  // we will generate the tags as requested.
-  
   const currentUrl = `${DOMAIN}/${currentLang === 'en' ? '' : currentLang}${cleanPath}`;
   const defaultUrl = `${DOMAIN}${cleanPath}`;
 
+  // Dynamically set title based on language and path
+  const t = (translations as any)[currentLang] || translations.en;
+  let pageTitle = t.title || "Falaises de Cassis";
+  
+  if (cleanPath === "/privacy") pageTitle = `${t.compliance?.privacy?.title || "Privacy Policy"} - ${pageTitle}`;
+  else if (cleanPath === "/terms") pageTitle = `${t.compliance?.terms?.title || "Terms of Service"} - ${pageTitle}`;
+  else if (cleanPath === "/cookie-settings") pageTitle = `${t.compliance?.settings?.title || "Cookie Settings"} - ${pageTitle}`;
+
   return (
     <Helmet>
+      {/* Title */}
+      <title>{pageTitle}</title>
+      <meta name="description" content={t.hero?.description || ""} />
+      
+      {/* Language */}
+      <html lang={currentLang} />
+
       {/* Self-referencing canonical */}
       <link rel="canonical" href={currentLang === 'en' ? defaultUrl : `${DOMAIN}/${currentLang}${cleanPath}`} />
 
