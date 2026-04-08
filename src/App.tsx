@@ -2,7 +2,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Router, Route, Switch } from "wouter";
-import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Home from "@/pages/Home";
@@ -12,12 +11,10 @@ import CookieSettings from "@/pages/CookieSettings";
 import Guide from "@/pages/Guide";
 import Blog from "@/pages/Blog";
 
-// Use hash-based routing (/#/) to support opening index.html directly via file:// protocol
-// Tolerant routing: unmatched paths are treated as anchor sections (e.g., /#/services → scroll to #services)
-// For in-page anchors, use <Link href="/section"> instead of <a href="#section">
+// Switch to normal browser routing for SEO
 function AppRouter() {
   return (
-    <Router hook={useHashLocation}>
+    <Router>
       <Switch>
         <Route path="/privacy" component={PrivacyPolicy} />
         <Route path="/terms" component={TermsOfService} />
