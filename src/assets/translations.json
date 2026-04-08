@@ -91,6 +91,14 @@
         "date": "2026-04-08",
         "category": "Guide",
         "read_more": "Read Article"
+      },
+      "blog_page": {
+        "title": "Blog & Guides",
+        "subtitle": "Discover everything you need to know about exploring the stunning Falaises de Cassis. From hiking routes to the best nearby attractions.",
+        "latest_articles": "Latest Articles",
+        "no_articles": "No articles yet",
+        "check_back": "Check back later for new updates and guides.",
+        "back_to_home": "Back to Home"
       }
     },
     "footer": {
@@ -212,7 +220,15 @@
         "Conseils pratiques",
         "Sources officielles",
         "Résumé"
-      ]
+      ],
+      "blog_page": {
+        "title": "Blog & Guides",
+        "subtitle": "Découvrez tout ce que vous devez savoir pour explorer les superbes falaises de Cassis. Des itinéraires de randonnée aux meilleures attractions à proximité.",
+        "latest_articles": "Derniers Articles",
+        "no_articles": "Aucun article pour le moment",
+        "check_back": "Revenez plus tard pour de nouvelles mises à jour et guides.",
+        "back_to_home": "Retour à l'Accueil"
+      }
     },
     "footer": {
       "support": "Pour le support technique, contactez : claritleonelmnicol@gmail.com",
@@ -333,7 +349,15 @@
         "実用的なヒント",
         "公式情報源",
         "体験まとめ"
-      ]
+      ],
+      "blog_page": {
+        "title": "ブログ＆ガイド",
+        "subtitle": "カシスの絶壁を探索するために知っておくべきすべてを発見してください。ハイキングルートから最寄りの観光スポットまで。",
+        "latest_articles": "最新記事",
+        "no_articles": "まだ記事がありません",
+        "check_back": "新しいアップデートとガイドを後でチェックしてください。",
+        "back_to_home": "ホームに戻る"
+      }
     },
     "footer": {
       "support": "テクニカルサポートについては、claritleonelmnicol@gmail.com までお問い合わせください。",
@@ -454,7 +478,15 @@
         "Consejos Prácticos",
         "Fuentes Oficiales",
         "Resumen de Experiencias"
-      ]
+      ],
+      "blog_page": {
+        "title": "Blog y Guías",
+        "subtitle": "Descubre todo lo que necesitas saber para explorar las impresionantes Falaises de Cassis. Desde rutas de senderismo hasta las mejores atracciones cercanas.",
+        "latest_articles": "Últimos Artículos",
+        "no_articles": "Aún no hay artículos",
+        "check_back": "Vuelve más tarde para nuevas actualizaciones y guías.",
+        "back_to_home": "Volver al Inicio"
+      }
     },
     "footer": {
       "support": "Para soporte técnico, contacte a: claritleonelmnicol@gmail.com",
@@ -575,7 +607,15 @@
         "Praktische Tipps",
         "Offizielle Quellen",
         "Erfahrungsbericht"
-      ]
+      ],
+      "blog_page": {
+        "title": "Blog & Leitfäden",
+        "subtitle": "Entdecken Sie alles, was Sie wissen müssen, um die atemberaubenden Falaises de Cassis zu erkunden. Von Wanderwegen bis zu den besten Sehenswürdigkeiten in der Nähe.",
+        "latest_articles": "Neueste Artikel",
+        "no_articles": "Noch keine Artikel",
+        "check_back": "Kommen Sie später wieder für neue Updates und Leitfäden.",
+        "back_to_home": "Zurück zur Startseite"
+      }
     },
     "footer": {
       "support": "Technischer Support: claritleonelmnicol@gmail.com",
@@ -817,7 +857,15 @@
         "실전 팁",
         "공식 정보원",
         "경험 요약"
-      ]
+      ],
+      "blog_page": {
+        "title": "블로그 및 가이드",
+        "subtitle": "Falaises de Cassis의 놀라운 절벽을 탐색하는 데 필요한 모든 것을 발견하세요. 하이킹 루트부터 가장 가까운 명소까지.",
+        "latest_articles": "최신 기사",
+        "no_articles": "아직 기사가 없습니다",
+        "check_back": "새로운 업데이트와 가이드를 위해 나중에 다시 확인하세요.",
+        "back_to_home": "홈으로 돌아가기"
+      }
     },
     "footer": {
       "support": "기술 지원: claritleonelmnicol@gmail.com",
