@@ -7,7 +7,6 @@ Design system reminder:
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Streamdown } from "streamdown";
 import { Moon, Sun, Languages, Cookie } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -30,16 +29,9 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { SEO } from "@/components/SEO";
 
 import heroImg from "@/assets/hero_google.jpg";
-import blogEn from "@/assets/blog_en.md?raw";
-import blogFr from "@/assets/blog_fr.md?raw";
-import blogJa from "@/assets/blog_ja.md?raw";
-import blogEs from "@/assets/blog_es.md?raw";
-import blogDe from "@/assets/blog_de.md?raw";
-import blogZhTw from "@/assets/blog_zh_tw.md?raw";
-import blogKo from "@/assets/blog_ko.md?raw";
-import featuredImg from "@/assets/image.jpg";
 import translations from "@/assets/translations.json";
 import reviewsData from "@/assets/reviews-data.json";
+import { posts } from "@/data/posts";
 
 import review01 from "@/assets/reviews/review_01.jpg";
 import review02 from "@/assets/reviews/review_02.jpg";
@@ -108,18 +100,6 @@ export default function Home({ targetSection }: HomeProps) {
   });
 
   const t = (translations as any)[lang];
-  
-  const blogMd = useMemo(() => {
-    switch (lang) {
-      case "fr": return blogFr;
-      case "ja": return blogJa;
-      case "es": return blogEs;
-      case "de": return blogDe;
-      case "zh-TW": return blogZhTw;
-      case "ko": return blogKo;
-      default: return blogEn;
-    }
-  }, [lang]);
 
   useEffect(() => {
     localStorage.setItem("app-lang", lang);
@@ -538,79 +518,40 @@ export default function Home({ targetSection }: HomeProps) {
 
           <Separator className="my-8" />
 
-          <div className="mb-12">
-            <Link href="/guide">
-              <Card className="group overflow-hidden border-border/70 bg-background/30 transition-colors hover:border-[oklch(var(--accent))]/50 hover:bg-accent/5 cursor-pointer p-6">
-                <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-                  <div className="space-y-3 flex-1">
-                    <div className="flex items-center gap-3">
-                      <Badge variant="secondary" className="bg-accent/10 text-[oklch(var(--accent))]">{t.blog.featured_article?.category || t.blog.featured_article?.category || "Guide"}</Badge>
-                      <span className="text-xs text-muted-foreground">{t.blog.featured_article?.date || "2026-04-08"}</span>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {posts.slice(0, 3).map((post, idx) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+              >
+                <Link href={post.path}>
+                  <Card className="group flex h-full cursor-pointer flex-col justify-between overflow-hidden border-border/70 bg-background/30 transition-colors hover:border-[oklch(var(--accent))]/50 hover:bg-accent/5">
+                    <div className="p-6">
+                      <div className="mb-4 flex items-center justify-between">
+                        <Badge variant="secondary" className="bg-accent/10 text-[oklch(var(--accent))]">
+                          {(post.category as any)[lang] || post.category.en}
+                        </Badge>
+                        <span className="text-xs text-muted-foreground">{post.date}</span>
+                      </div>
+                      <h3 className="mb-3 text-xl font-bold leading-tight tracking-tight group-hover:text-[oklch(var(--accent))] transition-colors">
+                        {(post.title as any)[lang] || post.title.en}
+                      </h3>
+                      <p className="font-editorial text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                        {(post.description as any)[lang] || post.description.en}
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold leading-tight tracking-tight group-hover:text-[oklch(var(--accent))] transition-colors">
-                      {t.blog.featured_article?.title || "Falaises de Cassis Complete Guide"}
-                    </h3>
-                    <p className="font-editorial text-sm leading-relaxed text-muted-foreground line-clamp-2">
-                      {t.blog.featured_article?.description || "A complete guide to Falaises de Cassis..."}
-                    </p>
-                  </div>
-                  <div className="flex items-center whitespace-nowrap text-sm font-medium text-[oklch(var(--accent))]">
-                    {t.blog.featured_article?.read_more || "Read Article"} <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-12">
-            <aside className="md:col-span-4">
-              <div className="sticky top-20 rounded-2xl border border-border/70 bg-background/35 p-5">
-                <div className="text-sm font-semibold">{t.blog.toc}</div>
-                <Separator className="my-4" />
-                <div className="space-y-2 text-sm">
-                  {t.blog.toc_items.map(
-                    (item: string) => (
-                      <button
-                        key={item}
-                        className="w-full rounded-lg px-2 py-2 text-left text-sm text-muted-foreground hover:bg-background/40 hover:text-foreground"
-                        onClick={() => {
-                          const hs = Array.from(document.querySelectorAll("#blog h2"));
-                          const target = hs.find((h) => (h.textContent || "").toLowerCase().includes(item.toLowerCase().substring(0, 10)));
-                          target?.scrollIntoView({ behavior: "smooth", block: "start" });
-                        }}
-                      >
-                        {item}
-                      </button>
-                    ),
-                  )}
-                </div>
-              </div>
-            </aside>
-
-            <article className="md:col-span-8 mx-auto max-w-2xl">
-              <div className="mb-10 overflow-hidden rounded-3xl border border-border/70">
-                <img 
-                  src={featuredImg} 
-                  alt="Featured view of Falaises de Cassis" 
-                  className="w-full h-auto object-cover aspect-[16/9]"
-                />
-                <div className="bg-background/40 p-4 text-center text-sm italic text-muted-foreground">
-                  {lang === 'fr' ? 'Une vue imprenable sur les falaises de Cassis' : 
-                   lang === 'ja' ? 'カシスの懸崖の素晴らしい眺め' : 
-                   lang === 'es' ? 'Una vista impresionante de los acantilados de Cassis' :
-                   lang === 'de' ? 'Ein atemberaubender Blick auf die Klippen von Cassis' :
-                   lang === 'zh-TW' ? '卡西斯懸崖的壯麗景色' :
-                   lang === 'ko' ? '카시스 절벽의 숨막히는 전경' :
-                   'A breathtaking view of the Cassis cliffs'}
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-border/70 bg-background/20 p-6 md:p-8 shadow-sm">
-                <div className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:scroll-mt-24 prose-a:text-[oklch(var(--accent))] prose-a:underline-offset-4 prose-strong:text-foreground prose-h1:text-center prose-h1:mb-8`}>
-                  <Streamdown>{blogMd}</Streamdown>
-                </div>
-              </div>
-            </article>
+                    <div className="mt-auto border-t border-border/50 p-4">
+                      <div className="flex items-center text-sm font-medium text-[oklch(var(--accent))]">
+                        {t.blog?.blog_page?.read_more || "Read Article"} <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

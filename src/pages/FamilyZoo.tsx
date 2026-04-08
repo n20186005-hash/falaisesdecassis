@@ -177,6 +177,17 @@ export default function FamilyZoo() {
       {/* CONTENT */}
       <div className="mx-auto max-w-4xl px-4 py-12">
         <div className="rounded-2xl border border-border/70 bg-background/20 p-6 md:p-10 shadow-sm">
+          {/* Top Ad Banner */}
+          <div className="flex justify-center mb-8 overflow-hidden rounded-lg">
+            <iframe 
+              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
+              style={{ width: "728px", height: "90px", border: "none" }} 
+              scrolling="no" 
+              id="SB15266995"
+              title="Trip.com Ad"
+            />
+          </div>
+
           <article 
             className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:underline hover:prose-a:underline prose-strong:text-foreground`}
           >
@@ -204,6 +215,17 @@ export default function FamilyZoo() {
                 # {lang === 'zh-TW' ? '伊夫城堡' : "Château d'If"}
               </a>
             </div>
+          </div>
+
+          {/* Bottom Ad Banner */}
+          <div className="flex justify-center mt-12 pt-8 border-t border-border/50 overflow-hidden rounded-lg">
+            <iframe 
+              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
+              style={{ width: "728px", height: "90px", border: "none" }} 
+              scrolling="no" 
+              id="SB15266995-bottom"
+              title="Trip.com Ad"
+            />
           </div>
         </div>
 
