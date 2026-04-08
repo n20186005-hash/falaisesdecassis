@@ -102,6 +102,12 @@ export default function CookieSettings() {
           </div>
         </div>
 
+        {/* Advertisement Disclosure */}
+        <div className="mb-10 rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 p-4 text-sm text-muted-foreground">
+          <strong>{t.compliance.ad_disclosure?.title || "Advertisement Disclosure"}</strong>
+          <p className="mt-2">{t.compliance.ad_disclosure?.content || "This site may contain affiliate links and advertisements. We may earn a commission if you make a purchase through these links, at no extra cost to you."}</p>
+        </div>
+
         <div className="space-y-6">
           <Card className="border-border/70 bg-card/50 p-6">
             <div className="flex items-start justify-between gap-4">

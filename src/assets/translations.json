@@ -132,6 +132,10 @@
       "terms": {
         "title": "Terms of Service",
         "content": "### 1. Service Rules\nUsers must use the service in compliance with all applicable laws.\n\n### 2. Prohibited Behavior\nUnauthorized data mining or attempts to disrupt the service are prohibited.\n\n### 3. Disclaimer\nThe service is provided 'as is' without warranties of any kind.\n\n### 4. Intellectual Property\nAll content on this site is the property of the site owner.\n\n### 5. Limitation of Liability\nWe are not liable for any damages arising from the use of this service."
+      },
+      "ad_disclosure": {
+        "title": "Advertisement & Affiliate Disclosure",
+        "content": "This website is an independent third-party travel guide. We may feature advertisements and affiliate links. If you click on an affiliate link and make a purchase or booking, we may earn a commission at no additional cost to you. This helps support the maintenance of our site."
       }
     }
   },
@@ -261,6 +265,10 @@
       "terms": {
         "title": "Conditions d'Utilisation",
         "content": "### 1. Règles du Service\nLes utilisateurs doivent utiliser le service conformément à toutes les lois applicables.\n\n### 2. Comportement Interdit\nL'extraction de données non autorisée ou les tentatives de perturbation du service sont interdites.\n\n### 3. Clause de Non-responsabilité\nLe service est fourni 'en l'état' sans garantie d'aucune sorte.\n\n### 4. Propriété Intellectuelle\nTout le contenu de ce site est la propriété du propriétaire du site.\n\n### 5. Limitation de Responsabilité\nNous ne sommes pas responsables des dommages résultant de l'utilisation de ce service."
+      },
+      "ad_disclosure": {
+        "title": "Avis sur les Publicités et Affiliations",
+        "content": "Ce site Web est un guide de voyage tiers indépendant. Nous pouvons afficher des publicités et des liens d'affiliation. Si vous cliquez sur un lien d'affiliation et effectuez un achat ou une réservation, nous pouvons gagner une commission sans frais supplémentaires pour vous. Cela aide à soutenir l'entretien de notre site."
       }
     }
   },
@@ -390,6 +398,10 @@
       "terms": {
         "title": "利用規約",
         "content": "### 1. サービス利用規則\nユーザーは、適用されるすべての法律を遵守してサービスを利用する必要があります。\n\n### 2. 禁止行為\n許可のないデータマイニングやサービスの妨害行為は禁止されています。\n\n### 3. 免責事項\nサービスは「現状有姿」で提供され、いかなる種類の保証もいたしません。\n\n### 4. 知的財産権\n当サイトのすべてのコンテンツは、サイト所有者に帰属します。\n\n### 5. 責任の制限\n当サービスの利用から生じるいかなる損害についても、当社は責任を負いません。"
+      },
+      "ad_disclosure": {
+        "title": "広告とアフィリエイトの開示",
+        "content": "このウェブサイトは独立した第三者の旅行ガイドです。広告やアフィリエイトリンクを掲載する場合があります。アフィリエイトリンクをクリックして購入や予約を行った場合、追加の費用なしで手数料を受け取ることがあります。これにより、当サイトの維持がサポートされます。"
       }
     }
   },
@@ -519,6 +531,10 @@
       "terms": {
         "title": "Términos de Servicio",
         "content": "### 1. Reglas del Servicio\nCumpla con todas las leyes aplicables.\n\n### 2. Comportamiento Prohibido\nProhibido el minado de datos o intentos de interrupción.\n\n### 3. Descargo de Responsabilidad\nServicio proporcionado 'tal cual' sin garantías.\n\n### 4. Propiedad Intelectual\nTodo el contenido es propiedad del dueño del sitio.\n\n### 5. Limitación de Responsabilidad\nNo somos responsables de daños por el uso del servicio."
+      },
+      "ad_disclosure": {
+        "title": "Aviso de Publicidad y Afiliados",
+        "content": "Este sitio web es una guía de viajes independiente de terceros. Podemos mostrar anuncios y enlaces de afiliados. Si hace clic en un enlace de afiliado y realiza una compra o reserva, podemos ganar una comisión sin costo adicional para usted. Esto ayuda a mantener nuestro sitio."
       }
     }
   },
@@ -648,6 +664,10 @@
       "terms": {
         "title": "Nutzungsbedingungen",
         "content": "### 1. Regeln\nNutzung gemäß geltendem Recht.\n\n### 2. Verbotenes Verhalten\nKein Data Mining oder Störungsversuche.\n\n### 3. Haftungsausschluss\nService wird 'wie besehen' ohne Gewährleistung bereitgestellt.\n\n### 4. Geistiges Eigentum\nInhalte sind Eigentum des Website-Besitzers.\n\n### 5. Haftungsbeschränkung\nKeine Haftung für Schäden aus der Nutzung."
+      },
+      "ad_disclosure": {
+        "title": "Werbe- und Affiliate-Hinweis",
+        "content": "Diese Website ist ein unabhängiger Reiseführer von Drittanbietern. Wir können Werbung und Affiliate-Links einblenden. Wenn Sie auf einen Affiliate-Link klicken und einen Kauf oder eine Buchung tätigen, erhalten wir möglicherweise eine Provision, ohne dass Ihnen zusätzliche Kosten entstehen. Dies hilft, die Pflege unserer Website zu unterstützen."
       }
     }
   },
@@ -777,6 +797,10 @@
       "terms": {
         "title": "使用條款",
         "content": "### 1. 服務規則\n用戶必須遵守所有適用法律。\n\n### 2. 禁止行為\n禁止未經授權的數據挖掘或干擾服務。\n\n### 3. 免責聲明\n服務按“現狀”提供，不提供任何形式的保證。\n\n### 4. 知識產權\n本站所有內容均為站長財產。\n\n### 5. 責任限制\n我們不對使用本服務產生的任何損害負責。"
+      },
+      "ad_disclosure": {
+        "title": "廣告與聯盟營銷聲明",
+        "content": "本網站為獨立的第三方旅遊指南。我們可能會展示廣告和聯盟連結。如果您點擊聯盟連結並進行購買或預訂，我們可能會賺取佣金，但您無需支付額外費用。這將有助於支持我們維護本網站。"
       }
     }
   },
@@ -906,6 +930,10 @@
       "terms": {
         "title": "이용약관",
         "content": "### 1. 서비스 규칙\n사용자는 모든 관련 법규를 준수하여 서비스를 이용해야 합니다.\n\n### 2. 금지 행위\n무단 데이터 마이닝 또는 서비스 방해 시도는 금지됩니다.\n\n### 3. 면책 조항\n서비스는 어떠한 보증 없이 '있는 그대로' 제공됩니다.\n\n### 4. 지적 재산권\n이 사이트의 모든 콘텐츠는 사이트 소유자의 자산입니다.\n\n### 5. 책임의 제한\n서비스 이용으로 발생하는 어떠한 손해에 대해서도 책임을 지지 않습니다."
+      },
+      "ad_disclosure": {
+        "title": "광고 및 제휴 고지",
+        "content": "본 웹사이트는 독립적인 제3자 여행 가이드입니다. 광고 및 제휴 링크가 포함될 수 있습니다. 제휴 링크를 클릭하여 구매하거나 예약하면 추가 비용 없이 수수료를 받을 수 있습니다. 이는 저희 사이트 유지 관리를 지원하는 데 도움이 됩니다."
       }
     }
   }

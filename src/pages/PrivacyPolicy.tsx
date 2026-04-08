@@ -78,13 +78,41 @@ export default function PrivacyPolicy() {
           </div>
         </div>
 
+        {/* Top Ad Banner */}
+        <div className="flex justify-center mb-8 overflow-hidden rounded-lg">
+          <iframe 
+            src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
+            style={{ width: "728px", height: "90px", border: "none" }} 
+            scrolling="no" 
+            id="SB15266995"
+            title="Trip.com Ad"
+          />
+        </div>
+
         <Separator className="mb-10" />
+
+        {/* Advertisement Disclosure */}
+        <div className="mb-10 rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 p-4 text-sm text-muted-foreground">
+          <strong>{t.compliance.ad_disclosure?.title || "Advertisement Disclosure"}</strong>
+          <p className="mt-2">{t.compliance.ad_disclosure?.content || "This site may contain affiliate links and advertisements. We may earn a commission if you make a purchase through these links, at no extra cost to you."}</p>
+        </div>
 
         <article className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))]`}>
           <Streamdown>
             {t.compliance.privacy.content}
           </Streamdown>
         </article>
+
+        {/* Bottom Ad Banner */}
+        <div className="flex justify-center mt-12 pt-8 border-t border-border/50 overflow-hidden rounded-lg">
+          <iframe 
+            src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
+            style={{ width: "728px", height: "90px", border: "none" }} 
+            scrolling="no" 
+            id="SB15266995-bottom"
+            title="Trip.com Ad"
+          />
+        </div>
 
         <Separator className="my-12" />
 

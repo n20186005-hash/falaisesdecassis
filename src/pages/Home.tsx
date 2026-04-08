@@ -276,6 +276,17 @@ export default function Home({ targetSection }: HomeProps) {
       {/* QUICK */}
       <section id="quick" className="diagonal-top bg-card text-card-foreground grain">
         <div className="mx-auto max-w-6xl px-4 pb-2">
+          {/* Top Ad Banner */}
+          <div className="flex justify-center mt-12 mb-4 overflow-hidden rounded-lg">
+            <iframe 
+              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
+              style={{ width: "728px", height: "90px", border: "none" }} 
+              scrolling="no" 
+              id="SB15266995"
+              title="Trip.com Ad"
+            />
+          </div>
+
           <div className="grid gap-8 py-10 md:grid-cols-12">
             <div className="md:col-span-5">
               <h2 className="text-3xl font-bold tracking-tight">{t.quick.title}</h2>
@@ -552,6 +563,17 @@ export default function Home({ targetSection }: HomeProps) {
                 </Link>
               </motion.div>
             ))}
+          </div>
+
+          {/* Bottom Ad Banner */}
+          <div className="flex justify-center mt-12 overflow-hidden rounded-lg">
+            <iframe 
+              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
+              style={{ width: "728px", height: "90px", border: "none" }} 
+              scrolling="no" 
+              id="SB15266995-bottom"
+              title="Trip.com Ad"
+            />
           </div>
         </div>
       </section>
