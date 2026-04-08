@@ -9,6 +9,8 @@ import Home from "@/pages/Home";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import CookieSettings from "@/pages/CookieSettings";
+import Guide from "@/pages/Guide";
+import Blog from "@/pages/Blog";
 
 // Use hash-based routing (/#/) to support opening index.html directly via file:// protocol
 // Tolerant routing: unmatched paths are treated as anchor sections (e.g., /#/services → scroll to #services)
@@ -20,6 +22,8 @@ function AppRouter() {
         <Route path="/privacy" component={PrivacyPolicy} />
         <Route path="/terms" component={TermsOfService} />
         <Route path="/cookie-settings" component={CookieSettings} />
+        <Route path="/guide" component={Guide} />
+        <Route path="/blog" component={Blog} />
         <Route path="/:section?">{(params) => <Home targetSection={params.section} />}</Route>
       </Switch>
     </Router>

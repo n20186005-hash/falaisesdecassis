@@ -4,12 +4,13 @@ import translations from "@/assets/translations.json";
 interface SEOProps {
   currentLang: string;
   path: string; // Should be like "" for home, "/privacy" for privacy policy, etc.
+  customMeta?: { title: string; description: string; };
 }
 
 const DOMAIN = "https://www.falaisesdecassis.com";
 const SUPPORTED_LANGS = ["en", "fr", "ja", "es", "de", "zh-TW", "ko"];
 
-export function SEO({ currentLang, path }: SEOProps) {
+export function SEO({ currentLang, path, customMeta }: SEOProps) {
   // Ensure path starts with a slash or is empty
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const cleanPath = normalizedPath === "/" ? "" : normalizedPath;
@@ -21,15 +22,18 @@ export function SEO({ currentLang, path }: SEOProps) {
   const t = (translations as any)[currentLang] || translations.en;
   let pageTitle = t.title || "Falaises de Cassis";
   
-  if (cleanPath === "/privacy") pageTitle = `${t.compliance?.privacy?.title || "Privacy Policy"} - ${pageTitle}`;
+  if (customMeta?.title) pageTitle = customMeta.title;
+  else if (cleanPath === "/privacy") pageTitle = `${t.compliance?.privacy?.title || "Privacy Policy"} - ${pageTitle}`;
   else if (cleanPath === "/terms") pageTitle = `${t.compliance?.terms?.title || "Terms of Service"} - ${pageTitle}`;
   else if (cleanPath === "/cookie-settings") pageTitle = `${t.compliance?.settings?.title || "Cookie Settings"} - ${pageTitle}`;
+
+  const pageDescription = customMeta?.description || t.hero?.description || "";
 
   return (
     <Helmet>
       {/* Title */}
       <title>{pageTitle}</title>
-      <meta name="description" content={t.hero?.description || ""} />
+      <meta name="description" content={pageDescription} />
       
       {/* Language */}
       <html lang={currentLang} />

@@ -186,9 +186,11 @@ export default function Home({ targetSection }: HomeProps) {
               <Button variant="ghost" size="sm" onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" })}>
                 {t.nav.reviews}
               </Button>
-              <Button variant="ghost" size="sm" onClick={() => document.getElementById("blog")?.scrollIntoView({ behavior: "smooth" })}>
-                {t.nav.blog}
-              </Button>
+              <Link href="/blog">
+                <Button variant="ghost" size="sm">
+                  {t.nav.blog}
+                </Button>
+              </Link>
             </div>
             
             <Separator orientation="vertical" className="mx-2 h-6 hidden md:block" />
@@ -517,21 +519,48 @@ export default function Home({ targetSection }: HomeProps) {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">{t.blog.title}</h2>
+              <Link href="/blog">
+                <h2 className="text-3xl font-bold tracking-tight hover:text-[oklch(var(--accent))] transition-colors cursor-pointer">{t.blog.title}</h2>
+              </Link>
               <p className="mt-2 text-sm text-muted-foreground">
                 {t.blog.description}
               </p>
             </div>
-            <Button
-              variant="outline"
-              className="w-fit border-primary/40 bg-background/40"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
-              {t.blog.back_to_top}
-            </Button>
+            <Link href="/blog">
+              <Button
+                variant="outline"
+                className="w-fit border-primary/40 bg-background/40"
+              >
+                View All Guides & Articles
+              </Button>
+            </Link>
           </div>
 
           <Separator className="my-8" />
+
+          <div className="mb-12">
+            <Link href="/guide">
+              <Card className="group overflow-hidden border-border/70 bg-background/30 transition-colors hover:border-[oklch(var(--accent))]/50 hover:bg-accent/5 cursor-pointer p-6">
+                <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+                  <div className="space-y-3 flex-1">
+                    <div className="flex items-center gap-3">
+                      <Badge variant="secondary" className="bg-accent/10 text-[oklch(var(--accent))]">Guide</Badge>
+                      <span className="text-xs text-muted-foreground">2026-04-08</span>
+                    </div>
+                    <h3 className="text-2xl font-bold leading-tight tracking-tight group-hover:text-[oklch(var(--accent))] transition-colors">
+                      Falaises de Cassis 2026 完整攻略｜一日遊・二日遊路線・Calanques 船遊・周邊景點推薦
+                    </h3>
+                    <p className="font-editorial text-sm leading-relaxed text-muted-foreground line-clamp-2">
+                      Falaises de Cassis 懸崖完整攻略，包含徒步路線、交通方式、最佳玩法、一日遊與二日遊建議，以及伊夫城堡、光影採石場、巴本動物公園等周邊推薦。
+                    </p>
+                  </div>
+                  <div className="flex items-center whitespace-nowrap text-sm font-medium text-[oklch(var(--accent))]">
+                    Read Article <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+                  </div>
+                </div>
+              </Card>
+            </Link>
+          </div>
 
           <div className="grid gap-8 md:grid-cols-12">
             <aside className="md:col-span-4">
