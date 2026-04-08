@@ -295,16 +295,7 @@ export default function Guide() {
       <div className="mx-auto max-w-4xl px-4 py-12">
         <div className="rounded-2xl border border-border/70 bg-background/20 p-6 md:p-10 shadow-sm">
           <article 
-            className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground`}
-            onClick={(e) => {
-              // Override Streamdown's default link behavior to prevent confirmation modals
-              const target = e.target as HTMLElement;
-              if (target.tagName === 'A' && target.hasAttribute('href')) {
-                e.preventDefault();
-                e.stopPropagation();
-                window.open(target.getAttribute('href')!, '_blank', 'noopener,noreferrer');
-              }
-            }}
+            className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:underline hover:prose-a:underline prose-strong:text-foreground`}
           >
             <Streamdown>
               {currentMarkdown}
