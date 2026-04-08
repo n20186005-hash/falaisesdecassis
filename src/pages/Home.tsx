@@ -544,18 +544,18 @@ export default function Home({ targetSection }: HomeProps) {
                 <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
                   <div className="space-y-3 flex-1">
                     <div className="flex items-center gap-3">
-                      <Badge variant="secondary" className="bg-accent/10 text-[oklch(var(--accent))]">{t.blog.featured_article.category}</Badge>
-                      <span className="text-xs text-muted-foreground">{t.blog.featured_article.date}</span>
+                      <Badge variant="secondary" className="bg-accent/10 text-[oklch(var(--accent))]">{t.blog.featured_article?.category || t.blog.featured_article?.category || "Guide"}</Badge>
+                      <span className="text-xs text-muted-foreground">{t.blog.featured_article?.date || "2026-04-08"}</span>
                     </div>
                     <h3 className="text-2xl font-bold leading-tight tracking-tight group-hover:text-[oklch(var(--accent))] transition-colors">
-                      {t.blog.featured_article.title}
+                      {t.blog.featured_article?.title || "Falaises de Cassis Complete Guide"}
                     </h3>
                     <p className="font-editorial text-sm leading-relaxed text-muted-foreground line-clamp-2">
-                      {t.blog.featured_article.description}
+                      {t.blog.featured_article?.description || "A complete guide to Falaises de Cassis..."}
                     </p>
                   </div>
                   <div className="flex items-center whitespace-nowrap text-sm font-medium text-[oklch(var(--accent))]">
-                    {t.blog.featured_article.read_more} <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+                    {t.blog.featured_article?.read_more || "Read Article"} <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
                   </div>
                 </div>
               </Card>

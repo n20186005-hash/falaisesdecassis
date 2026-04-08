@@ -10,6 +10,7 @@ import TermsOfService from "@/pages/TermsOfService";
 import CookieSettings from "@/pages/CookieSettings";
 import Guide from "@/pages/Guide";
 import Blog from "@/pages/Blog";
+import FamilyZoo from "@/pages/FamilyZoo";
 
 // Switch to normal browser routing for SEO
 function AppRouter() {
@@ -20,6 +21,7 @@ function AppRouter() {
         <Route path="/terms" component={TermsOfService} />
         <Route path="/cookie-settings" component={CookieSettings} />
         <Route path="/guide" component={Guide} />
+        <Route path="/family-zoo" component={FamilyZoo} />
         <Route path="/blog" component={Blog} />
         <Route path="/:section?">{(params) => <Home targetSection={params.section} />}</Route>
       </Switch>

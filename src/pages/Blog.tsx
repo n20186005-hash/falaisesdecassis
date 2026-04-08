@@ -49,6 +49,38 @@ const posts = [
       "ko": "가이드"
     },
     path: "/guide"
+  },
+  {
+    id: "family-zoo",
+    title: {
+      "en": "Zoo de la Barben 2026 Complete Family Guide",
+      "fr": "Zoo de la Barben 2026 Guide Familial Complet",
+      "ja": "ラ・バルバン動物園 2026 家族向け完全ガイド",
+      "es": "Zoo de la Barben 2026 Guía Familiar Completa",
+      "de": "Zoo de la Barben 2026 Kompletter Familienführer",
+      "zh-TW": "巴本動物公園 (Zoo de la Barben) 2026 完整親子遊攻略",
+      "ko": "Zoo de la Barben 2026 완전 가족 가이드"
+    },
+    description: {
+      "en": "Zoo de la Barben is the largest wildlife park in Provence, featuring 120 species, bird shows, and feeding interactions. A must-visit family destination in Southern France.",
+      "fr": "Le Zoo de la Barben est le plus grand parc animalier de Provence, avec 120 espèces. Une destination familiale incontournable dans le sud de la France.",
+      "ja": "ラ・バルバン動物園はプロヴァンス最大の野生動物公園です。南フランスで必見の家族向け観光地です。",
+      "es": "El Zoo de la Barben es el parque de vida silvestre más grande de Provenza. Un destino familiar de visita obligada en el sur de Francia.",
+      "de": "Der Zoo de la Barben ist der größte Wildpark in der Provence. Ein Muss für Familien in Südfrankreich.",
+      "zh-TW": "巴本動物公園是普羅旺斯最大的野生動物園，擁有 120 種動物，提供精彩鳥類表演與餵食互動，是南法親子遊必去的推薦景點。",
+      "ko": "Zoo de la Barben은 프로방스에서 가장 큰 야생 동물 공원입니다. 남프랑스에서 꼭 방문해야 할 가족 명소입니다."
+    },
+    date: "2026-04-09",
+    category: {
+      "en": "Family",
+      "fr": "Famille",
+      "ja": "家族",
+      "es": "Familia",
+      "de": "Familie",
+      "zh-TW": "親子",
+      "ko": "가족"
+    },
+    path: "/family-zoo"
   }
 ];
 
@@ -71,8 +103,8 @@ export default function Blog() {
         currentLang={lang} 
         path="/blog" 
         customMeta={{
-          title: `${t.blog.blog_page.title} - ${t.title}`,
-          description: t.blog.blog_page.subtitle
+          title: `${t.blog?.blog_page?.title || "Blog & Guides"} - ${t.title}`,
+          description: t.blog?.blog_page?.subtitle || "Discover everything you need to know about exploring the stunning Falaises de Cassis."
         }}
       />
       
@@ -83,11 +115,11 @@ export default function Blog() {
             <Link href="/">
               <Button variant="ghost" size="sm" className="gap-2">
                 <ArrowLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">{t.blog.blog_page.back_to_home}</span>
+                <span className="hidden sm:inline">{t.blog?.blog_page?.back_to_home || "Back to Home"}</span>
               </Button>
             </Link>
             <div className="hidden text-sm font-semibold tracking-tight md:block">
-              {t.title} {t.blog.title}
+              {t.title} {t.blog?.title || "Blog"}
             </div>
           </div>
           
@@ -127,15 +159,15 @@ export default function Blog() {
           >
             <div className="mb-4 flex flex-wrap gap-2">
               <Badge variant="outline" className="border-primary/40 bg-background/60">
-                {t.blog.blog_page.latest_articles}
+                {t.blog?.blog_page?.latest_articles || "Latest Articles"}
               </Badge>
             </div>
 
             <h1 className="text-4xl font-extrabold whitespace-pre-line leading-[0.95] tracking-tight md:text-6xl">
-              {t.blog.blog_page.title}
+              {t.blog?.blog_page?.title || "Blog & Guides"}
             </h1>
             <p className="font-editorial mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              {t.blog.blog_page.subtitle}
+              {t.blog?.blog_page?.subtitle || "Discover everything you need to know."}
             </p>
           </motion.div>
         </div>
@@ -171,7 +203,7 @@ export default function Blog() {
                   </div>
                   <div className="mt-auto border-t border-border/50 p-4">
                       <div className="flex items-center text-sm font-medium text-[oklch(var(--accent))]">
-                        {t.blog.blog_page.read_more} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        {t.blog?.blog_page?.read_more || "Read More"} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </Card>
@@ -185,8 +217,8 @@ export default function Blog() {
               <div className="rounded-full bg-accent/10 p-4 text-[oklch(var(--accent))]">
                 <Languages className="h-8 w-8" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">{t.blog.blog_page.no_articles}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{t.blog.blog_page.check_back}</p>
+              <h3 className="mt-4 text-lg font-semibold">{t.blog?.blog_page?.no_articles || "No articles yet"}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{t.blog?.blog_page?.check_back || "Check back later."}</p>
             </div>
           )}
         </div>

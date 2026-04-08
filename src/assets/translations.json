@@ -736,7 +736,15 @@
         "實測避坑指南",
         "權威信息來源",
         "體驗總結"
-      ]
+      ],
+      "blog_page": {
+        "title": "部落格與攻略",
+        "subtitle": "探索卡西斯懸崖的完整指南。從徒步路線到周邊的最佳景點。",
+        "latest_articles": "最新文章",
+        "no_articles": "目前沒有文章",
+        "check_back": "請稍後再來查看新的更新與指南。",
+        "back_to_home": "返回首頁"
+      }
     },
     "footer": {
       "support": "技術支持：claritleonelmnicol@gmail.com",
