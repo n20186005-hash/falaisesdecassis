@@ -101,6 +101,26 @@
         "back_to_home": "Back to Home"
       }
     },
+    "recommendations": {
+      "attractions_title": "Recommended Nearby Attractions",
+      "routes_title": "Recommended Nearby Tours & Routes",
+      "attractions": [
+        { "name": "Zoo de la Barben", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
+        { "name": "Château d'If", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
+        { "name": "Carrières des Lumières", "url": "https://www.trip.com/t/1MwajN2BEU2" },
+        { "name": "Île d'If", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+      ],
+      "routes": [
+        { "name": "Marseille Aix Cathedral + Zoo de la Barben + Silvacane Abbey + Château de Lourmarin", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
+        { "name": "Marseille Aix + Cours Mirabeau + Cathedral Custom 1-Day Tour", "url": "https://www.trip.com/t/HZL38bxAEU2" },
+        { "name": "Provence Classic Old Towns: Aix + Moustiers + Lac de Sainte-Croix + Gorges du Verdon", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
+        { "name": "From Marseille: Arles, Les Baux & Saint-Rémy 1-Day Tour", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
+        { "name": "Provence Hidden Gems: Pink Salt Lake + Les Baux Castle + Carrières des Lumières", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
+        { "name": "Calanques National Park + Marseille Old Port + Île d'If + Sugiton Fjord 1-Day Tour", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Marseille Calanques View + Old Port + Île d'If + Mucem 1-Day Tour", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "Marseille Île d'If + Mucem + Notre-Dame de la Garde + Palais Longchamp 1-Day Tour", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+      ]
+    },
     "footer": {
       "support": "For technical support of this website, please contact: claritleonelmnicol@gmail.com",
       "privacy": "Privacy Policy",
@@ -233,6 +253,26 @@
         "check_back": "Revenez plus tard pour de nouvelles mises à jour et guides.",
         "back_to_home": "Retour à l'Accueil"
       }
+    },
+    "recommendations": {
+      "attractions_title": "Attractions à proximité recommandées",
+      "routes_title": "Itinéraires et circuits recommandés",
+      "attractions": [
+        { "name": "Zoo de la Barben", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
+        { "name": "Château d'If", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
+        { "name": "Carrières des Lumières", "url": "https://www.trip.com/t/1MwajN2BEU2" },
+        { "name": "Île d'If", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+      ],
+      "routes": [
+        { "name": "Cathédrale d'Aix + Zoo de la Barben + Abbaye de Silvacane + Château de Lourmarin", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
+        { "name": "Aix-en-Provence + Cours Mirabeau + Cathédrale Visite Personnalisée", "url": "https://www.trip.com/t/HZL38bxAEU2" },
+        { "name": "Villages classiques de Provence : Aix + Moustiers + Lac de Sainte-Croix + Gorges du Verdon", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
+        { "name": "Depuis Marseille : Arles, Les Baux et Saint-Rémy Visite d'une journée", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
+        { "name": "Joyaux cachés de Provence : Lac Salé Rose + Château des Baux + Carrières des Lumières", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
+        { "name": "Parc National des Calanques + Vieux-Port + Île d'If + Calanque de Sugiton", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Vue sur les Calanques + Vieux-Port + Île d'If + Mucem", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "Île d'If + Mucem + Notre-Dame de la Garde + Palais Longchamp", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+      ]
     },
     "footer": {
       "support": "Pour le support technique, contactez : claritleonelmnicol@gmail.com",
@@ -367,6 +407,26 @@
         "back_to_home": "ホームに戻る"
       }
     },
+    "recommendations": {
+      "attractions_title": "周辺のおすすめ観光スポット",
+      "routes_title": "周辺のおすすめツアールート",
+      "attractions": [
+        { "name": "ラ・バルバン動物園", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
+        { "name": "イフ城", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
+        { "name": "カリエール・デ・ルミエール", "url": "https://www.trip.com/t/1MwajN2BEU2" },
+        { "name": "イフ島", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+      ],
+      "routes": [
+        { "name": "マルセイユ エクス大聖堂 + ラ・バルバン動物園 + シルヴァカンヌ修道院 + ルールマラン城", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
+        { "name": "マルセイユ エクス + ミラボー大通り + 大聖堂 カスタム1日ツアー", "url": "https://www.trip.com/t/HZL38bxAEU2" },
+        { "name": "プロヴァンスの伝統的な古い町: エクス + ムスティエ + サント・クロワ湖 + ヴェルドン渓谷", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
+        { "name": "マルセイユ出発：アルル、レ・ボー、サン・レミ1日ツアー", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
+        { "name": "プロヴァンスの隠れた名所: ピンクソルトレイク + レ・ボー城 + カリエール・デ・ルミエール", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
+        { "name": "カランク国立公園 + 旧港 + イフ島 + スジトン フィヨルド 1日ツアー", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "マルセイユ カランクの景色 + 旧港 + イフ島 + Mucem 1日ツアー", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "マルセイユ イフ島 + Mucem + ノートルダム・ド・ラ・ガルド + ロンシャン宮殿 1日ツアー", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+      ]
+    },
     "footer": {
       "support": "テクニカルサポートについては、claritleonelmnicol@gmail.com までお問い合わせください。",
       "privacy": "プライバシーポリシー",
@@ -499,6 +559,26 @@
         "check_back": "Vuelve más tarde para nuevas actualizaciones y guías.",
         "back_to_home": "Volver al Inicio"
       }
+    },
+    "recommendations": {
+      "attractions_title": "Atracciones cercanas recomendadas",
+      "routes_title": "Rutas y tours cercanos recomendados",
+      "attractions": [
+        { "name": "Zoo de la Barben", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
+        { "name": "Château d'If", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
+        { "name": "Carrières des Lumières", "url": "https://www.trip.com/t/1MwajN2BEU2" },
+        { "name": "Île d'If", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+      ],
+      "routes": [
+        { "name": "Catedral de Aix + Zoo de la Barben + Abadía de Silvacane + Castillo de Lourmarin", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
+        { "name": "Aix-en-Provence + Cours Mirabeau + Tour personalizado de la Catedral", "url": "https://www.trip.com/t/HZL38bxAEU2" },
+        { "name": "Pueblos clásicos de Provenza: Aix + Moustiers + Lago de Sainte-Croix + Gargantas del Verdon", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
+        { "name": "Desde Marsella: Tour de 1 día a Arles, Les Baux y Saint-Rémy", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
+        { "name": "Joyas ocultas de Provenza: Lago Salado Rosa + Castillo de Les Baux + Carrières des Lumières", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
+        { "name": "Parque Nacional de Calanques + Puerto Viejo + Île d'If + Calanque de Sugiton", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Vista de Calanques + Puerto Viejo + Île d'If + Mucem", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "Île d'If + Mucem + Notre-Dame de la Garde + Palais Longchamp", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+      ]
     },
     "footer": {
       "support": "Para soporte técnico, contacte a: claritleonelmnicol@gmail.com",
@@ -633,6 +713,26 @@
         "back_to_home": "Zurück zur Startseite"
       }
     },
+    "recommendations": {
+      "attractions_title": "Empfohlene Sehenswürdigkeiten",
+      "routes_title": "Empfohlene Touren & Routen",
+      "attractions": [
+        { "name": "Zoo de la Barben", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
+        { "name": "Château d'If", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
+        { "name": "Carrières des Lumières", "url": "https://www.trip.com/t/1MwajN2BEU2" },
+        { "name": "Île d'If", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+      ],
+      "routes": [
+        { "name": "Kathedrale von Aix + Zoo de la Barben + Abtei Silvacane + Schloss Lourmarin", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
+        { "name": "Marseille Aix + Cours Mirabeau + Kathedrale Individuelle 1-Tagestour", "url": "https://www.trip.com/t/HZL38bxAEU2" },
+        { "name": "Klassische Dörfer der Provence: Aix + Moustiers + Lac de Sainte-Croix + Verdonschlucht", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
+        { "name": "Ab Marseille: Arles, Les Baux & Saint-Rémy 1-Tagestour", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
+        { "name": "Geheimtipps der Provence: Pink Salt Lake + Schloss Les Baux + Carrières des Lumières", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
+        { "name": "Nationalpark Calanques + Alter Hafen + Île d'If + Calanque de Sugiton", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Marseille Calanques Ansicht + Alter Hafen + Île d'If + Mucem", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "Île d'If + Mucem + Notre-Dame de la Garde + Palais Longchamp", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+      ]
+    },
     "footer": {
       "support": "Technischer Support: claritleonelmnicol@gmail.com",
       "privacy": "Datenschutz",
@@ -766,6 +866,26 @@
         "back_to_home": "返回首頁"
       }
     },
+    "recommendations": {
+      "attractions_title": "周邊景點推薦",
+      "routes_title": "周邊遊路線推薦",
+      "attractions": [
+        { "name": "巴本動物公園", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
+        { "name": "伊夫城堡", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
+        { "name": "光影採石場", "url": "https://www.trip.com/t/1MwajN2BEU2" },
+        { "name": "伊夫島", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+      ],
+      "routes": [
+        { "name": "馬賽艾克斯主教座堂 + 巴本動物公園 + 西瓦岡修道院 + 盧瑪宏城堡", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
+        { "name": "法國馬賽卡艾克斯 + 米拉波大道 + 主座大教堂中文包車一日遊", "url": "https://www.trip.com/t/HZL38bxAEU2" },
+        { "name": "法國普羅旺斯法式老城：艾克斯 + 陶瓷鎮 + 聖十字湖 + 韋爾東峽谷", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
+        { "name": "從馬賽出發：阿爾勒、萊博及聖雷米一日遊", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
+        { "name": "法國普羅旺斯小眾經典線：粉色鹽湖 + 萊博德城堡 + 光影採石場", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
+        { "name": "蔚藍海岸國家公園 + 馬賽老港 + 伊夫島 + Sugiton峽灣一日遊", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "法國馬賽卡朗格峽灣觀景 + 馬賽老港 + 伊夫島 + 地中海博物館一日遊", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "法國馬賽伊夫島 + 歐洲地中海博物館 + 守護聖母聖殿 + 隆尚宮一日遊", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+      ]
+    },
     "footer": {
       "support": "技術支持：claritleonelmnicol@gmail.com",
       "privacy": "隱私政策",
@@ -898,6 +1018,26 @@
         "check_back": "새로운 업데이트와 가이드를 위해 나중에 다시 확인하세요.",
         "back_to_home": "홈으로 돌아가기"
       }
+    },
+    "recommendations": {
+      "attractions_title": "주변 추천 명소",
+      "routes_title": "주변 추천 투어 및 루트",
+      "attractions": [
+        { "name": "바르벤 동물원", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
+        { "name": "이프성", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
+        { "name": "빛의 채석장", "url": "https://www.trip.com/t/1MwajN2BEU2" },
+        { "name": "이프섬", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+      ],
+      "routes": [
+        { "name": "마르세유 엑스 대성당 + 바르벤 동물원 + 실바칸 수도원 + 루르마랭 성", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
+        { "name": "마르세유 엑스 + 미라보 거리 + 대성당 맞춤형 1일 투어", "url": "https://www.trip.com/t/HZL38bxAEU2" },
+        { "name": "프로방스 클래식 올드 타운: 엑스 + 무스티에 + 생크루아 호수 + 베르동 협곡", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
+        { "name": "마르세유 출발: 아를, 레보, 생레미 1일 투어", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
+        { "name": "프로방스의 숨겨진 명소: 핑크 소금 호수 + 레보 성 + 빛의 채석장", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
+        { "name": "칼랑크 국립공원 + 마르세유 구항구 + 이프섬 + 수지통 피오르드 1일 투어", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "마르세유 칼랑크 뷰 + 구항구 + 이프섬 + 무셈 1일 투어", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "마르세유 이프섬 + 무셈 + 노트르담 드 라 가르드 + 롱샹 궁전 1일 투어", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+      ]
     },
     "footer": {
       "support": "기술 지원: claritleonelmnicol@gmail.com",

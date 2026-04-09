@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/contexts/ThemeContext";
 import { SEO } from "@/components/SEO";
+import { Recommendations } from "@/components/Recommendations";
 
 import heroImg from "@/assets/hero_google.jpg";
 import translations from "@/assets/translations.json";
@@ -564,6 +565,8 @@ export default function Home({ targetSection }: HomeProps) {
               </motion.div>
             ))}
           </div>
+
+          <Recommendations translations={t.recommendations} />
 
           {/* Bottom Ad Banner */}
           <div className="flex justify-center mt-12 overflow-hidden rounded-lg">

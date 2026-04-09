@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/contexts/ThemeContext";
 import { SEO } from "@/components/SEO";
+import { Recommendations } from "@/components/Recommendations";
 import translations from "@/assets/translations.json";
 
 const guideMarkdownZhTw = `
@@ -312,6 +313,8 @@ export default function Guide() {
               {currentMarkdown}
             </Streamdown>
           </article>
+
+          <Recommendations translations={t.recommendations} />
 
           {/* Bottom Ad Banner */}
           <div className="flex justify-center mt-12 pt-8 border-t border-border/50 overflow-hidden rounded-lg">
