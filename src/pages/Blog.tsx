@@ -17,18 +17,29 @@ import { SEO } from "@/components/SEO";
 import translations from "@/assets/translations.json";
 import { posts } from "@/data/posts";
 
-export default function Blog() {
+interface BlogProps {
+  initialLang?: "en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko";
+}
+
+export default function Blog({ initialLang }: BlogProps) {
   const { theme, toggleTheme } = useTheme();
   const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
     const saved = localStorage.getItem("app-lang");
-    return (saved as any) || "en";
+    return (initialLang as any) || (saved as any) || "en";
   });
 
   const t = (translations as any)[lang];
+  const visiblePosts = posts.filter((post: any) => post.indexable !== false);
 
   useEffect(() => {
     localStorage.setItem("app-lang", lang);
   }, [lang]);
+
+  useEffect(() => {
+    if (initialLang && initialLang !== lang) {
+      setLang(initialLang);
+    }
+  }, [initialLang, lang]);
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -110,7 +121,7 @@ export default function Blog() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post, idx) => (
+            {visiblePosts.map((post, idx) => (
               <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
@@ -145,7 +156,7 @@ export default function Blog() {
             ))}
           </div>
           
-          {posts.length === 0 && (
+          {visiblePosts.length === 0 && (
             <div className="flex flex-col items-center justify-center py-20 text-center">
               <div className="rounded-full bg-accent/10 p-4 text-[oklch(var(--accent))]">
                 <Languages className="h-8 w-8" />

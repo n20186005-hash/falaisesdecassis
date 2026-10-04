@@ -5,12 +5,13 @@ interface SEOProps {
   currentLang: string;
   path: string; // Should be like "" for home, "/privacy" for privacy policy, etc.
   customMeta?: { title: string; description: string; };
+  robots?: string;
 }
 
 const DOMAIN = "https://www.falaisesdecassis.com";
 const SUPPORTED_LANGS = ["en", "fr", "ja", "es", "de", "zh-TW", "ko"];
 
-export function SEO({ currentLang, path, customMeta }: SEOProps) {
+export function SEO({ currentLang, path, customMeta, robots }: SEOProps) {
   // Ensure path starts with a slash or is empty
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const cleanPath = normalizedPath === "/" ? "" : normalizedPath;
@@ -34,6 +35,7 @@ export function SEO({ currentLang, path, customMeta }: SEOProps) {
       {/* Title */}
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
+      {robots ? <meta name="robots" content={robots} /> : null}
       
       {/* Language */}
       <html lang={currentLang} />

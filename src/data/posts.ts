@@ -2,8 +2,8 @@ export const posts = [
   {
     id: "guide-2026",
     title: {
-      "en": "Falaises de Cassis 2026 Complete Guide | 1-Day & 2-Day Routes, Boat Tours, and Nearby Attractions",
-      "fr": "Guide Complet Falaises de Cassis 2026 | Itinéraires 1-2 Jours, Excursions en Bateau et Attractions à Proximité",
+      "en": "Falaises de Cassis Guide | Access, Parking, Hiking & Best Views",
+      "fr": "Guide des Falaises de Cassis | Acces, parking, randonnee et points de vue",
       "ja": "カシス懸崖2026完全ガイド | 1日・2日ルート、ボートツアー、周辺観光スポット",
       "es": "Guía Completa Falaises de Cassis 2026 | Rutas 1-2 Días, Tours en Barco y Atracciones Cercanas",
       "de": "Falaises de Cassis 2026 Komplette Anleitung | 1-2 Tages Routen, Bootstouren und Nahegelegene Attraktionen",
@@ -11,8 +11,8 @@ export const posts = [
       "ko": "Falaises de Cassis 2026 완전 가이드 | 1-2일 루트, 보트 투어, 인근 명소"
     },
     description: {
-      "en": "A complete guide to Falaises de Cassis, including hiking routes, transportation, 1-2 day itineraries, and nearby attractions like Château d'If and Carrières des Lumières.",
-      "fr": "Un guide complet des Falaises de Cassis, incluant les itinéraires de randonnée, le transport, les itinéraires 1-2 jours et les attractions à proximité comme Château d'If et Carrières des Lumières.",
+      "en": "Plan your visit to the Falaises de Cassis with practical advice on access, parking, Route des Cretes viewpoints, hiking, safety and the best time to go.",
+      "fr": "Preparez votre visite des Falaises de Cassis avec des conseils pratiques sur l'acces, le parking, la Route des Cretes, la randonnee, la securite et le meilleur moment pour y aller.",
       "ja": "カシス懸崖への完全ガイド、ハイキングルート、交通、1-2日ルート、イフ城やカリエール・デ・ルミエールなどの周辺観光スポットを含む。",
       "es": "Una guía completa de Falaises de Cassis, incluyendo rutas de senderismo, transporte, itinerarios de 1-2 días y atracciones cercanas como Château d'If y Carrières des Lumières.",
       "de": "Eine vollständige Anleitung zu Falaises de Cassis, einschließlich Wanderwegen, Transport, 1-2-Tages-Routen und nahegelegenen Attraktionen wie Château d'If und Carrières des Lumières.",
@@ -29,7 +29,8 @@ export const posts = [
       "zh-TW": "攻略",
       "ko": "가이드"
     },
-    path: "/guide"
+    path: "/guide",
+    indexable: true
   },
   {
     id: "family-zoo",
@@ -61,6 +62,7 @@ export const posts = [
       "zh-TW": "親子",
       "ko": "가족"
     },
-    path: "/family-zoo"
+    path: "/family-zoo",
+    indexable: false
   }
 ];

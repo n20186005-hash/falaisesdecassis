@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Map, ArrowLeft, Languages, Sun, Moon } from "lucide-react";
+import { Map, Languages, Sun, Moon } from "lucide-react";
 import { Streamdown } from "streamdown";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -16,179 +16,450 @@ import { Recommendations } from "@/components/Recommendations";
 import translations from "@/assets/translations.json";
 
 const guideMarkdownZhTw = `
-# Falaises de Cassis 2026 完整攻略｜一日遊與二日遊路線・船遊・周邊私房景點推薦
+# Falaises de Cassis 攻略｜交通、停車、徒步與最佳觀景點
 
-## 引言 
+## 這一頁適合誰
 
-Falaises de Cassis（卡西斯懸崖）坐落於法國普羅旺斯 - 阿爾卑斯 - 蔚藍海岸大區，是卡朗格峽灣國家公園中最具代表性的海岸奇觀。奶白色的石灰岩懸崖垂直墜入漸變藍的地中海，當海風吹起浪濤拍擊岩壁，光影隨著日照角度千變萬化，這裡一直被許多旅人視為南法海岸的「隱藏寶石」。
+如果你搜尋的是 **Falaises de Cassis、Cap Canaille、Route des Cretes、Cassis cliffs**，這一頁就是給準備實際出發的人看的。重點不是「南法還能順便去哪裡」，而是把卡西斯懸崖本身玩明白。
 
-這裡不僅是徒步愛好者與攝影師的天堂，如果搭配馬賽、萊博德普羅旺斯等經典景點，更能輕鬆規劃出 1 到 2 天的豐富行程。這篇最新的 2026 攻略，將會手把手分享交通、路線、避坑技巧，並精選高口碑的周邊體驗，讓你一站式玩透卡西斯懸崖。
+Falaises de Cassis 指的不是一個單一觀景台，而是 Cassis 與 La Ciotat 之間、圍繞 **Cap Canaille** 和 **Route des Cretes** 展開的一整段海岸懸崖風景帶。你可以用最輕鬆的自駕觀景方式看全景，也可以把它和 Port Miou、Port Pin 一起走成半天到一天的徒步行程。
 
-## 基本資訊快速查詢 
+## 基本資訊
 
-- **景點名稱**：Falaises de Cassis（卡西斯懸崖）
-- **詳細地址**：13260 Cassis, France
-- **開放時間**：24 小時全年無休，免費開放無門票
-- **建議遊玩時長**：1-3 小時（輕鬆觀景）；半天 - 2 天（深度徒步 + 周邊）
-- **最佳季節**：4-10 月（海水湛藍、日照充足）；11-3 月（人少清幽，風力較強）
-- **適合人群**：徒步愛好者、攝影師、情侶、親子家庭（搭配動物園更佳）
+- **地點**：13260 Cassis, France
+- **核心關鍵區域**：Cap Canaille、Route des Cretes、Falaises Soubeyranes
+- **建議停留時間**：2-3 小時起；若加上徒步，建議半天到一天
+- **適合玩法**：觀景、自駕、公路騎行、短程徒步、日落攝影
+- **不適合情況**：只想停車 5 分鐘拍完就走、怕高、沒有防滑鞋卻想走岩地
 
-## 如何前往 Cassis 與卡西斯懸崖
+## 怎麼去 Falaises de Cassis
 
-1. **馬賽 → Cassis（最推薦的大眾交通方式）**
-   - **區域快車（TER）**：全程大約只要 17 分鐘，單程票價約 8 歐元起。班次相當密集且準點率高，出發站為馬賽聖夏爾站（Marseille St-Charles）。
-   - **市區巴士**：適合自駕旅客，可以沿著風景優美的山脊公路（Route des Crêtes）直達懸崖觀景台。但請注意，部分路段在夏季或週日可能會禁止私家車通行。
-2. **機場 → Cassis**
-   - 馬賽普羅旺斯機場並沒有直達交通，你需要先搭乘接駁車至馬賽市區或火車站，然後再轉乘 TER 區域快車前往。
-3. **Cassis 車站 → 市區 / 懸崖**
-   - 車站與市區有一段距離，抵達後需要搭乘官方接駁巴士（營運時間為 06:40-20:30）。在旅遊旺季，建議務必提前預留等車的時間。
+### 從馬賽出發
 
-## Falaises de Cassis 核心玩法
+最常見的方式是先到 **Cassis 小鎮**，再前往 Route des Cretes 或徒步起點。
 
-卡西斯懸崖**不是單一的觀景點**，而是一整片綿延的海岸風景帶。主要有兩種玩法，你可以根據體力自由組合：
+1. **火車 + 接駁**
+   從 Marseille Saint-Charles 搭 TER 到 Cassis，再轉接駁或計程車進鎮上。
+2. **自駕**
+   自駕最靈活，尤其適合想走 **Route des Cretes** 的旅客。
+3. **包車 / 一日行程**
+   如果你不想處理停車與道路限制，跟一日行程會更省心。
 
-### 1. 輕鬆觀景版（山脊公路 Route des Crêtes）
-非常適合不想走太多路、想快速欣賞全景的旅客。無論是自駕或是騎行，沿著公路行駛，沿途設有多個觀景台可以隨停隨拍，特別是日落時分的視覺效果絕對令人驚豔。
+### 到了 Cassis 之後怎麼走
 
-### 2. 深度徒步版（經典環線）
-- **路線建議**：卡西斯小鎮 → Port Miou 灣 → Port Pin 灣 → 懸崖核心觀景點 → 返回小鎮
-- 這是能最距離接觸峽灣與岩壁的方式，沉浸式感受壯麗的海岸風光。
-- **重要提醒**：沿途沒有任何補給點，請務必自備 1-2 公升的水、乾糧與防曬用品。
-- 岩壁邊緣風力往往很強，請穿著防滑徒步鞋並注意自身安全。
+- 想看全景：直接去 **Route des Cretes** 的觀景點
+- 想走海灣步道：從 **Port Miou** 一帶開始徒步
+- 想拍日落：優先安排 **Cap Canaille** 一線的高處觀景台
 
-### 3. 必備實用建議
-- **裝備**：防滑鞋、防曬霜、帽子、防風外套（海風強勁）。
-- **最佳拍照時間**：清晨（人少且光線柔和）、傍晚（能捕捉到日落的金黃光芒）。
-- **安全**：每年 6-9 月是森林火險高危期，出發前務必查詢卡朗格國家公園的官方開放狀態。
+## 停車與進入方式
 
-## 一日遊建議行程（適合多數旅客）
+這一區最容易踩雷的不是找不到景，而是 **停車、封路與季節性限制**。
 
-- **上午**：從馬賽出發 → 抵達 Cassis 小鎮 → 前往卡西斯懸崖觀景或進行輕度徒步
-- **下午**：回到 Cassis 港口，搭乘 **Calanques 船遊**，從海上環遊峽灣與懸崖（這也是最輕鬆能俯瞰全景的方式）
-- **晚上**：返回馬賽，或是留在 Cassis 港口找家氣氛好的餐廳，品嚐新鮮的海鮮料理
+### 停車建議
 
-## 二日遊建議行程（深度玩轉南法）
+- **Cassis 鎮上停車場**：適合先逛港口，再去步道或觀景公路
+- **Route des Cretes 沿線停靠點**：方便、但旺季與日落前後很容易滿
+- **不要臨停在危險彎道或邊坡**：風大、路窄，而且視線死角多
 
-### Day 1：卡西斯懸崖 + 沉浸式藝術
-- 白天：全天暢玩 Falaises de Cassis，享受徒步與觀景的雙重體驗。
-- 傍晚：前往[光影採石場（Carrières de Lumières）](https://www.trip.com/t/cbem5BtJDU2)。這是一個由舊采石場改造而成的光影藝術館，透過巨幅投影與音樂帶來的沉浸式體驗，視覺極度震撼。
+### 出發前一定要確認
 
-### Day 2：馬賽歷史經典之旅
-- 上午：從馬賽舊港出發，乘船登陸[伊夫島](https://www.trip.com/t/Vere9GuJDU2)。
-- 下午：參觀島上的[伊夫城堡](https://www.trip.com/t/QikyawuJDU2)。這裡不僅是法國名著《基督山伯爵》的經典取景地，這座百年監獄更充滿了濃厚的歷史感。
+- 是否有 **強風封路**
+- 是否有 **森林火險限制**
+- 是否遇到 **週日或旺季交通管制**
 
-### 親子家庭專屬加選
-- 如果是帶著孩子同行，強烈建議優先安排 <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">巴本動物公園</a>。這是位於普羅旺斯心臟地帶的大型野生動物園，擁有多達 120 多種動物，還有精彩的鳥類飛行表演與餵食互動，距離 Cassis 的車程也不遠。
+這些條件會直接影響你能不能開上去，或能不能走特定步道。
 
-## 周邊推薦景點
+## 最推薦的兩種玩法
 
-除了卡西斯懸崖本身，南法還有許多值得探索的景點。以下是我們精選的 5 個周邊推薦，讓你的南法之旅更加豐富：
+## 1. Route des Cretes 觀景線
 
-<div class="attractions-grid" style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+這是最容易把 **Cassis cliffs / Falaises de Cassis** 看明白的方式。
 
-<div class="attraction-card" style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; background: rgba(255,255,255,0.05);">
-<h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
-<a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">巴本動物公園</a>
-</h3>
-<p style="margin: 0 0 0.5rem 0; color: #6b7280; font-size: 0.875rem; line-height: 1.5;">適合親子家庭，距離 Cassis 不遠，有各種動物互動體驗。</p>
-<p style="margin: 0; color: #9ca3af; font-size: 0.75rem;">（Trip.com 聯盟連結，點擊不影響價格）</p>
-</div>
+- **適合**：第一次來、帶長輩、時間不多、想拍全景的人
+- **特色**：車程短、視野大、可以多點停靠
+- **最佳時段**：上午空氣清楚；傍晚適合拍日落
 
-<div class="attraction-card" style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; background: rgba(255,255,255,0.05);">
-<h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
-<a href="https://www.trip.com/t/cbem5BtJDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">光影採石場（Carrières de Lumière）</a>
-</h3>
-<p style="margin: 0 0 0.5rem 0; color: #6b7280; font-size: 0.875rem; line-height: 1.5;">把舊採石場變成沉浸式光影藝術展覽，視覺效果非常震撼，適合喜歡藝術的旅客。</p>
-<p style="margin: 0; color: #9ca3af; font-size: 0.75rem;">（Trip.com 聯盟連結，點擊不影響價格）</p>
-</div>
+你會看到的核心畫面通常是：
 
-<div class="attraction-card" style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; background: rgba(255,255,255,0.05);">
-<h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
-<a href="https://www.trip.com/t/Vere9GuJDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">伊夫島（Île d'If）</a>
-</h3>
-<p style="margin: 0 0 0.5rem 0; color: #6b7280; font-size: 0.875rem; line-height: 1.5;">從馬賽港出發的經典島嶼，結合歷史與海景，和 Cassis 懸崖形成對比。</p>
-<p style="margin: 0; color: #9ca3af; font-size: 0.75rem;">（Trip.com 聯盟連結，點擊不影響價格）</p>
-</div>
+- 奶白色石灰岩斷崖
+- 地中海深藍到藍綠的海色變化
+- Cap Canaille 的高差與海岸線延伸
 
-<div class="attraction-card" style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; background: rgba(255,255,255,0.05);">
-<h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
-<a href="https://www.trip.com/t/QikyawuJDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">伊夫城堡（Château d'If）</a>
-</h3>
-<p style="margin: 0 0 0.5rem 0; color: #6b7280; font-size: 0.875rem; line-height: 1.5;">著名的監獄城堡，《基督山恩仇記》的取景地，可登島參觀，歷史感十足。</p>
-<p style="margin: 0; color: #9ca3af; font-size: 0.75rem;">（Trip.com 聯盟連結，點擊不影響價格）</p>
-</div>
+## 2. Port Miou / Port Pin 延伸徒步
 
-<div class="attraction-card" style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; background: rgba(255,255,255,0.05);">
-<h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 600;">
-<a href="https://www.trip.com/t/xVAmgGHKDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">羅訥河口酒店</a>
-</h3>
-<p style="margin: 0 0 0.5rem 0; color: #6b7280; font-size: 0.875rem; line-height: 1.5;">推薦在羅訥河口附近選擇舒適住宿，方便遊玩 Cassis 與周邊景點。</p>
-<p style="margin: 0; color: #9ca3af; font-size: 0.75rem;">（Trip.com 聯盟連結，點擊不影響價格）</p>
-</div>
+如果你不只想看「高處全景」，而是想真正走進卡朗格地形，這條線更有沉浸感。
 
-</div>
+- **適合**：平常有在走路、願意準備水和鞋子的人
+- **特色**：能同時看到海灣、岩壁、步道與懸崖地貌
+- **提醒**：夏天曝曬強，補水一定要準備足
 
-## 實用旅行 Tips
+## 最佳觀景時間與拍照建議
 
-- **天氣與安全**：懸崖上的陣風有時非常強烈，拍照時切勿過度靠近邊緣；6-9 月嚴禁攜帶任何明火，請隨時關注火險預警。
-- **飲食推薦**：Cassis 港口周邊餐廳林立，推薦必嘗當地的海鮮拼盤、普羅旺斯燉菜，別忘了搭配一杯當地產的清爽白葡萄酒。
-- **住宿推薦**：如果想節省交通時間，可以直接住在 Cassis 小鎮；如果偏好生活機能便利，可以選擇住在馬賽老港周邊的<a href="https://www.trip.com/t/xVAmgGHKDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">羅訥河口省高評分住宿</a>。<span style="color: #9ca3af; font-size: 0.75rem;">（Trip.com 聯盟連結，點擊不影響價格）</span>
-- **預訂提醒**：像<a href="https://www.trip.com/t/cbem5BtJDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">光影採石場</a>、<a href="https://www.trip.com/t/QikyawuJDU2" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; cursor: pointer;">伊夫城堡</a>這類熱門景點，強烈建議事先在線上買好門票，以免在現場浪費時間排隊。<span style="color: #9ca3af; font-size: 0.75rem;">（Trip.com 聯盟連結，點擊不影響價格）</span>
+### 上午
 
-## 結語與預訂說明
+- 光線乾淨，海色通常比較通透
+- 風有時比傍晚穩
+- 適合廣角風景照
 
-Falaises de Cassis 從來都不是一個「打卡即走」的景點。只要巧妙結合峽灣船遊、光影藝術展以及歷史城堡，你就能完整領略到南法蔚藍海岸與普羅旺斯交織出的雙重魅力。
+### 日落前
 
-*本站部分連結為 Trip.com 聯盟連結，點擊預訂的價格與官方完全一致，不會對您產生任何額外費用，您的支持將能讓我們持續更新更多實用的法國南部旅行攻略。*
+- Route des Cretes 一線最有氛圍
+- 懸崖與海面容易出現金色層次
+- 但熱門停靠點更容易擁擠
+
+### 拍照重點
+
+- 以 **Cap Canaille + 海岸線延伸** 為主體，比只拍一塊岩壁更有辨識度
+- 逆風很常見，手機和帽子要抓穩
+- 不要站到邊緣拍，這裡不是適合冒險取景的地方
+
+## 季節、封路與安全
+
+### 夏季
+
+- 人潮最多
+- 曝曬與缺水最明顯
+- 最需要留意火險與道路限制
+
+### 春秋
+
+- 整體最推薦
+- 光線穩定，體感也比盛夏舒服
+
+### 冬季
+
+- 人少、畫面乾淨
+- 但海風可能很強，體感偏冷
+
+### 安全提醒
+
+- 穿 **防滑鞋**
+- 每人至少準備 **1-2 公升水**
+- 出發前看 **風況、火險、道路是否開放**
+- 有小孩同行時，不要讓孩子靠近裸露崖邊
+
+## 建議停留多久
+
+- **2 小時**：只走 Route des Cretes 幾個核心觀景點
+- **半天**：觀景公路 + Cassis 港口
+- **一天**：觀景公路 + 徒步 + 日落
+
+## 常見問題
+
+### Falaises de Cassis 和 Cap Canaille 是同一個地方嗎
+
+不是完全同一點，但高度相關。大多數旅客實際看到的核心懸崖景觀，都圍繞 **Cap Canaille、Falaises Soubeyranes、Route des Cretes** 這一帶。
+
+### 需要買門票嗎
+
+通常不需要。這裡更像自然景觀與道路觀景區，但停車、交通限制和是否開放必須自己確認。
+
+### 值得專程去嗎
+
+如果你喜歡海岸懸崖、公路觀景、卡朗格式地貌，值得。若你只想逛市區或博物館，這裡的吸引力就沒那麼強。
+
+## 我的建議
+
+第一次來，最穩的安排是：
+
+1. 早上到 Cassis
+2. 先跑 **Route des Cretes**
+3. 視體力決定要不要加 Port Miou 一帶步道
+4. 傍晚回到高處觀景點等日落
+
+這樣最容易把 **Falaises de Cassis / Cassis cliffs / Cap Canaille** 的精華一次看完整。
 `;
 
 const guideMarkdownEn = `
-# Falaises de Cassis 2026 Complete Guide | 1-Day & 2-Day Routes, Boat Tours, and Nearby Attractions
+# Falaises de Cassis Guide | Access, Parking, Hiking and Best Viewpoints
 
-## Introduction
+## Who this guide is for
 
-Located in the Bouches-du-Rhône department of the Provence-Alpes-Côte d'Azur region, the Falaises de Cassis (Cliffs of Cassis) is one of the most iconic coastal wonders in the Calanques National Park. The creamy white limestone cliffs plunge vertically into the azure Mediterranean Sea. When the wind blows, the waves crash against the rock walls, and the light and shadow change with the angle. It is known as the "hidden gem" of the southern French coast.
+If you are searching for **Falaises de Cassis, Cassis cliffs, Cap Canaille or Route des Cretes**, this page is built for the actual visit. The goal here is to help you understand how to get there, where to stop, what to watch for, and how to choose between the scenic road and the hiking routes.
 
-This area is a paradise not only for hikers and photographers but also an ideal addition to classic Provence destinations like Marseille. With this 2026 updated guide, we will walk you through transportation, routes, practical tips, and top-rated local experiences.
+The Falaises de Cassis are not one single lookout. They are the dramatic cliff landscapes around **Cap Canaille**, the **Route des Cretes** and the coastal ridge between Cassis and La Ciotat.
 
-## Quick Information
+## Quick facts
 
-- **Name**: Falaises de Cassis (Cliffs of Cassis)
-- **Address**: 13260 Cassis, France
-- **Opening Hours**: Open 24 hours, free entry
-- **Suggested Duration**: 1-3 hours (easy viewing); half day to 2 days (hiking + surrounding areas)
-- **Best Season**: April-October (azure waters, sunny); November-March (quiet, but windy)
+- **Location**: 13260 Cassis, France
+- **Main areas**: Cap Canaille, Route des Cretes, Falaises Soubeyranes
+- **Suggested visit time**: at least 2-3 hours, or half a day if you add hiking
+- **Best for**: scenic drives, viewpoints, short hikes, sunset photos
+- **Less ideal for**: very quick stopovers, travelers uncomfortable with heights, and anyone attempting rocky paths without proper shoes
 
-👉 **Official Reference**: [Falaises de Cassis Details (Trip.com)](https://www.trip.com/t/jic2LTlJDU2)
+## How to get to the Falaises de Cassis
 
-## 2-Day Suggested Itinerary
+### From Marseille
 
-### Day 1: Cliffs + Immersive Art
-- Full day at Falaises de Cassis, enjoying both hiking and viewpoints
-- In the evening, head to [Carrières des Lumières](https://www.trip.com/t/cbem5BtJDU2): an immersive art gallery transformed from an old quarry, offering a visually stunning experience with projections and music.
+Most visitors first reach **Cassis town** and continue from there.
 
-### Day 2: Marseille Historical Classic Tour
-- Depart from Marseille's Old Port, land on [Île d'If](https://www.trip.com/t/Vere9GuJDU2), and visit [Château d'If](https://www.trip.com/t/QikyawuJDU2): the classic filming location for *The Count of Monte Cristo*, filled with the historical atmosphere of a century-old prison.
+1. **Train plus local transfer**
+   Take a TER train from Marseille Saint-Charles to Cassis, then continue by shuttle, taxi or car.
+2. **Driving**
+   This is the easiest option if your main target is **Route des Cretes**.
+3. **Private transfer or day tour**
+   Useful if you want the viewpoints without dealing with parking and road restrictions.
 
-### Family Exclusive Addition
-- If traveling with kids, prioritize <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">Zoo de la Barben</a>: a wildlife park in the heart of Provence with over 120 animal species, bird flight shows, and feeding interactions, just a short drive from Cassis.
+### Once you are in Cassis
 
-## Practical Tips
+- For the big panorama, head toward **Route des Cretes**
+- For a more immersive walk, start around **Port Miou**
+- For sunset, prioritize the higher viewpoints near **Cap Canaille**
 
-- **Accommodation**: Stay in Cassis for convenience or around Marseille's Old Port for a city vibe. We recommend checking out [Top-Rated Accommodation in Bouches-du-Rhône](https://www.trip.com/t/xVAmgGHKDU2).
+## Parking and access
 
-## Conclusion
+This is where most practical mistakes happen. The scenery is easy to love. The logistics need more attention.
 
-Falaises de Cassis is never just a "check-in" spot. Combined with boat tours, art exhibitions, and historical castles, you can fully appreciate the dual charm of the French Riviera and Provence.
+### Parking tips
 
-*Some links on this site are Trip.com affiliate links. Booking through these links costs you nothing extra, and your support helps us continue updating practical travel guides for Southern France.*
+- **Cassis town parking** works well if you want to combine the cliffs with the harbor
+- **Roadside pull-offs on Route des Cretes** are convenient but fill up quickly near sunset
+- Do not stop on blind curves or unstable shoulders
+
+### Always check before you go
+
+- strong wind closures
+- forest fire restrictions
+- Sunday or seasonal vehicle controls
+
+These conditions can change whether you can drive the road or access certain hiking sections.
+
+## The two best ways to visit
+
+## 1. Route des Cretes scenic road
+
+This is the easiest way to understand the **Cassis cliffs** landscape.
+
+- **Best for**: first-time visitors, families, short visits, wide panoramas
+- **Why it works**: minimal effort, multiple viewpoints, great sunset potential
+- **Best timing**: morning for clarity, late afternoon for atmosphere
+
+What makes this route special is the combination of:
+
+- pale limestone cliffs
+- deep blue Mediterranean water
+- the height and scale of **Cap Canaille**
+
+## 2. Port Miou and Port Pin hiking extension
+
+If you want more than roadside viewpoints, this option gives you a stronger feel for the coastline.
+
+- **Best for**: visitors comfortable walking on uneven terrain
+- **Why it works**: closer contact with coves, rock walls and the Calanques landscape
+- **Important**: bring water, especially in warm weather
+
+## Best viewpoints and photo timing
+
+### Morning
+
+- clearer light
+- cleaner sea colors
+- good for wide landscape shots
+
+### Sunset
+
+- stronger atmosphere along **Route des Cretes**
+- warmer tones on the cliff faces
+- more competition for parking and stopping points
+
+### Photo advice
+
+- frame **Cap Canaille** with the coastline whenever possible
+- expect strong wind
+- avoid stepping close to exposed cliff edges for photos
+
+## Seasonal restrictions and safety
+
+### Summer
+
+- busiest season
+- highest heat and sun exposure
+- most likely period for fire-risk restrictions
+
+### Spring and autumn
+
+- usually the best balance of weather, light and comfort
+
+### Winter
+
+- quieter and often more relaxed
+- but wind can be much stronger
+
+### Safety checklist
+
+- wear shoes with grip
+- carry at least 1-2 liters of water per person
+- check daily access conditions before departure
+- keep children away from exposed edges
+
+## How long should you spend here
+
+- **2 hours**: a few key Route des Cretes viewpoints
+- **Half day**: viewpoints plus Cassis harbor
+- **Full day**: viewpoints, hiking and sunset
+
+## Frequently asked questions
+
+### Are Falaises de Cassis and Cap Canaille the same thing
+
+Not exactly, but they are closely connected in how visitors experience the area. Most of the iconic cliff scenery people mean by **Falaises de Cassis** is linked to **Cap Canaille**, **Falaises Soubeyranes** and **Route des Cretes**.
+
+### Do you need a ticket
+
+Usually no. This is mainly an outdoor scenic area, but access conditions and parking rules still matter.
+
+### Is it worth a dedicated visit
+
+Yes if you love cliffs, sea views, scenic drives or coastal hiking. Less so if you mainly want urban sightseeing.
+
+## Recommended first visit plan
+
+1. Arrive in Cassis in the morning
+2. Start with **Route des Cretes**
+3. Add a Port Miou walk if you still have time and energy
+4. Return to a higher viewpoint for sunset
+
+That plan gives you the clearest first impression of **Falaises de Cassis, Cassis cliffs and Cap Canaille** without overloading the day.
 `;
 
-export default function Guide() {
+const guideMarkdownFr = `
+# Guide des Falaises de Cassis | Acces, parking, randonnee et meilleurs points de vue
+
+## Pour qui est cette page
+
+Si vous cherchez **Falaises de Cassis, Cap Canaille, Route des Cretes** ou les meilleurs points de vue autour de Cassis, cette page a ete pensee pour la visite concrete. L'objectif est d'aider a preparer l'acces, le stationnement, les arrets utiles, la randonnee et les verifications a faire avant le depart.
+
+Les Falaises de Cassis ne correspondent pas a un seul belvedere. Il s'agit d'un ensemble de paysages de falaises autour de **Cap Canaille**, de la **Route des Cretes** et du relief littoral entre Cassis et La Ciotat.
+
+## Infos rapides
+
+- **Lieu** : 13260 Cassis, France
+- **Zones cles** : Cap Canaille, Route des Cretes, Falaises Soubeyranes
+- **Temps conseille** : 2 a 3 heures minimum, ou une demi-journee avec marche
+- **Ideal pour** : route panoramique, points de vue, randonnee courte, coucher de soleil
+- **Moins adapte a** : visite tres rapide, peur du vide, chaussures non adaptees
+
+## Comment venir
+
+### Depuis Marseille
+
+La plupart des visiteurs commencent par rejoindre **Cassis**.
+
+1. **Train puis transfert local**
+   Prenez un TER depuis Marseille Saint-Charles jusqu'a Cassis, puis continuez en navette, taxi ou voiture.
+2. **Voiture**
+   C'est l'option la plus simple si votre objectif principal est la **Route des Cretes**.
+3. **Transfert prive ou excursion**
+   Pratique si vous voulez eviter la gestion du stationnement et des fermetures.
+
+### Une fois a Cassis
+
+- Pour le panorama : allez vers la **Route des Cretes**
+- Pour une balade plus immersive : commencez vers **Port Miou**
+- Pour le coucher de soleil : visez les points hauts pres de **Cap Canaille**
+
+## Parking et acces
+
+Le plus important ici n'est pas seulement la vue, mais la logistique.
+
+### Conseils de stationnement
+
+- Les parkings de **Cassis** conviennent bien si vous combinez falaises et port
+- Les arrets le long de la **Route des Cretes** sont pratiques mais vite complets
+- Ne vous arretez pas dans les virages sans visibilite
+
+### A verifier avant de partir
+
+- fermetures pour vent fort
+- restrictions liees au risque incendie
+- limitations de circulation le dimanche ou en saison
+
+## Les deux meilleures manieres de visiter
+
+## 1. La Route des Cretes
+
+La route panoramique est la facon la plus simple de comprendre le paysage des falaises.
+
+- **Ideale pour** : premiere visite, familles, peu de temps
+- **Atout principal** : plusieurs points de vue avec peu d'effort
+- **Meilleur moment** : le matin pour la clarte, la fin d'apres-midi pour l'ambiance
+
+## 2. La marche vers Port Miou et Port Pin
+
+Si vous voulez aller au-dela de la route, cette option permet une experience plus proche du terrain.
+
+- **Ideale pour** : visiteurs a l'aise sur terrain irregulier
+- **Atout principal** : contact plus direct avec les calanques et les falaises
+- **Important** : emportez de l'eau
+
+## Meilleurs moments et conseils photo
+
+### Le matin
+
+- lumiere plus nette
+- couleurs de mer plus propres
+- bonne visibilite pour les paysages larges
+
+### Au coucher du soleil
+
+- ambiance tres forte sur la **Route des Cretes**
+- teintes plus chaudes sur les falaises
+- plus de monde aux arrets
+
+## Saisons, restrictions et securite
+
+### En ete
+
+- saison la plus frequentee
+- chaleur et exposition importantes
+- periode la plus sensible pour les restrictions incendie
+
+### Au printemps et en automne
+
+- souvent la meilleure periode pour la visite
+
+### En hiver
+
+- moins de monde
+- mais vent parfois plus fort
+
+### Rappels securite
+
+- portez des chaussures avec accroche
+- prevoyez 1 a 2 litres d'eau par personne
+- verifiez l'ouverture avant de partir
+- gardez les enfants loin des bords exposes
+
+## Duree conseillee
+
+- **2 heures** : quelques points de vue de la Route des Cretes
+- **Demi-journee** : route panoramique plus port de Cassis
+- **Journee complete** : points de vue, marche et coucher de soleil
+
+## Questions frequentes
+
+### Falaises de Cassis et Cap Canaille, est-ce la meme chose
+
+Pas exactement, mais les deux sont etroitement lies. Une grande partie des paysages que les visiteurs associent aux **Falaises de Cassis** se situe autour de **Cap Canaille**, des **Falaises Soubeyranes** et de la **Route des Cretes**.
+
+### Faut-il un billet
+
+En general non. Il s'agit surtout d'un espace naturel et routier, mais les conditions d'acces doivent etre verifiees.
+
+### Est-ce que cela vaut le detour
+
+Oui si vous aimez les falaises, la mer, les routes panoramiques et la marche en bord de cote.
+`;
+
+interface GuideProps {
+  initialLang?: "en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko";
+}
+
+export default function Guide({ initialLang }: GuideProps) {
   const { theme, toggleTheme } = useTheme();
   const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
     const saved = localStorage.getItem("app-lang");
-    return (saved as any) || "en";
+    return (initialLang as any) || (saved as any) || "en";
   });
 
   const t = (translations as any)[lang] || translations.en;
@@ -197,29 +468,57 @@ export default function Guide() {
     localStorage.setItem("app-lang", lang);
   }, [lang]);
 
-  // Select the appropriate markdown content based on the selected language
-  // For now, we fallback to English if the specific translation isn't available
-  const currentMarkdown = lang === "zh-TW" ? guideMarkdownZhTw : guideMarkdownEn;
-  
-  const title = lang === "zh-TW" ? "Cassis 旅遊攻略" : "Cassis Travel Guide";
-  const subtitle = lang === "zh-TW" ? "Falaises de Cassis 2026 完整指南" : "Falaises de Cassis 2026 Complete Guide";
+  useEffect(() => {
+    if (initialLang && initialLang !== lang) {
+      setLang(initialLang);
+    }
+  }, [initialLang, lang]);
+
+  const currentMarkdown =
+    lang === "zh-TW" ? guideMarkdownZhTw : lang === "fr" ? guideMarkdownFr : guideMarkdownEn;
+
+  const title =
+    lang === "zh-TW"
+      ? "卡西斯懸崖攻略"
+      : lang === "fr"
+        ? "Guide des Falaises de Cassis"
+        : "Falaises de Cassis Guide";
+
+  const subtitle =
+    lang === "zh-TW"
+      ? "交通、停車、徒步與最佳觀景點"
+      : lang === "fr"
+        ? "Acces, parking, randonnee et points de vue"
+        : "Access, parking, hiking and best viewpoints";
 
   return (
     <main className="min-h-screen bg-background text-foreground grain">
-      <SEO 
-        currentLang={lang} 
-        path="/guide" 
+      <SEO
+        currentLang={lang}
+        path="/guide"
         customMeta={{
-          title: lang === "zh-TW" ? "Falaises de Cassis 2026 完整攻略｜一日遊・二日遊路線・Calanques 船遊・周邊景點推薦" : "Falaises de Cassis 2026 Complete Guide",
-          description: lang === "zh-TW" ? "Falaises de Cassis 懸崖完整攻略，包含徒步路線、交通方式、最佳玩法、一日遊與二日遊建議，以及伊夫城堡、光影採石場、巴本動物公園等周邊推薦。附 Trip.com 最新門票與體驗預訂連結。" : "A complete guide to Falaises de Cassis, including hiking routes, transportation, 1-2 day itineraries, and nearby attractions."
+          title:
+            lang === "zh-TW"
+              ? "Falaises de Cassis 攻略｜交通、停車、徒步與最佳觀景點"
+              : lang === "fr"
+                ? "Guide des Falaises de Cassis : acces, parking, randonnee et itineraire"
+                : "Falaises de Cassis Guide: Hiking, Parking, Access & Best Views",
+          description:
+            lang === "zh-TW"
+              ? "規劃 Falaises de Cassis 行程：交通、停車、Route des Cretes、Cap Canaille、徒步難度、最佳觀景點與安全提醒。"
+              : lang === "fr"
+                ? "Preparez votre visite des Falaises de Cassis avec des conseils pratiques sur l'acces, le parking, la Route des Cretes, la randonnee et la securite."
+                : "Plan your visit to the Falaises de Cassis with practical advice on access, parking, Route des Cretes viewpoints, hiking, safety and the best time to go.",
         }}
       />
-      {/* Top nav */}
+
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur grain">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-baseline gap-3">
             <Link href="/">
-              <div className="text-lg font-semibold tracking-tight hover:text-[oklch(var(--accent))] transition-colors cursor-pointer">{t.title}</div>
+              <div className="cursor-pointer text-lg font-semibold tracking-tight transition-colors hover:text-[oklch(var(--accent))]">
+                {t.title}
+              </div>
             </Link>
             <div className="hidden text-xs text-muted-foreground md:block">{t.subtitle}</div>
           </div>
@@ -246,9 +545,9 @@ export default function Guide() {
                 </Button>
               </Link>
             </div>
-            
-            <Separator orientation="vertical" className="mx-2 h-6 hidden md:block" />
-            
+
+            <Separator orientation="vertical" className="mx-2 hidden h-6 md:block" />
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="h-8 w-8">
@@ -273,7 +572,6 @@ export default function Guide() {
         </div>
       </header>
 
-      {/* HERO SECTION */}
       <section className="relative overflow-hidden border-b border-border/50 bg-card grain">
         <div className="relative mx-auto max-w-4xl px-4 py-12 md:py-20">
           <div className="mb-8 flex items-center gap-4">
@@ -281,47 +579,38 @@ export default function Guide() {
               <Map className="h-8 w-8" />
             </div>
             <div>
-              <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">
-                {title}
-              </h1>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {subtitle}
-              </p>
+              <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">{title}</h1>
+              <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CONTENT */}
       <div className="mx-auto max-w-4xl px-4 py-12">
-        <div className="rounded-2xl border border-border/70 bg-background/20 p-6 md:p-10 shadow-sm">
-          {/* Top Ad Banner */}
-          <div className="flex justify-center mb-8 overflow-hidden rounded-lg">
-            <iframe 
-              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
-              style={{ width: "728px", height: "90px", border: "none" }} 
-              scrolling="no" 
+        <div className="rounded-2xl border border-border/70 bg-background/20 p-6 shadow-sm md:p-10">
+          <div className="mb-8 flex justify-center overflow-hidden rounded-lg">
+            <iframe
+              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3"
+              style={{ width: "728px", height: "90px", border: "none" }}
+              scrolling="no"
               id="SB15266995"
               title="Trip.com Ad"
             />
           </div>
 
-          <article 
-            className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:underline hover:prose-a:underline prose-strong:text-foreground`}
+          <article
+            className={`prose ${theme === "dark" ? "prose-invert" : ""} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:underline hover:prose-a:underline prose-strong:text-foreground`}
           >
-            <Streamdown>
-              {currentMarkdown}
-            </Streamdown>
+            <Streamdown>{currentMarkdown}</Streamdown>
           </article>
 
           <Recommendations translations={t.recommendations} />
 
-          {/* Bottom Ad Banner */}
-          <div className="flex justify-center mt-12 pt-8 border-t border-border/50 overflow-hidden rounded-lg">
-            <iframe 
-              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3" 
-              style={{ width: "728px", height: "90px", border: "none" }} 
-              scrolling="no" 
+          <div className="mt-12 overflow-hidden rounded-lg border-t border-border/50 pt-8">
+            <iframe
+              src="https://www.trip.com/partners/ad/SB15266995?Allianceid=7974128&SID=300882170&trip_sub1=%E7%BE%85%E8%A8%A5%E6%B2%B3%E5%8F%A3"
+              style={{ width: "728px", height: "90px", border: "none" }}
+              scrolling="no"
               id="SB15266995-bottom"
               title="Trip.com Ad"
             />
@@ -339,20 +628,17 @@ export default function Guide() {
         </div>
       </div>
 
-      {/* FOOTER */}
       <footer className="border-t border-border/70 bg-background py-10">
         <div className="mx-auto max-w-6xl px-4 text-center">
-          <div className="text-xs text-muted-foreground">
-            {t.footer?.support || "Support & Info"}
-          </div>
+          <div className="text-xs text-muted-foreground">{t.footer?.support || "Support & Info"}</div>
           <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground/80">
-            <Link href="/privacy" className="hover:text-foreground transition-colors">
+            <Link href="/privacy" className="transition-colors hover:text-foreground">
               {t.footer?.privacy || "Privacy Policy"}
             </Link>
-            <Link href="/terms" className="hover:text-foreground transition-colors">
+            <Link href="/terms" className="transition-colors hover:text-foreground">
               {t.footer?.terms || "Terms of Service"}
             </Link>
-            <Link href="/cookie-settings" className="hover:text-foreground transition-colors">
+            <Link href="/cookie-settings" className="transition-colors hover:text-foreground">
               {t.footer?.cookie_settings || "Cookie Settings"}
             </Link>
           </div>
@@ -360,7 +646,7 @@ export default function Guide() {
             <div className="rounded-xl border border-[oklch(var(--accent))]/20 bg-[oklch(var(--accent))]/5 px-4 py-3 text-center text-xs leading-relaxed text-muted-foreground/90">
               {t.footer?.disclaimer || "Disclaimer"}
             </div>
-            <div className="text-center text-xs text-muted-foreground/70 italic">
+            <div className="text-center text-xs italic text-muted-foreground/70">
               {t.footer?.source_info || "Information sourced from official guides."}
             </div>
           </div>

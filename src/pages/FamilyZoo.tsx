@@ -85,11 +85,15 @@ Whether you are a traveler who loves natural ecology or a parent hoping to creat
 ---
 `;
 
-export default function FamilyZoo() {
+interface FamilyZooProps {
+  initialLang?: "en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko";
+}
+
+export default function FamilyZoo({ initialLang }: FamilyZooProps) {
   const { theme, toggleTheme } = useTheme();
   const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
     const saved = localStorage.getItem("app-lang");
-    return (saved as any) || "en";
+    return (initialLang as any) || (saved as any) || "en";
   });
 
   const t = (translations as any)[lang] || translations.en;
@@ -97,6 +101,12 @@ export default function FamilyZoo() {
   useEffect(() => {
     localStorage.setItem("app-lang", lang);
   }, [lang]);
+
+  useEffect(() => {
+    if (initialLang && initialLang !== lang) {
+      setLang(initialLang);
+    }
+  }, [initialLang, lang]);
 
   const currentMarkdown = lang === "zh-TW" ? zooMarkdownZhTw : zooMarkdownEn;
   const title = lang === "zh-TW" ? "巴本動物公園攻略" : "Zoo de la Barben Guide";
@@ -107,6 +117,7 @@ export default function FamilyZoo() {
       <SEO 
         currentLang={lang} 
         path="/family-zoo" 
+        robots="noindex,follow"
         customMeta={{
           title: lang === "zh-TW" ? "巴本動物公園 (Zoo de la Barben) 2026 完整親子遊攻略" : "Zoo de la Barben 2026 Complete Family Guide",
           description: lang === "zh-TW" ? "巴本動物公園是普羅旺斯最大的野生動物園，擁有 120 種動物，提供精彩鳥類表演與餵食互動，是南法親子遊必去的推薦景點。" : "Zoo de la Barben is the largest wildlife park in Provence, featuring 120 species, bird shows, and feeding interactions. A must-visit family destination in Southern France."

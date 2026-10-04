@@ -17,12 +17,19 @@ function AppRouter() {
   return (
     <Router>
       <Switch>
-        <Route path="/privacy" component={PrivacyPolicy} />
-        <Route path="/terms" component={TermsOfService} />
-        <Route path="/cookie-settings" component={CookieSettings} />
-        <Route path="/guide" component={Guide} />
-        <Route path="/family-zoo" component={FamilyZoo} />
-        <Route path="/blog" component={Blog} />
+        <Route path="/privacy">{() => <PrivacyPolicy />}</Route>
+        <Route path="/terms">{() => <TermsOfService />}</Route>
+        <Route path="/cookie-settings">{() => <CookieSettings />}</Route>
+        <Route path="/guide">{() => <Guide />}</Route>
+        <Route path="/family-zoo">{() => <FamilyZoo />}</Route>
+        <Route path="/blog">{() => <Blog />}</Route>
+        <Route path="/:lang/privacy">{(params) => <PrivacyPolicy initialLang={params.lang as any} />}</Route>
+        <Route path="/:lang/terms">{(params) => <TermsOfService initialLang={params.lang as any} />}</Route>
+        <Route path="/:lang/cookie-settings">{(params) => <CookieSettings initialLang={params.lang as any} />}</Route>
+        <Route path="/:lang/guide">{(params) => <Guide initialLang={params.lang as any} />}</Route>
+        <Route path="/:lang/family-zoo">{(params) => <FamilyZoo initialLang={params.lang as any} />}</Route>
+        <Route path="/:lang/blog">{(params) => <Blog initialLang={params.lang as any} />}</Route>
+        <Route path="/:lang/:section?">{(params) => <Home initialLang={params.lang as any} targetSection={params.section} />}</Route>
         <Route path="/:section?">{(params) => <Home targetSection={params.section} />}</Route>
       </Switch>
     </Router>

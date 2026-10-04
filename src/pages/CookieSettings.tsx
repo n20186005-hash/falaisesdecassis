@@ -17,11 +17,15 @@ import { SEO } from "@/components/SEO";
 import translations from "@/assets/translations.json";
 import { toast } from "sonner";
 
-export default function CookieSettings() {
+interface CookieSettingsProps {
+  initialLang?: "en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko";
+}
+
+export default function CookieSettings({ initialLang }: CookieSettingsProps) {
   const { theme, toggleTheme } = useTheme();
   const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
     const saved = localStorage.getItem("app-lang");
-    return (saved as any) || "en";
+    return (initialLang as any) || (saved as any) || "en";
   });
 
   const t = (translations as any)[lang];
@@ -38,6 +42,12 @@ export default function CookieSettings() {
     }
     localStorage.setItem("app-lang", lang);
   }, [lang]);
+
+  useEffect(() => {
+    if (initialLang && initialLang !== lang) {
+      setLang(initialLang);
+    }
+  }, [initialLang, lang]);
 
   const handleSave = () => {
     localStorage.setItem("cookie-consent", JSON.stringify(settings));

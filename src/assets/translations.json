@@ -10,8 +10,8 @@
     },
     "hero": {
       "badges": ["Viewpoint", "Mediterranean Coastline", "Hiking / Driving"],
-      "title": "Milk-white Limestone Meets Deep Blue Sea\nWind at the Edge of the Cliff",
-      "description": "Falaises de Cassis is not just 'a point', but a continuous belt of coastal scenery. The best adjectives are not 'popular', but - layers, sound of the wind, and the flickering sea.",
+      "title": "Falaises de Cassis:\nCap Canaille, Cassis Cliffs and Best Viewpoints",
+      "description": "Falaises de Cassis, also known as the Cassis cliffs, rise above the Mediterranean around Cap Canaille and the Route des Cretes between Cassis and La Ciotat.",
       "google_maps_stats": "{count} reviews",
       "cta_routes": "See the routes",
       "cta_map": "Open map location",
@@ -19,40 +19,40 @@
     },
     "quick": {
       "title": "Understand in 30s",
-      "description": "It's not just a 'viewpoint'. It's a continuous stretch of cliffs: every few steps, the light and sea color change.",
-      "suitable": "Suitable for: Those seeking pristine coastal scenery, comfortable with moderate hiking, and cliff views.",
-      "unsuitable": "Unsuitable for: Those only wanting quick photos, unwilling to walk, or afraid of strong winds.",
+      "description": "This is not one single lookout. It is a full cliff landscape built around Cap Canaille, the Route des Cretes and the high Mediterranean coastline above Cassis.",
+      "suitable": "Suitable for: Scenic drives, coastal viewpoints, sunset photographers and travelers comfortable with light to moderate walking.",
+      "unsuitable": "Unsuitable for: Visitors expecting a five-minute stop, travelers not prepared for wind, or anyone attempting rocky paths without proper shoes.",
       "cards": [
         {
           "title": "What you'll see",
-          "text": "Deep blue to mint blue Mediterranean + milk-white limestone + ochre rock walls; wind, light, and perspective constantly changing."
+          "text": "Cap Canaille, pale limestone cliffs, dramatic sea color changes and a high ridge road overlooking Cassis and La Ciotat."
         },
         {
           "title": "How to play best",
-          "text": "Morning hiking line (good morning feel) + evening highway viewpoint line (sunset), two segments connected smoothly."
+          "text": "Use Route des Cretes for the big panorama first, then add Port Miou or Port Pin if you still want a closer hiking experience."
         },
         {
           "title": "One-sentence strategy",
-          "text": "Treat it as a 'line' rather than a 'point': reserve at least 2–3 hours, walk slowly, the scenery will open up piece by piece."
+          "text": "Treat Falaises de Cassis as a route rather than a dot on the map: give it at least 2 to 3 hours and check access conditions before you go."
         }
       ]
     },
     "routes": {
-      "title": "Core Route Planning",
-      "subtitle": "A Hiking Loop (Immersive) and B Ridge Road Viewpoint (Easy), can be played separately or combined.",
+      "title": "How to Visit",
+      "subtitle": "Choose between the panoramic Route des Cretes and a more immersive hiking extension from Cassis.",
       "a": {
-        "title": "Route A · Pristine Hiking Loop",
+        "title": "Route A · Port Miou Hiking Extension",
         "badge": "Hiking",
-        "description": "Cassis Town → Port Miou → Port Pin → Cliff Viewpoint → Return to Cassis. Close contact with coastal rock walls and small bays.",
-        "suitable": "Suitable for: Those who like hiking and want an immersive experience.",
-        "warning": "Reminder: No supply points along the way, water and energy must be brought."
+        "description": "Cassis Town → Port Miou → Port Pin → return toward town. Best for travelers who want coves, rocky paths and a closer feel for the coastline.",
+        "suitable": "Suitable for: Visitors comfortable with uneven terrain and longer walking.",
+        "warning": "Reminder: Carry water, sun protection and shoes with grip."
       },
       "b": {
-        "title": "Route B · Ridge Road Viewpoint",
+        "title": "Route B · Route des Cretes Viewpoints",
         "badge": "Driving/Cycling",
-        "description": "Cassis Town → Route des Crêtes → Falaises de Cassis core cliff segment. Wide view, moving viewpoint.",
-        "suitable": "Suitable for: Those who want to see the panorama quickly and more easily.",
-        "warning": "Reminder: Closed to private vehicles during some periods or Sundays."
+        "description": "Cassis Town → Route des Cretes → Cap Canaille viewpoints. The easiest way to understand the scale of the Cassis cliffs.",
+        "suitable": "Suitable for: First-time visitors, short stays and sunset viewpoints.",
+        "warning": "Reminder: Check wind, fire-risk and Sunday access restrictions before driving up."
       }
     },
     "map": {
@@ -70,7 +70,7 @@
     },
     "blog": {
       "title": "Guide Blog",
-      "description": "Long-form guide: transport, routes, seasons, risks, and budget. Save to your travel notes.",
+      "description": "Practical guides for Falaises de Cassis, Route des Cretes, access, parking, viewpoints and seasonal restrictions.",
       "back_to_top": "Back to Top",
       "toc": "Table of Contents (Quick Jump)",
       "toc_items": [
@@ -86,15 +86,15 @@
         "Summary of Experiences"
       ],
       "featured_article": {
-        "title": "Falaises de Cassis 2026 Complete Guide | 1-Day & 2-Day Routes, Boat Tours, and Nearby Attractions",
-        "description": "A complete guide to Falaises de Cassis, including hiking routes, transportation, 1-2 day itineraries, and nearby attractions like Château d'If and Carrières des Lumières.",
+        "title": "Falaises de Cassis Guide | Access, Parking, Hiking & Best Views",
+        "description": "Plan your visit to the Falaises de Cassis with practical advice on access, parking, Route des Cretes viewpoints, hiking, safety and the best time to go.",
         "date": "2026-04-08",
         "category": "Guide",
         "read_more": "Read Article"
       },
       "blog_page": {
         "title": "Blog & Guides",
-        "subtitle": "Discover everything you need to know about exploring the stunning Falaises de Cassis. From hiking routes to the best nearby attractions.",
+        "subtitle": "Practical planning for Falaises de Cassis, including access, parking, viewpoints, hiking and Route des Cretes tips.",
         "latest_articles": "Latest Articles",
         "no_articles": "No articles yet",
         "check_back": "Check back later for new updates and guides.",
@@ -102,23 +102,19 @@
       }
     },
     "recommendations": {
-      "attractions_title": "Recommended Nearby Attractions",
-      "routes_title": "Recommended Nearby Tours & Routes",
+      "attractions_title": "Related Places Around Cassis",
+      "routes_title": "Recommended Cassis Routes & Day Trips",
       "attractions": [
-        { "name": "Zoo de la Barben", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
-        { "name": "Château d'If", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
-        { "name": "Carrières des Lumières", "url": "https://www.trip.com/t/1MwajN2BEU2" },
-        { "name": "Île d'If", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+        { "name": "Cap Canaille", "url": "https://www.trip.com/t/jic2LTlJDU2" },
+        { "name": "Calanques National Park", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Port Miou", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Cassis Harbor", "url": "https://www.trip.com/t/WLBbUjDBEU2" }
       ],
       "routes": [
-        { "name": "Marseille Aix Cathedral + Zoo de la Barben + Silvacane Abbey + Château de Lourmarin", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
-        { "name": "Marseille Aix + Cours Mirabeau + Cathedral Custom 1-Day Tour", "url": "https://www.trip.com/t/HZL38bxAEU2" },
-        { "name": "Provence Classic Old Towns: Aix + Moustiers + Lac de Sainte-Croix + Gorges du Verdon", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
-        { "name": "From Marseille: Arles, Les Baux & Saint-Rémy 1-Day Tour", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
-        { "name": "Provence Hidden Gems: Pink Salt Lake + Les Baux Castle + Carrières des Lumières", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
-        { "name": "Calanques National Park + Marseille Old Port + Île d'If + Sugiton Fjord 1-Day Tour", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
-        { "name": "Marseille Calanques View + Old Port + Île d'If + Mucem 1-Day Tour", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
-        { "name": "Marseille Île d'If + Mucem + Notre-Dame de la Garde + Palais Longchamp 1-Day Tour", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+        { "name": "Route des Cretes and Cap Canaille scenic day", "url": "https://www.trip.com/t/jic2LTlJDU2" },
+        { "name": "Calanques National Park and Cassis coastline", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Cassis harbor and coastal viewpoints", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "Marseille to Cassis day trip planning", "url": "https://www.trip.com/t/WLBbUjDBEU2" }
       ]
     },
     "footer": {
@@ -170,8 +166,8 @@
     },
     "hero": {
       "badges": ["Point de vue", "Littoral méditerranéen", "Randonnée / Voiture"],
-      "title": "Le calcaire blanc rencontre la mer bleue\nLe vent au bord de la falaise",
-      "description": "Les Falaises de Cassis ne sont pas seulement 'un point', mais une ceinture continue de paysages côtiers. Les meilleurs adjectifs ne sont pas 'populaires', mais - couches, bruit du vent et mer scintillante.",
+      "title": "Falaises de Cassis :\nCap Canaille, Route des Cretes et meilleurs points de vue",
+      "description": "Les Falaises de Cassis dominent la Mediterranee autour de Cap Canaille et de la Route des Cretes entre Cassis et La Ciotat.",
       "google_maps_stats": "{count} avis",
       "cta_routes": "Voir les itinéraires",
       "cta_map": "Ouvrir la carte",
@@ -179,40 +175,40 @@
     },
     "quick": {
       "title": "Comprendre en 30s",
-      "description": "Ce n'est pas seulement un 'point de vue'. C'est une étendue continue de falaises : à chaque pas, la lumière et la couleur de la mer changent.",
-      "suitable": "Convient pour : Ceux qui recherchent des paysages côtiers vierges, à l'aise avec une randonnée modérée.",
-      "unsuitable": "À éviter pour : Ceux qui veulent seulement des photos rapides ou ont peur du vent.",
+      "description": "Ce n'est pas un seul point de vue, mais un ensemble de falaises, de belvederes et de routes panoramiques autour de Cap Canaille et de la Route des Cretes.",
+      "suitable": "Convient pour : Les visiteurs qui aiment les panoramas, la route cotiere, le coucher de soleil et la marche legere a moderee.",
+      "unsuitable": "A eviter pour : Les visites tres rapides, les personnes non preparees au vent ou celles qui marchent sans chaussures adaptees.",
       "cards": [
         {
           "title": "Ce que vous verrez",
-          "text": "Méditerranée bleu profond à bleu menthe + calcaire blanc + parois rocheuses ocre; vent, lumière et perspective changeant constamment."
+          "text": "Cap Canaille, falaises calcaires claires, variations de bleu de la Mediterranee et grande vue sur Cassis et La Ciotat."
         },
         {
           "title": "Comment mieux profiter",
-          "text": "Ligne de randonnée le matin (bonne sensation matinale) + ligne de point de vue sur la route le soir (coucher du soleil)."
+          "text": "Commencez par la Route des Cretes pour le grand panorama, puis ajoutez Port Miou ou Port Pin si vous voulez marcher davantage."
         },
         {
           "title": "Stratégie en une phrase",
-          "text": "Considérez-le comme une 'ligne' plutôt qu'un 'point' : réservez au moins 2-3 heures, marchez lentement."
+          "text": "Pensez cet endroit comme un itineraire et non comme un simple arret : prevoyez 2 a 3 heures minimum et verifiez l'acces avant de partir."
         }
       ]
     },
     "routes": {
-      "title": "Planification des itinéraires",
-      "subtitle": "Boucle A (Immersive) et Point de vue B (Facile), jouables séparément ou combinées.",
+      "title": "Comment visiter",
+      "subtitle": "Choisissez entre la Route des Cretes pour le panorama et une extension a pied depuis Cassis.",
       "a": {
-        "title": "Route A · Boucle de randonnée",
+        "title": "Route A · Extension a pied par Port Miou",
         "badge": "Randonnée",
-        "description": "Ville de Cassis → Port Miou → Port Pin → Point de vue → Retour à Cassis. Contact étroit avec le littoral.",
-        "suitable": "Convient pour : Amateurs de randonnée et d'immersion.",
-        "warning": "Rappel : Pas de ravitaillement, apportez votre eau et énergie."
+        "description": "Cassis → Port Miou → Port Pin → retour. Ideal pour ressentir de plus pres la cote, les criques et les rochers.",
+        "suitable": "Convient pour : Les visiteurs a l'aise sur terrain irregulier et avec une marche plus longue.",
+        "warning": "Rappel : Emportez de l'eau, une protection solaire et des chaussures adherentes."
       },
       "b": {
-        "title": "Route B · Point de vue sur la crête",
+        "title": "Route B · Points de vue Route des Cretes",
         "badge": "Voiture/Vélo",
-        "description": "Ville de Cassis → Route des Crêtes → Segment central. Vue panoramique.",
-        "suitable": "Convient pour : Ceux qui veulent voir le panorama rapidement.",
-        "warning": "Rappel : Fermé aux véhicules certains jours ou dimanches."
+        "description": "Cassis → Route des Cretes → points de vue de Cap Canaille. Le moyen le plus simple de comprendre l'echelle des falaises.",
+        "suitable": "Convient pour : Une premiere visite, un court sejour et les points de vue au coucher du soleil.",
+        "warning": "Rappel : Verifiez le vent, le risque incendie et les restrictions d'acces avant de monter."
       }
     },
     "map": {
@@ -230,7 +226,7 @@
     },
     "blog": {
       "title": "Blog Guide",
-      "description": "Guide complet : transport, itinéraires, saisons, risques et budget.",
+      "description": "Guides pratiques sur les Falaises de Cassis, la Route des Cretes, l'acces, le parking, les points de vue et les restrictions saisonnieres.",
       "back_to_top": "Retour en haut",
       "toc": "Table des matières",
       "toc_items": [
@@ -247,7 +243,7 @@
       ],
       "blog_page": {
         "title": "Blog & Guides",
-        "subtitle": "Découvrez tout ce que vous devez savoir pour explorer les superbes falaises de Cassis. Des itinéraires de randonnée aux meilleures attractions à proximité.",
+        "subtitle": "Preparation pratique pour les Falaises de Cassis : acces, parking, points de vue, randonnee et conseils Route des Cretes.",
         "latest_articles": "Derniers Articles",
         "no_articles": "Aucun article pour le moment",
         "check_back": "Revenez plus tard pour de nouvelles mises à jour et guides.",
@@ -255,23 +251,19 @@
       }
     },
     "recommendations": {
-      "attractions_title": "Attractions à proximité recommandées",
-      "routes_title": "Itinéraires et circuits recommandés",
+      "attractions_title": "Lieux lies autour de Cassis",
+      "routes_title": "Itineraires recommandes autour de Cassis",
       "attractions": [
-        { "name": "Zoo de la Barben", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
-        { "name": "Château d'If", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
-        { "name": "Carrières des Lumières", "url": "https://www.trip.com/t/1MwajN2BEU2" },
-        { "name": "Île d'If", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+        { "name": "Cap Canaille", "url": "https://www.trip.com/t/jic2LTlJDU2" },
+        { "name": "Parc national des Calanques", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Port Miou", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Port de Cassis", "url": "https://www.trip.com/t/WLBbUjDBEU2" }
       ],
       "routes": [
-        { "name": "Cathédrale d'Aix + Zoo de la Barben + Abbaye de Silvacane + Château de Lourmarin", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
-        { "name": "Aix-en-Provence + Cours Mirabeau + Cathédrale Visite Personnalisée", "url": "https://www.trip.com/t/HZL38bxAEU2" },
-        { "name": "Villages classiques de Provence : Aix + Moustiers + Lac de Sainte-Croix + Gorges du Verdon", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
-        { "name": "Depuis Marseille : Arles, Les Baux et Saint-Rémy Visite d'une journée", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
-        { "name": "Joyaux cachés de Provence : Lac Salé Rose + Château des Baux + Carrières des Lumières", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
-        { "name": "Parc National des Calanques + Vieux-Port + Île d'If + Calanque de Sugiton", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
-        { "name": "Vue sur les Calanques + Vieux-Port + Île d'If + Mucem", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
-        { "name": "Île d'If + Mucem + Notre-Dame de la Garde + Palais Longchamp", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+        { "name": "Journee panoramique Route des Cretes et Cap Canaille", "url": "https://www.trip.com/t/jic2LTlJDU2" },
+        { "name": "Parc national des Calanques et littoral de Cassis", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Port de Cassis et points de vue cotiers", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "Preparation d'une excursion Marseille vers Cassis", "url": "https://www.trip.com/t/WLBbUjDBEU2" }
       ]
     },
     "footer": {
@@ -782,8 +774,8 @@
     },
     "hero": {
       "badges": ["觀景點", "地中海海岸線", "徒步 / 自駕"],
-      "title": "奶白石灰岩與深藍海\n在懸崖邊撞上風",
-      "description": "Falaises de Cassis 不是“一個點”，而是一段連續的懸崖海岸風景帶。最像它的形容詞不是“熱門”，而是——層次、風聲、與忽明忽暗的海。",
+      "title": "Falaises de Cassis：\nCap Canaille、Route des Cretes 與最佳觀景點",
+      "description": "Falaises de Cassis 不是單一觀景台，而是圍繞 Cap Canaille 與 Route des Cretes 展開的一整段地中海懸崖海岸。",
       "google_maps_stats": "{count} 條評價",
       "cta_routes": "查看路線",
       "cta_map": "在地圖中開啟",
@@ -791,40 +783,40 @@
     },
     "quick": {
       "title": "30秒速懂",
-      "description": "它不是一個“觀景台打卡點”。它是一段連續的懸崖海岸：每走幾步，光線與海色都在變化。",
-      "suitable": "適合：想要原生態海岸、能接受適度徒步的人。",
-      "unsuitable": "不適合：只想輕鬆拍照、不願走路的人。",
+      "description": "它不是一個點，而是一條以 Cap Canaille、Route des Cretes 和 Cassis 高處海岸為核心的懸崖風景線。",
+      "suitable": "適合：喜歡海岸全景、公路觀景、日落與輕中度徒步的人。",
+      "unsuitable": "不適合：只想停車拍 5 分鐘、沒有防風準備或想穿普通鞋走岩地的人。",
       "cards": [
         {
           "title": "你會看到什麼",
-          "text": "深藍到薄荷藍的地中海 + 奶白石灰岩 + 赭色岩壁；風、光線、視角持續變化。"
+          "text": "Cap Canaille 高差、奶白石灰岩、地中海藍綠海色，還有俯瞰 Cassis 與 La Ciotat 的高處視野。"
         },
         {
           "title": "怎麼玩最划算",
-          "text": "上午徒步線（清晨體感好） + 傍晚公路觀景線（蹲日落）。"
+          "text": "先跑 Route des Cretes 看全景，再視體力加 Port Miou 或 Port Pin 的步道，效率最高。"
         },
         {
           "title": "一句話攻略",
-          "text": "把它當“線”而不是“點”：預留至少 2–3 小時，慢慢走。"
+          "text": "把 Falaises de Cassis 當成一條路線來玩，不要只當單一地標；至少留 2 到 3 小時，出發前先查開放狀態。"
         }
       ]
     },
     "routes": {
-      "title": "核心路線規劃",
-      "subtitle": "A 徒步環線（沉浸）與 B 山脊公路觀景線（輕鬆），可單獨玩也可組合。",
+      "title": "怎麼安排最順",
+      "subtitle": "你可以選擇 Route des Cretes 全景線，或從 Cassis 出發加上更有沉浸感的步道。",
       "a": {
-        "title": "路線 A · 原生態徒步環線",
+        "title": "路線 A · Port Miou 延伸徒步",
         "badge": "徒步",
-        "description": "卡西斯小鎮 → Port Miou → Port Pin → 懸崖觀景台 → 返回卡西斯。",
-        "suitable": "適合：喜歡徒步、想沉浸式體驗的人。",
-        "warning": "提醒：全程無補給，請自備水和食物。"
+        "description": "從 Cassis 走向 Port Miou、Port Pin 一帶，適合想更近距離接觸海灣、岩壁與步道地形的人。",
+        "suitable": "適合：能接受不平路面、願意多走一段的人。",
+        "warning": "提醒：請自備水、防曬與止滑鞋。"
       },
       "b": {
-        "title": "路線 B · 山脊公路觀景線",
+        "title": "路線 B · Route des Cretes 觀景線",
         "badge": "自駕/單車",
-        "description": "卡西斯小鎮 → Route des Crêtes → 核心懸崖段。視野開闊。",
-        "suitable": "適合：想快速看全景、行程輕鬆的人。",
-        "warning": "提醒：部分時段或週日可能對私家車關閉。"
+        "description": "Cassis 小鎮 → Route des Cretes → Cap Canaille 一線觀景點，最容易看懂卡西斯懸崖的尺度。",
+        "suitable": "適合：第一次來、時間不多、想拍日落的人。",
+        "warning": "提醒：上山前先查風況、火險與週日交通限制。"
       }
     },
     "map": {
@@ -842,7 +834,7 @@
     },
     "blog": {
       "title": "攻略部落格",
-      "description": "長文攻略：交通、路線、季節、風險與預算。",
+      "description": "Falaises de Cassis、Route des Cretes、交通、停車、觀景點與季節限制的實用攻略。",
       "back_to_top": "回到頂部",
       "toc": "目錄（快速跳轉）",
       "toc_items": [
@@ -859,7 +851,7 @@
       ],
       "blog_page": {
         "title": "部落格與攻略",
-        "subtitle": "探索卡西斯懸崖的完整指南。從徒步路線到周邊的最佳景點。",
+        "subtitle": "以實際出發為核心，整理 Falaises de Cassis 的交通、停車、觀景、徒步與 Route des Cretes 建議。",
         "latest_articles": "最新文章",
         "no_articles": "目前沒有文章",
         "check_back": "請稍後再來查看新的更新與指南。",
@@ -867,23 +859,19 @@
       }
     },
     "recommendations": {
-      "attractions_title": "周邊景點推薦",
-      "routes_title": "周邊遊路線推薦",
+      "attractions_title": "Cassis 周邊關聯地點",
+      "routes_title": "推薦路線與延伸安排",
       "attractions": [
-        { "name": "巴本動物公園", "url": "https://www.trip.com/t/2fn1gfrAEU2" },
-        { "name": "伊夫城堡", "url": "https://www.trip.com/t/m5DrKV1BEU2" },
-        { "name": "光影採石場", "url": "https://www.trip.com/t/1MwajN2BEU2" },
-        { "name": "伊夫島", "url": "https://www.trip.com/t/hu3UQU8BEU2" }
+        { "name": "Cap Canaille", "url": "https://www.trip.com/t/jic2LTlJDU2" },
+        { "name": "卡朗格國家公園", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Port Miou", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Cassis 港口", "url": "https://www.trip.com/t/WLBbUjDBEU2" }
       ],
       "routes": [
-        { "name": "馬賽艾克斯主教座堂 + 巴本動物公園 + 西瓦岡修道院 + 盧瑪宏城堡", "url": "https://www.trip.com/t/Aaw9kbwAEU2" },
-        { "name": "法國馬賽卡艾克斯 + 米拉波大道 + 主座大教堂中文包車一日遊", "url": "https://www.trip.com/t/HZL38bxAEU2" },
-        { "name": "法國普羅旺斯法式老城：艾克斯 + 陶瓷鎮 + 聖十字湖 + 韋爾東峽谷", "url": "https://www.trip.com/t/2Hnc4dyAEU2" },
-        { "name": "從馬賽出發：阿爾勒、萊博及聖雷米一日遊", "url": "https://www.trip.com/t/J0CAQd5BEU2" },
-        { "name": "法國普羅旺斯小眾經典線：粉色鹽湖 + 萊博德城堡 + 光影採石場", "url": "https://www.trip.com/t/PEHPxo6BEU2" },
-        { "name": "蔚藍海岸國家公園 + 馬賽老港 + 伊夫島 + Sugiton峽灣一日遊", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
-        { "name": "法國馬賽卡朗格峽灣觀景 + 馬賽老港 + 伊夫島 + 地中海博物館一日遊", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
-        { "name": "法國馬賽伊夫島 + 歐洲地中海博物館 + 守護聖母聖殿 + 隆尚宮一日遊", "url": "https://www.trip.com/t/jnEfdIFBEU2" }
+        { "name": "Route des Cretes + Cap Canaille 全景安排", "url": "https://www.trip.com/t/jic2LTlJDU2" },
+        { "name": "卡朗格國家公園與 Cassis 海岸線", "url": "https://www.trip.com/t/qx0ZMPCBEU2" },
+        { "name": "Cassis 港口與海岸觀景點", "url": "https://www.trip.com/t/WLBbUjDBEU2" },
+        { "name": "馬賽到 Cassis 的一日行程規劃", "url": "https://www.trip.com/t/WLBbUjDBEU2" }
       ]
     },
     "footer": {

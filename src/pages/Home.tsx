@@ -45,6 +45,7 @@ import review08 from "@/assets/reviews/review_08.jpg";
 
 interface HomeProps {
   targetSection?: string;
+  initialLang?: "en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko";
 }
 
 type Review = {
@@ -90,14 +91,14 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-export default function Home({ targetSection }: HomeProps) {
+export default function Home({ targetSection, initialLang }: HomeProps) {
   const section = hashToSectionId(targetSection);
   const { theme, toggleTheme } = useTheme();
   
   // Initialize language from localStorage or default to "en"
   const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
     const saved = localStorage.getItem("app-lang");
-    return (saved as any) || "en";
+    return (initialLang as any) || (saved as any) || "en";
   });
 
   const t = (translations as any)[lang];
@@ -107,12 +108,19 @@ export default function Home({ targetSection }: HomeProps) {
   }, [lang]);
 
   useEffect(() => {
+    if (initialLang && initialLang !== lang) {
+      setLang(initialLang);
+    }
+  }, [initialLang, lang]);
+
+  useEffect(() => {
     if (section) {
       document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
     }
   }, [section]);
 
   const payload = reviewsData as ReviewsPayload;
+  const featuredPosts = posts.filter((post: any) => post.indexable !== false);
 
   const imagePool = useMemo(
     () => [
@@ -148,7 +156,24 @@ export default function Home({ targetSection }: HomeProps) {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <SEO currentLang={lang} path="/" />
+      <SEO
+        currentLang={lang}
+        path="/"
+        customMeta={{
+          title:
+            lang === "fr"
+              ? "Falaises de Cassis : Cap Canaille, acces et Route des Cretes"
+              : lang === "zh-TW"
+                ? "卡西斯懸崖 Falaises de Cassis｜Cap Canaille・Route des Cretes・觀景攻略"
+                : "Falaises de Cassis (Cassis Cliffs): Cap Canaille & Route des Cretes",
+          description:
+            lang === "fr"
+              ? "Preparez votre visite des Falaises de Cassis et du Cap Canaille : Route des Cretes, points de vue, randonnee, acces, parking, coucher de soleil et conseils de securite."
+              : lang === "zh-TW"
+                ? "規劃 Falaises de Cassis 與 Cap Canaille 行程：Route des Cretes 路線、觀景台、徒步、停車、日落時間與安全提醒。"
+                : "Plan your visit to the Falaises de Cassis and Cap Canaille: Route des Cretes, viewpoints, hiking, access, parking, sunset and safety tips.",
+        }}
+      />
       {/* Top nav */}
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/70 backdrop-blur grain">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -445,7 +470,7 @@ export default function Home({ targetSection }: HomeProps) {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="bg-background">
+      <section id="reviews" className="bg-background" data-nosnippet>
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
@@ -531,7 +556,7 @@ export default function Home({ targetSection }: HomeProps) {
           <Separator className="my-8" />
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.slice(0, 3).map((post, idx) => (
+            {featuredPosts.slice(0, 3).map((post, idx) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}

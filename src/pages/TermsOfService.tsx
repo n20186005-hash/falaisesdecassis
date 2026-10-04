@@ -14,11 +14,15 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { SEO } from "@/components/SEO";
 import translations from "@/assets/translations.json";
 
-export default function TermsOfService() {
+interface TermsOfServiceProps {
+  initialLang?: "en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko";
+}
+
+export default function TermsOfService({ initialLang }: TermsOfServiceProps) {
   const { theme, toggleTheme } = useTheme();
   const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
     const saved = localStorage.getItem("app-lang");
-    return (saved as any) || "en";
+    return (initialLang as any) || (saved as any) || "en";
   });
 
   const t = (translations as any)[lang];
@@ -26,6 +30,12 @@ export default function TermsOfService() {
   useEffect(() => {
     localStorage.setItem("app-lang", lang);
   }, [lang]);
+
+  useEffect(() => {
+    if (initialLang && initialLang !== lang) {
+      setLang(initialLang);
+    }
+  }, [initialLang, lang]);
 
   return (
     <main className="min-h-screen bg-background text-foreground grain">
