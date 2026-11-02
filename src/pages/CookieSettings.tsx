@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useLanguage } from "@/hooks/use-language";
+import { useState } from "react";
 import { Link } from "wouter";
 import { Cookie, ArrowLeft, Languages, Sun, Moon, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "@/contexts/theme";
 import { SEO } from "@/components/SEO";
 import translations from "@/assets/translations.json";
 import { toast } from "sonner";
@@ -23,31 +24,20 @@ interface CookieSettingsProps {
 
 export default function CookieSettings({ initialLang }: CookieSettingsProps) {
   const { theme, toggleTheme } = useTheme();
-  const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
-    const saved = localStorage.getItem("app-lang");
-    return (initialLang as any) || (saved as any) || "en";
-  });
+  const [lang, setLang] = useLanguage(initialLang);
 
-  const t = (translations as any)[lang];
+  const t = translations[lang];
 
-  const [settings, setCookieSettings] = useState({
-    necessary: true,
-    analytics: true,
-  });
-
-  useEffect(() => {
+  const readSettings = () => {
     const consent = localStorage.getItem("cookie-consent");
-    if (consent) {
-      setCookieSettings(JSON.parse(consent));
-    }
-    localStorage.setItem("app-lang", lang);
-  }, [lang]);
-
-  useEffect(() => {
-    if (initialLang && initialLang !== lang) {
-      setLang(initialLang);
-    }
-  }, [initialLang, lang]);
+    return consent ? JSON.parse(consent) as { necessary: boolean; analytics: boolean } : { necessary: true, analytics: true };
+  };
+  const [settings, setCookieSettings] = useState(readSettings);
+  const [settingsLang, setSettingsLang] = useState(lang);
+  if (settingsLang !== lang) {
+    setSettingsLang(lang);
+    if (localStorage.getItem("cookie-consent")) setCookieSettings(readSettings());
+  }
 
   const handleSave = () => {
     localStorage.setItem("cookie-consent", JSON.stringify(settings));
@@ -144,7 +134,7 @@ export default function CookieSettings({ initialLang }: CookieSettingsProps) {
               </div>
               <Switch 
                 checked={settings.analytics} 
-                onCheckedChange={(v) => setCookieSettings(s => ({ ...settings, analytics: v }))} 
+                onCheckedChange={(v) => setCookieSettings(s => ({ ...s, analytics: v }))}
               />
             </div>
           </Card>

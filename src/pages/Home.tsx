@@ -1,10 +1,11 @@
+import { useLanguage } from "@/hooks/use-language";
 /*
 Design system reminder:
 - Mediterranean Coastal Brutalism: deep sea background, limestone text, rust accent, diagonal sections, grain overlay
 - Headings: Fraunces, Body: Spline Sans, Long-form: Newsreader
 */
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Moon, Sun, Languages, Cookie } from "lucide-react";
@@ -14,52 +15,23 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "@/contexts/theme";
 import { SEO } from "@/components/SEO";
 import { Recommendations } from "@/components/Recommendations";
 
-import heroImg from "@/assets/hero_google.jpg";
 import translations from "@/assets/translations.json";
-import reviewsData from "@/assets/reviews-data.json";
 import { posts } from "@/data/posts";
 
-import review01 from "@/assets/reviews/review_01.jpg";
-import review02 from "@/assets/reviews/review_02.jpg";
-import review03 from "@/assets/reviews/review_03.jpg";
-import review04 from "@/assets/reviews/review_04.jpg";
-import review05 from "@/assets/reviews/review_05.jpg";
-import review06 from "@/assets/reviews/review_06.jpg";
-import review07 from "@/assets/reviews/review_07.jpg";
-import review08 from "@/assets/reviews/review_08.jpg";
 
 interface HomeProps {
   targetSection?: string;
   initialLang?: "en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko";
 }
-
-type Review = {
-  author: string;
-  time: string;
-  rating: number;
-  text: string;
-  images?: string[];
-};
-
-type ReviewsPayload = {
-  source: { name: string; place: string; url: string };
-  reviews: Review[];
-};
 
 const embedIframeSrc =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908.584648603767!2d5.549549813028578!3d43.19722528168019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9baa863b8078f%3A0xd793ddf66db198d8!2sFalaises%20de%20Cassis!5e0!3m2!1sen!2sus!4v1773919371511!5m2!1sen!2sus";
@@ -96,22 +68,11 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
   const { theme, toggleTheme } = useTheme();
   
   // Initialize language from localStorage or default to "en"
-  const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
-    const saved = localStorage.getItem("app-lang");
-    return (initialLang as any) || (saved as any) || "en";
-  });
+  const [lang, setLang] = useLanguage(initialLang);
 
-  const t = (translations as any)[lang];
+  const t = translations[lang];
 
-  useEffect(() => {
-    localStorage.setItem("app-lang", lang);
-  }, [lang]);
 
-  useEffect(() => {
-    if (initialLang && initialLang !== lang) {
-      setLang(initialLang);
-    }
-  }, [initialLang, lang]);
 
   useEffect(() => {
     if (section) {
@@ -119,34 +80,10 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
     }
   }, [section]);
 
-  const payload = reviewsData as ReviewsPayload;
-  const featuredPosts = posts.filter((post: any) => post.indexable !== false);
-
-  const imagePool = useMemo(
-    () => [
-      { src: review01, alt: "Google Maps Photo 1" },
-      { src: review02, alt: "Google Maps Photo 2" },
-      { src: review03, alt: "Google Maps Photo 3" },
-      { src: review04, alt: "Google Maps Photo 4" },
-      { src: review05, alt: "Google Maps Photo 5" },
-      { src: review06, alt: "Google Maps Photo 6" },
-      { src: review07, alt: "Google Maps Photo 7" },
-      { src: review08, alt: "Google Maps Photo 8" },
-    ],
-    [],
-  );
-
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const featuredPosts = posts.filter((post) => post.indexable !== false);
 
   // Compliance States
-  const [showCookieNotice, setShowCookieNotice] = useState(false);
-
-  useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
-    if (!consent) {
-      setShowCookieNotice(true);
-    }
-  }, []);
+  const [showCookieNotice, setShowCookieNotice] = useState(() => !localStorage.getItem("cookie-consent"));
 
   const handleAcceptAll = () => {
     const consent = { necessary: true, analytics: true };
@@ -165,13 +102,29 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
               ? "Falaises de Cassis : Cap Canaille, acces et Route des Cretes"
               : lang === "zh-TW"
                 ? "卡西斯懸崖 Falaises de Cassis｜Cap Canaille・Route des Cretes・觀景攻略"
-                : "Falaises de Cassis (Cassis Cliffs): Cap Canaille & Route des Cretes",
+                : lang === "ja"
+                  ? "カシスの断崖ガイド｜カップ・カナイユとルート・デ・クレット"
+                  : lang === "es"
+                    ? "Acantilados de Cassis: Cap Canaille y Route des Crêtes"
+                    : lang === "de"
+                      ? "Die Klippen von Cassis: Cap Canaille und Route des Crêtes"
+                      : lang === "ko"
+                        ? "카시스 절벽 여행 가이드: 캅 카나이유와 루트 데 크레트"
+                        : "Falaises de Cassis (Cassis Cliffs): Cap Canaille & Route des Cretes",
           description:
             lang === "fr"
               ? "Preparez votre visite des Falaises de Cassis et du Cap Canaille : Route des Cretes, points de vue, randonnee, acces, parking, coucher de soleil et conseils de securite."
               : lang === "zh-TW"
                 ? "規劃 Falaises de Cassis 與 Cap Canaille 行程：Route des Cretes 路線、觀景台、徒步、停車、日落時間與安全提醒。"
-                : "Plan your visit to the Falaises de Cassis and Cap Canaille: Route des Cretes, viewpoints, hiking, access, parking, sunset and safety tips.",
+                : lang === "ja"
+                  ? "カシスの断崖とカップ・カナイユへの旅を計画。ルート・デ・クレット、展望スポット、ハイキング、アクセス、駐車場、夕日、安全上の注意をご紹介。"
+                  : lang === "es"
+                    ? "Prepara tu visita a los acantilados de Cassis y Cap Canaille: Route des Crêtes, miradores, senderismo, acceso, aparcamiento, puesta de sol y consejos de seguridad."
+                    : lang === "de"
+                      ? "Plane deinen Besuch der Klippen von Cassis und des Cap Canaille: Route des Crêtes, Aussichtspunkte, Wanderungen, Anreise, Parkplätze, Sonnenuntergang und Sicherheitstipps."
+                      : lang === "ko"
+                        ? "카시스 절벽과 캅 카나이유 여행을 계획해 보세요. 루트 데 크레트, 전망대, 하이킹, 교통편, 주차, 일몰과 안전 수칙을 안내합니다."
+                        : "Plan your visit to the Falaises de Cassis and Cap Canaille: Route des Cretes, viewpoints, hiking, access, parking, sunset and safety tips.",
         }}
       />
       {/* Top nav */}
@@ -228,11 +181,6 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Falaises de Cassis Coastal Cliffs"
-            className="h-full w-full object-cover opacity-90"
-          />
           <div className="absolute inset-0 bg-[linear-gradient(120deg,oklch(0.12_0.03_240)_10%,transparent_55%),linear-gradient(0deg,oklch(0.12_0.03_240)_0%,transparent_55%)]" />
           <div className="absolute inset-0 grain" />
         </div>
@@ -442,7 +390,7 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
                   </a>
                   <a
                     className="inline-flex items-center rounded-lg border border-border/70 bg-background/40 px-3 py-2 text-xs hover:bg-background/60"
-                    href={payload.source.url}
+                    href="https://maps.app.goo.gl/Bm9hr7qFrNnZHEva8"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -469,65 +417,13 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section id="reviews" className="bg-background" data-nosnippet>
-        <div className="mx-auto max-w-6xl px-4 py-16">
-          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight">{t.reviews.title}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {t.reviews.description}
-              </p>
-            </div>
-            <a
-              className="text-xs text-muted-foreground underline-offset-4 hover:underline"
-              href={payload.source.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.reviews.view_source.replace("{name}", payload.source.name).replace("{place}", payload.source.place)}
-            </a>
-          </div>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {payload.reviews.map((r, idx) => (
-              <Card key={idx} className="border-border/70 bg-card p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-sm font-semibold">{r.author}</div>
-                    <div className="mt-1 text-xs text-muted-foreground">{r.time}</div>
-                  </div>
-                  <Stars rating={r.rating} />
-                </div>
-                <p className="mt-3 font-editorial text-sm leading-relaxed text-foreground/90">
-                  {r.text}
-                </p>
-              </Card>
-            ))}
-          </div>
-
-          <Separator className="my-10" />
-
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-            {imagePool.map((img) => (
-              <button
-                key={img.src}
-                className="group relative overflow-hidden rounded-2xl border border-border/70 bg-muted/30"
-                onClick={() => setLightbox(img)}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="h-44 w-full object-cover transition duration-500 group-hover:scale-[1.05]"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(0deg,oklch(0.12_0.03_240)_0%,transparent_60%)] opacity-0 transition group-hover:opacity-100" />
-                <div className="absolute bottom-2 left-2 rounded-lg bg-background/70 px-2 py-1 text-[10px] text-muted-foreground backdrop-blur">
-                  {t.reviews.click_to_enlarge}
-                </div>
-              </button>
-            ))}
-          </div>
+      {/* Link to reviews at their source; no third-party photos or review text are reproduced. */}
+      <section id="reviews" className="bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-10">
+          <h2 className="text-3xl font-bold tracking-tight">{t.reviews.title}</h2>
+          <a className="mt-4 inline-block underline underline-offset-4" href="https://maps.app.goo.gl/Bm9hr7qFrNnZHEva8" target="_blank" rel="noopener noreferrer">
+            {t.reviews.view_source.replace("{name}", "Google Maps").replace("{place}", "Falaises de Cassis")}
+          </a>
         </div>
       </section>
 
@@ -569,20 +465,20 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
                     <div className="p-6">
                       <div className="mb-4 flex items-center justify-between">
                         <Badge variant="secondary" className="bg-accent/10 text-[oklch(var(--accent))]">
-                          {(post.category as any)[lang] || post.category.en}
+                          {post.category[lang] || post.category.en}
                         </Badge>
                         <span className="text-xs text-muted-foreground">{post.date}</span>
                       </div>
                       <h3 className="mb-3 text-xl font-bold leading-tight tracking-tight group-hover:text-[oklch(var(--accent))] transition-colors">
-                        {(post.title as any)[lang] || post.title.en}
+                        {post.title[lang] || post.title.en}
                       </h3>
                       <p className="font-editorial text-sm leading-relaxed text-muted-foreground line-clamp-3">
-                        {(post.description as any)[lang] || post.description.en}
+                        {post.description[lang] || post.description.en}
                       </p>
                     </div>
                     <div className="mt-auto border-t border-border/50 p-4">
                       <div className="flex items-center text-sm font-medium text-[oklch(var(--accent))]">
-                        {t.blog?.blog_page?.read_more || "Read Article"} <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+                        {("read_more" in t.blog.blog_page ? String(t.blog.blog_page.read_more) : "Read Article")} <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
                       </div>
                     </div>
                   </Card>
@@ -657,21 +553,6 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-
-      <Dialog open={!!lightbox} onOpenChange={(v) => (!v ? setLightbox(null) : undefined)}>
-        <DialogContent className="max-w-4xl border-border/70 bg-background text-foreground">
-          <DialogHeader>
-            <DialogTitle className="text-base">{lightbox?.alt}</DialogTitle>
-          </DialogHeader>
-          {lightbox ? (
-            <img
-              src={lightbox.src}
-              alt={lightbox.alt}
-              className="max-h-[70vh] w-full rounded-xl object-contain"
-            />
-          ) : null}
-        </DialogContent>
-      </Dialog>
 
       {/* Cookie Notice Banner */}
       {showCookieNotice && (

@@ -1,3 +1,4 @@
+import { parseLanguage } from "@/lib/language";
 import { Helmet } from "react-helmet-async";
 import translations from "@/assets/translations.json";
 
@@ -6,21 +7,21 @@ interface SEOProps {
   path: string; // Should be like "" for home, "/privacy" for privacy policy, etc.
   customMeta?: { title: string; description: string; };
   robots?: string;
+  alternateLangs?: readonly string[];
 }
 
 const DOMAIN = "https://www.falaisesdecassis.com";
 const SUPPORTED_LANGS = ["en", "fr", "ja", "es", "de", "zh-TW", "ko"];
 
-export function SEO({ currentLang, path, customMeta, robots }: SEOProps) {
+export function SEO({ currentLang, path, customMeta, robots, alternateLangs = SUPPORTED_LANGS }: SEOProps) {
   // Ensure path starts with a slash or is empty
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const cleanPath = normalizedPath === "/" ? "" : normalizedPath;
 
-  const currentUrl = `${DOMAIN}/${currentLang === 'en' ? '' : currentLang}${cleanPath}`;
   const defaultUrl = `${DOMAIN}${cleanPath}`;
 
   // Dynamically set title based on language and path
-  const t = (translations as any)[currentLang] || translations.en;
+  const t = translations[parseLanguage(currentLang) ?? "en"] || translations.en;
   let pageTitle = t.title || "Falaises de Cassis";
   
   if (customMeta?.title) pageTitle = customMeta.title;
@@ -47,7 +48,7 @@ export function SEO({ currentLang, path, customMeta, robots }: SEOProps) {
       <link rel="alternate" hrefLang="x-default" href={defaultUrl} />
 
       {/* Language alternates */}
-      {SUPPORTED_LANGS.map((lang) => (
+      {alternateLangs.map((lang) => (
         <link
           key={lang}
           rel="alternate"

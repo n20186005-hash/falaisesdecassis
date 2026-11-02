@@ -1,3 +1,4 @@
+import { parseLanguage } from "@/lib/language";
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,13 +24,13 @@ function AppRouter() {
         <Route path="/guide">{() => <Guide />}</Route>
         <Route path="/family-zoo">{() => <FamilyZoo />}</Route>
         <Route path="/blog">{() => <Blog />}</Route>
-        <Route path="/:lang/privacy">{(params) => <PrivacyPolicy initialLang={params.lang as any} />}</Route>
-        <Route path="/:lang/terms">{(params) => <TermsOfService initialLang={params.lang as any} />}</Route>
-        <Route path="/:lang/cookie-settings">{(params) => <CookieSettings initialLang={params.lang as any} />}</Route>
-        <Route path="/:lang/guide">{(params) => <Guide initialLang={params.lang as any} />}</Route>
-        <Route path="/:lang/family-zoo">{(params) => <FamilyZoo initialLang={params.lang as any} />}</Route>
-        <Route path="/:lang/blog">{(params) => <Blog initialLang={params.lang as any} />}</Route>
-        <Route path="/:lang/:section?">{(params) => <Home initialLang={params.lang as any} targetSection={params.section} />}</Route>
+        <Route path="/:lang/privacy">{(params) => <PrivacyPolicy initialLang={parseLanguage(params.lang)} />}</Route>
+        <Route path="/:lang/terms">{(params) => <TermsOfService initialLang={parseLanguage(params.lang)} />}</Route>
+        <Route path="/:lang/cookie-settings">{(params) => <CookieSettings initialLang={parseLanguage(params.lang)} />}</Route>
+        <Route path="/:lang/guide">{(params) => <Guide initialLang={parseLanguage(params.lang)} />}</Route>
+        <Route path="/:lang/family-zoo">{(params) => <FamilyZoo initialLang={parseLanguage(params.lang)} />}</Route>
+        <Route path="/:lang/blog">{(params) => <Blog initialLang={parseLanguage(params.lang)} />}</Route>
+        <Route path="/:lang/:section?">{(params) => <Home initialLang={parseLanguage(params.lang)} targetSection={params.section} />}</Route>
         <Route path="/:section?">{(params) => <Home targetSection={params.section} />}</Route>
       </Switch>
     </Router>
