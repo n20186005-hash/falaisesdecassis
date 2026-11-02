@@ -29,7 +29,11 @@ export function SEO({ currentLang, path, customMeta, robots, alternateLangs = SU
   else if (cleanPath === "/terms") pageTitle = `${t.compliance?.terms?.title || "Terms of Service"} - ${pageTitle}`;
   else if (cleanPath === "/cookie-settings") pageTitle = `${t.compliance?.settings?.title || "Cookie Settings"} - ${pageTitle}`;
 
-  const pageDescription = customMeta?.description || t.hero?.description || "";
+  const legalPage = cleanPath === "/privacy" ? t.compliance.privacy : cleanPath === "/terms" ? t.compliance.terms : undefined;
+  const legalDescription = legalPage
+    ? `${legalPage.title}: ${legalPage.content.split("\n").filter((line) => line.startsWith("### ")).map((line) => line.replace(/^### \d+\.\s*/, "")).join("; ")}`
+    : undefined;
+  const pageDescription = customMeta?.description || legalDescription || t.hero?.description || "";
 
   return (
     <Helmet>

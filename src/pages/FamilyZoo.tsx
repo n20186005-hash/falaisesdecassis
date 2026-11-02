@@ -16,8 +16,6 @@ import { Recommendations } from "@/components/Recommendations";
 import translations from "@/assets/translations.json";
 
 const zooMarkdownZhTw = `
-# 巴本動物公園 (Zoo de la Barben) 2026 完整親子遊攻略
-
 ## 引言 
 
 如果您正在計劃前往南法普羅旺斯地區，除了絕美的卡西斯懸崖 (Falaises de Cassis) 之外，我們強烈推薦帶著孩子們來一趟 <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">巴本動物公園</a>。這座位於普羅旺斯心臟地帶的大型野生動物園，不僅環境優美，更是親子家庭的絕佳選擇。
@@ -51,8 +49,6 @@ const zooMarkdownZhTw = `
 `;
 
 const zooMarkdownEn = `
-# Zoo de la Barben 2026 Complete Family Guide
-
 ## Introduction
 
 If you are planning a trip to the Provence region in southern France, in addition to the stunning Falaises de Cassis, we highly recommend a family trip to the <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">Zoo de la Barben</a>. Located in the heart of Provence, this large wildlife park is not only beautiful but also an excellent choice for families with children.
@@ -197,6 +193,11 @@ export default function FamilyZoo({ initialLang }: FamilyZooProps) {
               This guide is available in English and Traditional Chinese. You are reading the English version. <a className="underline" href="/family-zoo">Open the English guide</a>.
             </p>
           )}
+          <p className="mb-6 text-sm">
+            <a className="underline underline-offset-4" href="https://www.zoolabarben.com/wp-content/uploads/2014/12/ReglementInterieur-ZooBarben.pdf" target="_blank" rel="noopener noreferrer">
+              {lang === "zh-TW" ? "園方參觀規則（PDF）" : "Official visitor rules (PDF)"}
+            </a>
+          </p>
           <article 
             className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:underline hover:prose-a:underline prose-strong:text-foreground`}
           >
