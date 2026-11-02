@@ -11,6 +11,12 @@ function isAppRoute(pathname) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if ((url.hostname === "falaisesdecassis.com" || url.hostname === "www.falaisesdecassis.com") &&
+        (url.protocol !== "https:" || url.hostname !== "www.falaisesdecassis.com")) {
+      url.protocol = "https:";
+      url.hostname = "www.falaisesdecassis.com";
+      return Response.redirect(url.toString(), 301);
+    }
     if (isAppRoute(url.pathname)) {
       const root = new URL("/", url);
       return env.ASSETS.fetch(new Request(root, request));
