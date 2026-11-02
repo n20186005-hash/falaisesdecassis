@@ -92,6 +92,48 @@ export default function Blog({ initialLang }: BlogProps) {
         </div>
       </header>
 
+      <section className="mx-auto max-w-6xl px-4 py-8" lang="fr" aria-label="Guides pratiques en français">
+        <h2 className="text-2xl font-semibold mb-4">Guides pratiques en français</h2>
+        <ul className="space-y-2 underline">
+          <li><a href="/guides/port-pin/">Calanque de Port-Pin depuis Cassis : accès et préparation</a></li>
+          <li><a href="/guides/en-vau/">Calanque d’En-Vau depuis Cassis : marche, difficulté et préparation</a></li>
+          <li><a href="/guides/port-miou/">Port-Miou à Cassis : port, ancienne carrière et départ de randonnée</a></li>
+          <li><a href="/guides/plages-face-cap-canaille/">Plages de Cassis face au Cap Canaille : laquelle choisir ?</a></li>
+          <li><a href="/guides/marseille-cassis-train/">De Marseille aux falaises de Cassis en train : organiser la journée</a></li>
+          <li><a href="/guides/cap-canaille-geologie/">Cap Canaille et falaises de Cassis : comprendre le paysage</a></li>
+          <li><a href="/guides/cassis-avec-chien/">Visiter les Calanques de Cassis avec un chien</a></li>
+          <li><a href="/guides/kayak-cassis-calanques/">Kayak depuis Cassis vers les Calanques : préparer sa sortie</a></li>
+          <li><a href="/guides/vignoble-cassis/">Vignoble de Cassis et Cap Canaille : organiser une visite</a></li>
+          <li><a href="/guides/cassis-marche-village/">Marché et village de Cassis avant une visite des falaises</a></li>
+          <li><a href="/guides/cassis-saison-visite/">Quand visiter Cassis et les falaises : choisir sa saison</a></li>
+          <li><a href="/guides/parking-gorguettes/">Parking des Gorguettes à Cassis : rejoindre le village et les Calanques</a></li>
+          <li><a href="/guides/drone-falaises-cassis/">Drone et photographie aux falaises de Cassis : quelles règles vérifier ?</a></li>
+          <li><a href="/guides/une-journee-cassis/">Une journée à Cassis : choisir entre Calanques et falaises</a></li>
+          <li><a href="/guides/cassis-sans-voiture/">Cassis sans voiture : visiter les falaises et les Calanques</a></li>
+          <li><a href="/guides/cassis-bateau-ou-marche/">Calanques de Cassis : visite en bateau ou randonnée ?</a></li>
+          <li><a href="/guides/port-pin-ou-en-vau/">Port-Pin ou En-Vau : quelle calanque choisir depuis Cassis ?</a></li>
+          <li><a href="/guides/vent-route-des-cretes/">Vent et Route des Crêtes : quand modifier sa visite ?</a></li>
+          <li><a href="/guides/equipement-randonnee-calanques/">Que prendre pour une randonnée depuis Cassis dans les Calanques ?</a></li>
+          <li><a href="/guides/dimanche-route-des-cretes/">Route des Crêtes le dimanche : comment organiser sa visite ?</a></li>
+          <li><a href="/guides/cassis-avec-enfants/">Cassis avec des enfants : choisir entre plage et randonnée</a></li>
+          <li><a href="/guides/semaphore-bec-aigle/">Randonnée au sémaphore du Bec de l’Aigle depuis La Ciotat</a></li>
+          <li><a href="/guides/faune-cap-canaille/">Faune du Cap Canaille : observer les falaises sans déranger</a></li>
+          <li><a href="/guides/pierre-cassis-port-miou/">Pierre de Cassis et ancienne carrière de Port-Miou</a></li>
+          <li><a href="/guides/baignade-calanques-cassis/">Se baigner dans les Calanques de Cassis : préparer sa sortie</a></li>
+          <li><a href="/guides/deux-jours-cassis/">Deux jours à Cassis : organiser falaises, village et Calanques</a></li>
+          <li><a href="/guides/sentier-petit-prince/">Sentier du Petit Prince à Cassis : courte boucle sur la presqu’île</a></li>
+          <li><a href="/guides/traversee-cassis-la-ciotat/">Randonnée Cassis–La Ciotat par le Cap Canaille : distance et difficulté</a></li>
+          <li><a href="/guides/escalade-cap-canaille/">Escalade au Cap Canaille : vérifier les voies et les fermetures</a></li>
+          <li><a href="/guides/anse-arene-cassis/">Anse de l’Arène à Cassis : une crique sous le Cap Canaille</a></li>
+          <li><a href="/guides/belvederes-cap-canaille/">Belvédères du Cap Canaille : voir les falaises en sécurité</a></li>
+          <li><a href="/guides/photo-falaises-cassis/">Photographier les falaises de Cassis</a></li>
+          <li><a href="/guides/acces-feux/">Accès aux massifs et risque incendie</a></li>
+          <li><a href="/guides/gare-port-miou/">De la gare de Cassis à Port-Miou</a></li>
+          <li><a href="/guides/route-des-cretes/">Préparer la Route des Crêtes</a></li>
+          <li><a href="/guides/port-miou-port-pin/">Marcher de Port-Miou à Port-Pin</a></li>
+        </ul>
+      </section>
+
       {/* HERO SECTION */}
       <section className="relative overflow-hidden border-b border-border/50 bg-card grain">
         <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">

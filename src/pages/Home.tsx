@@ -262,10 +262,10 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <div className="rounded-xl border border-border/70 bg-background/70 px-4 py-2 backdrop-blur">
-                <div className="text-xs text-muted-foreground">Google Maps</div>
+                <div className="text-xs text-muted-foreground">Google Maps · 2026-11-02</div>
                 <div className="mt-1 flex items-center gap-3">
                   <Stars rating={4.9} />
-                  <span className="text-xs text-muted-foreground">{t.hero.google_maps_stats.replace("{count}", "2,382")}</span>
+                  <span className="text-xs text-muted-foreground">{t.hero.google_maps_stats.replace("{count}", "2,572")}</span>
                 </div>
               </div>
 

@@ -16,7 +16,6 @@ import { Recommendations } from "@/components/Recommendations";
 import translations from "@/assets/translations.json";
 
 const guideMarkdownZhTw = `
-# Falaises de Cassis 攻略｜交通、停車、徒步與最佳觀景點
 
 ## 這一頁適合誰
 
@@ -171,7 +170,6 @@ Falaises de Cassis 指的不是一個單一觀景台，而是 Cassis 與 La Ciot
 `;
 
 const guideMarkdownEn = `
-# Falaises de Cassis Guide | Access, Parking, Hiking and Best Viewpoints
 
 ## Who this guide is for
 
@@ -323,7 +321,6 @@ That plan gives you the clearest first impression of **Falaises de Cassis, Cassi
 `;
 
 const guideMarkdownFr = `
-# Guide des Falaises de Cassis | Acces, parking, randonnee et meilleurs points de vue
 
 ## Pour qui est cette page
 
