@@ -60,13 +60,11 @@
       "description": "Google Maps embed provided below. Please check road closures, fire risks, and weather before departure.",
       "links": "Quick Links",
       "open_google_maps": "Open Google Maps",
-      "source": "Review & Photo Source"
+      "source": "Google Maps source"
     },
     "reviews": {
-      "title": "Real Reviews & Photos",
-      "description": "Texts and photos from real Google Maps user reviews (shortened/simplified for layout).",
-      "view_source": "View source: {name} · {place}",
-      "click_to_enlarge": "Click to enlarge"
+      "title": "Reviews on Google Maps",
+      "view_source": "View source: {name} · {place}"
     },
     "blog": {
       "title": "Guide Blog",
@@ -216,13 +214,11 @@
       "description": "Carte Google Maps intégrée ci-dessous. Vérifiez les fermetures et risques d'incendie avant de partir.",
       "links": "Liens rapides",
       "open_google_maps": "Ouvrir Google Maps",
-      "source": "Source des avis et photos"
+      "source": "Source Google Maps"
     },
     "reviews": {
-      "title": "Avis réels & Photos",
-      "description": "Textes et photos d'utilisateurs réels de Google Maps (simplifiés pour la mise en page).",
-      "view_source": "Source : {name} · {place}",
-      "click_to_enlarge": "Cliquer pour agrandir"
+      "title": "Avis sur Google Maps",
+      "view_source": "Source : {name} · {place}"
     },
     "blog": {
       "title": "Blog Guide",
@@ -365,13 +361,11 @@
       "description": "下にGoogleマップを埋め込んでいます。出発前に道路の閉鎖、火災リスク、天候を確認してください。",
       "links": "クイックリンク",
       "open_google_maps": "Googleマップを開く",
-      "source": "レビューと写真のソース"
+      "source": "Google マップの出典"
     },
     "reviews": {
-      "title": "実際のレビューと写真",
-      "description": "Googleマップの実際のユーザーレビューからのテキストと写真（レイアウトのために短縮/簡略化されています）。",
-      "view_source": "ソースを表示: {name} · {place}",
-      "click_to_enlarge": "クリックして拡大"
+      "title": "Google マップのレビュー",
+      "view_source": "ソースを表示: {name} · {place}"
     },
     "blog": {
       "title": "ガイドブログ",
@@ -518,13 +512,11 @@
       "description": "Mapa de Google Maps integrado abajo. Verifique cierres de carreteras y riesgos de incendio antes de salir.",
       "links": "Enlaces Rápidos",
       "open_google_maps": "Abrir Google Maps",
-      "source": "Fuente de Reseñas y Fotos"
+      "source": "Fuente: Google Maps"
     },
     "reviews": {
-      "title": "Reseñas y Fotos Reales",
-      "description": "Textos y fotos de reseñas reales de usuarios de Google Maps (abreviados para el diseño).",
-      "view_source": "Ver fuente: {name} · {place}",
-      "click_to_enlarge": "Click para ampliar"
+      "title": "Reseñas en Google Maps",
+      "view_source": "Ver fuente: {name} · {place}"
     },
     "blog": {
       "title": "Blog de Guía",
@@ -671,13 +663,11 @@
       "description": "Eingebettete Karte unten. Prüfen Sie Straßensperrungen und Brandgefahr vor der Abfahrt.",
       "links": "Schnelllinks",
       "open_google_maps": "Google Maps öffnen",
-      "source": "Quelle für Bewertungen & Fotos"
+      "source": "Quelle: Google Maps"
     },
     "reviews": {
-      "title": "Echte Bewertungen & Fotos",
-      "description": "Texte und Fotos aus echten Google Maps Bewertungen (für das Layout gekürzt).",
-      "view_source": "Quelle: {name} · {place}",
-      "click_to_enlarge": "Zum Vergrößern klicken"
+      "title": "Bewertungen auf Google Maps",
+      "view_source": "Quelle: {name} · {place}"
     },
     "blog": {
       "title": "Leitfaden-Blog",
@@ -824,13 +814,11 @@
       "description": "下方提供 Google Maps 嵌入。出發前請核對：道路封閉、火險與天氣。",
       "links": "快速連結",
       "open_google_maps": "開啟 Google Maps",
-      "source": "評價與照片來源"
+      "source": "Google Maps 來源"
     },
     "reviews": {
-      "title": "真實評價與照片",
-      "description": "來自 Google Maps 的真實用戶評價（為排版做了精簡）。",
-      "view_source": "查看來源：{name} · {place}",
-      "click_to_enlarge": "點擊放大"
+      "title": "Google Maps 上的評價",
+      "view_source": "查看來源：{name} · {place}"
     },
     "blog": {
       "title": "攻略部落格",
@@ -973,13 +961,11 @@
       "description": "아래에 Google Maps가 포함되어 있습니다. 출발 전 도로 통제, 화재 위험, 날씨를 확인하세요.",
       "links": "빠른 링크",
       "open_google_maps": "Google Maps 열기",
-      "source": "리뷰 및 사진 출처"
+      "source": "Google Maps 출처"
     },
     "reviews": {
-      "title": "실제 리뷰 및 사진",
-      "description": "Google Maps 실제 사용자 리뷰의 텍스트와 사진 (레이아웃을 위해 요약됨).",
-      "view_source": "출처 보기: {name} · {place}",
-      "click_to_enlarge": "클릭하여 확대"
+      "title": "Google Maps 리뷰",
+      "view_source": "출처 보기: {name} · {place}"
     },
     "blog": {
       "title": "가이드 블로그",

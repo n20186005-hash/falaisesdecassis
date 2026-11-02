@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useLanguage } from "@/hooks/use-language";
 import { Link } from "wouter";
 import { Map, Languages, Sun, Moon } from "lucide-react";
 import { Streamdown } from "streamdown";
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "@/contexts/theme";
 import { SEO } from "@/components/SEO";
 import { Recommendations } from "@/components/Recommendations";
 import translations from "@/assets/translations.json";
@@ -24,24 +24,24 @@ const zooMarkdownZhTw = `
 
 ## 為什麼選擇巴本動物公園？
 
-<a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">巴本動物公園</a> 是普羅旺斯地區最大的動物園之一，園內擁有超過 120 種、共計數百隻來自世界各地的野生動物。
+<a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">巴本動物公園</a> 是普羅旺斯的動物園，可安排親子動物觀察行程；開放展區與動物資訊請以園方最新公告為準。
 
-1. **豐富的動物種類**：從非洲草原的獅子、長頸鹿、犀牛，到亞洲的珍稀物種，孩子們可以近距離觀察這些美麗的生物。
-2. **精彩的鳥類飛行表演**：每天定時舉行的猛禽與鳥類飛行表演，絕對是園區內的一大亮點，令人驚呼連連。
-3. **沉浸式餵食互動**：園區內設有專門的互動區域，讓孩子們可以親手餵食小動物，體驗與大自然零距離接觸的樂趣。
+1. **豐富的動物種類**：從非洲草原的獅子、長頸鹿、犀牛，到亞洲的珍稀物種，孩子們可以在指定遊客區域觀察動物，並遵守安全圍欄與現場指示。
+2. **當日活動資訊**：活動內容、日期與場次可能調整，出發前請查閱 [園方官網](https://www.zoolabarben.com/)，並以當日現場公告為準。
+3. **尊重動物與安全距離**：依 [園方參觀規則](https://www.zoolabarben.com/wp-content/uploads/2014/12/ReglementInterieur-ZooBarben.pdf)，禁止餵食、觸摸動物或跨越安全圍欄；兒童須由成人全程看顧。
 4. **綠意盎然的環境**：園區內種植了大量的地中海植物，漫步其中彷彿置身於一座大型植物園，非常適合全家大小一起散步放鬆。
 
 ## 交通與行程建議
 
-- **位置**：距離卡西斯 (Cassis) 和馬賽 (Marseille) 車程約 1 小時，非常適合安排在南法自駕遊的行程中。
-- **建議停留時間**：建議預留半天（約 3-4 小時）的時間，這樣可以悠閒地逛遍整個園區，並觀賞精彩的表演。
+- **位置**：可先以卡西斯 (Cassis) 或馬賽 (Marseille) 出發約 1 小時車程作為粗略估計；實際時間視出發點、路線及交通狀況而異，請於當日查看導航。
+- **建議停留時間**：可先預留半天作為行程規劃，再依孩子體力、當日開放時間與活動安排調整。
 - **行程搭配**：上午前往 <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">巴本動物公園</a>，下午可以順道前往附近的光影採石場，或是回到卡西斯港口搭乘遊船。
 
 ## 實用旅行 Tips
 
-- **提前購票**：為了避免現場排隊浪費時間，強烈建議您事先在線上買好門票。點擊這裡即可快速跳轉購票：<a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">預訂巴本動物公園門票</a>。
+- **購票與預約資訊**：出發前請查看 [園方官網](https://www.zoolabarben.com/) 的票價、營業時間及是否需預約；第三方票券的使用日期與條件請另外確認：<a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">預訂巴本動物公園門票</a>。
 - **防曬與補水**：南法的陽光非常熱情，請務必為孩子們準備好防曬霜、帽子，並隨時補充水分。
-- **推車租借**：園區內部分路段有坡度，如果您帶著幼童，可以在入口處租借嬰兒推車，讓行程更加輕鬆。
+- **推車與親子設施**：若需使用推車，請先向園方確認路線適用性、可用設施與當日服務，勿預設現場提供租借。
 
 ## 結語
 
@@ -59,24 +59,24 @@ If you are planning a trip to the Provence region in southern France, in additio
 
 ## Why Choose Zoo de la Barben?
 
-<a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">Zoo de la Barben</a> is one of the largest zoos in the Provence region, home to over 120 species and hundreds of wild animals from all over the world.
+<a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">Zoo de la Barben</a> is a zoo in Provence that can be included in a family animal-observation itinerary. Check the park’s latest information for open areas and animal exhibits.
 
-1. **Rich Variety of Animals**: From lions, giraffes, and rhinos of the African savannah to rare species from Asia, children can observe these beautiful creatures up close.
-2. **Spectacular Bird Flight Shows**: The daily raptor and bird flight shows are definitely a highlight of the park, bringing constant amazement.
-3. **Immersive Feeding Interactions**: The park features dedicated interaction areas where children can hand-feed small animals and experience the joy of being close to nature.
+1. **Rich Variety of Animals**: From lions, giraffes, and rhinos of the African savannah to rare species from Asia, children can observe animals from designated visitor areas while respecting safety barriers and staff instructions.
+2. **Activities on Your Visit Date**: Activities, dates and times may change. Check the [official website](https://www.zoolabarben.com/) before travelling and follow the day’s on-site announcements.
+3. **Animal Welfare and Safe Observation**: The [official visitor rules](https://www.zoolabarben.com/wp-content/uploads/2014/12/ReglementInterieur-ZooBarben.pdf) prohibit feeding or touching animals and crossing safety barriers. Children must remain under adult supervision.
 4. **Lush Environment**: The park is planted with a large number of Mediterranean plants. Walking through it feels like being in a large botanical garden, perfect for a relaxing family stroll.
 
 ## Transportation and Itinerary Suggestions
 
-- **Location**: About a 1-hour drive from Cassis and Marseille, making it highly suitable to include in a southern France road trip itinerary.
-- **Suggested Duration**: We recommend setting aside half a day (about 3-4 hours) so you can leisurely explore the entire park and watch the wonderful shows.
+- **Location**: Use roughly one hour by car from Cassis or Marseille as an initial estimate. Actual journey times depend on your starting point, route and traffic; check directions on the day of travel.
+- **Suggested Duration**: Allow half a day as a planning suggestion, then adjust to your children’s energy, the opening hours and activities available on your visit date.
 - **Itinerary Pairing**: Head to the <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">Zoo de la Barben</a> in the morning, and in the afternoon, you can drop by the nearby Carrières de Lumières or return to the Cassis port for a boat tour.
 
 ## Practical Travel Tips
 
-- **Book in Advance**: To avoid wasting time in lines, it is strongly recommended that you buy your tickets online in advance. Click here to book quickly: <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">Book Zoo de la Barben Tickets</a>.
+- **Tickets and Reservations**: Check the [official website](https://www.zoolabarben.com/) for current prices, opening hours and any reservation requirements. Separately check the dates and conditions of third-party tickets: <a href="https://www.trip.com/t/ENNHxEsJDU2" target="_blank" rel="noopener noreferrer">Book Zoo de la Barben Tickets</a>.
 - **Sun Protection and Hydration**: The sun in southern France can be very intense. Please make sure to prepare sunscreen and hats for the children, and keep them hydrated.
-- **Stroller Rental**: Some parts of the park have slopes. If you are traveling with toddlers, you can rent a stroller at the entrance to make the trip easier.
+- **Strollers and Family Facilities**: Ask the park about suitable routes, available facilities and services for your visit date; do not assume stroller rental is available.
 
 ## Conclusion
 
@@ -91,22 +91,13 @@ interface FamilyZooProps {
 
 export default function FamilyZoo({ initialLang }: FamilyZooProps) {
   const { theme, toggleTheme } = useTheme();
-  const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
-    const saved = localStorage.getItem("app-lang");
-    return (initialLang as any) || (saved as any) || "en";
-  });
+  const [lang, setLang] = useLanguage(initialLang);
 
-  const t = (translations as any)[lang] || translations.en;
+  const t = translations[lang] || translations.en;
 
-  useEffect(() => {
-    localStorage.setItem("app-lang", lang);
-  }, [lang]);
 
-  useEffect(() => {
-    if (initialLang && initialLang !== lang) {
-      setLang(initialLang);
-    }
-  }, [initialLang, lang]);
+
+  const isEnglishFallback = lang !== "en" && lang !== "zh-TW";
 
   const currentMarkdown = lang === "zh-TW" ? zooMarkdownZhTw : zooMarkdownEn;
   const title = lang === "zh-TW" ? "巴本動物公園攻略" : "Zoo de la Barben Guide";
@@ -115,12 +106,13 @@ export default function FamilyZoo({ initialLang }: FamilyZooProps) {
   return (
     <main className="min-h-screen bg-background text-foreground grain">
       <SEO 
-        currentLang={lang} 
+        currentLang={isEnglishFallback ? "en" : lang}
         path="/family-zoo" 
         robots="noindex,follow"
+        alternateLangs={["en", "zh-TW"]}
         customMeta={{
           title: lang === "zh-TW" ? "巴本動物公園 (Zoo de la Barben) 2026 完整親子遊攻略" : "Zoo de la Barben 2026 Complete Family Guide",
-          description: lang === "zh-TW" ? "巴本動物公園是普羅旺斯最大的野生動物園，擁有 120 種動物，提供精彩鳥類表演與餵食互動，是南法親子遊必去的推薦景點。" : "Zoo de la Barben is the largest wildlife park in Provence, featuring 120 species, bird shows, and feeding interactions. A must-visit family destination in Southern France."
+          description: lang === "zh-TW" ? "規劃普羅旺斯巴本動物公園親子行程：動物觀察、參觀安全、購票與當日活動資訊；禁止餵食及觸摸動物。" : "Plan a family visit to Zoo de la Barben in Provence with animal-observation tips, visitor rules and links to current ticket and activity information. Do not feed or touch animals."
         }}
       />
       {/* Top nav */}
@@ -200,6 +192,11 @@ export default function FamilyZoo({ initialLang }: FamilyZooProps) {
             />
           </div>
 
+          {isEnglishFallback && (
+            <p lang="en" className="mb-6 rounded-lg border border-border bg-card p-4 text-sm">
+              This guide is available in English and Traditional Chinese. You are reading the English version. <a className="underline" href="/family-zoo">Open the English guide</a>.
+            </p>
+          )}
           <article 
             className={`prose ${theme === 'dark' ? 'prose-invert' : ''} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:underline hover:prose-a:underline prose-strong:text-foreground`}
           >

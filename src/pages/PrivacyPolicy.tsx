@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useLanguage } from "@/hooks/use-language";
 import { Link } from "wouter";
 import { Shield, ArrowLeft, Languages, Sun, Moon } from "lucide-react";
 import { Streamdown } from "streamdown";
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "@/contexts/theme";
 import { SEO } from "@/components/SEO";
 import translations from "@/assets/translations.json";
 
@@ -20,22 +20,11 @@ interface PrivacyPolicyProps {
 
 export default function PrivacyPolicy({ initialLang }: PrivacyPolicyProps) {
   const { theme, toggleTheme } = useTheme();
-  const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
-    const saved = localStorage.getItem("app-lang");
-    return (initialLang as any) || (saved as any) || "en";
-  });
+  const [lang, setLang] = useLanguage(initialLang);
 
-  const t = (translations as any)[lang];
+  const t = translations[lang];
 
-  useEffect(() => {
-    localStorage.setItem("app-lang", lang);
-  }, [lang]);
 
-  useEffect(() => {
-    if (initialLang && initialLang !== lang) {
-      setLang(initialLang);
-    }
-  }, [initialLang, lang]);
 
   return (
     <main className="min-h-screen bg-background text-foreground grain">

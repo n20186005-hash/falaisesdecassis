@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
+import { useLanguage } from "@/hooks/use-language";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Languages, Sun, Moon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "@/contexts/theme";
 import { SEO } from "@/components/SEO";
 import translations from "@/assets/translations.json";
 import { posts } from "@/data/posts";
@@ -23,23 +22,12 @@ interface BlogProps {
 
 export default function Blog({ initialLang }: BlogProps) {
   const { theme, toggleTheme } = useTheme();
-  const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
-    const saved = localStorage.getItem("app-lang");
-    return (initialLang as any) || (saved as any) || "en";
-  });
+  const [lang, setLang] = useLanguage(initialLang);
 
-  const t = (translations as any)[lang];
-  const visiblePosts = posts.filter((post: any) => post.indexable !== false);
+  const t = translations[lang];
+  const visiblePosts = posts.filter((post) => post.indexable !== false);
 
-  useEffect(() => {
-    localStorage.setItem("app-lang", lang);
-  }, [lang]);
 
-  useEffect(() => {
-    if (initialLang && initialLang !== lang) {
-      setLang(initialLang);
-    }
-  }, [initialLang, lang]);
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -189,7 +177,7 @@ export default function Blog({ initialLang }: BlogProps) {
                   </div>
                   <div className="mt-auto border-t border-border/50 p-4">
                       <div className="flex items-center text-sm font-medium text-[oklch(var(--accent))]">
-                        {t.blog?.blog_page?.read_more || "Read More"} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        {("read_more" in t.blog.blog_page ? String(t.blog.blog_page.read_more) : "Read More")} <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </Card>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useLanguage } from "@/hooks/use-language";
 import { Link } from "wouter";
 import { Map, Languages, Sun, Moon } from "lucide-react";
 import { Streamdown } from "streamdown";
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "@/contexts/theme";
 import { SEO } from "@/components/SEO";
 import { Recommendations } from "@/components/Recommendations";
 import translations from "@/assets/translations.json";
@@ -454,22 +454,13 @@ interface GuideProps {
 
 export default function Guide({ initialLang }: GuideProps) {
   const { theme, toggleTheme } = useTheme();
-  const [lang, setLang] = useState<"en" | "fr" | "ja" | "es" | "de" | "zh-TW" | "ko">(() => {
-    const saved = localStorage.getItem("app-lang");
-    return (initialLang as any) || (saved as any) || "en";
-  });
+  const [lang, setLang] = useLanguage(initialLang);
 
-  const t = (translations as any)[lang] || translations.en;
+  const t = translations[lang] || translations.en;
 
-  useEffect(() => {
-    localStorage.setItem("app-lang", lang);
-  }, [lang]);
 
-  useEffect(() => {
-    if (initialLang && initialLang !== lang) {
-      setLang(initialLang);
-    }
-  }, [initialLang, lang]);
+
+  const isEnglishFallback = !["en", "fr", "zh-TW"].includes(lang);
 
   const currentMarkdown =
     lang === "zh-TW" ? guideMarkdownZhTw : lang === "fr" ? guideMarkdownFr : guideMarkdownEn;
@@ -491,8 +482,10 @@ export default function Guide({ initialLang }: GuideProps) {
   return (
     <main className="min-h-screen bg-background text-foreground grain">
       <SEO
-        currentLang={lang}
+        currentLang={isEnglishFallback ? "en" : lang}
         path="/guide"
+        robots={isEnglishFallback ? "noindex, follow" : undefined}
+        alternateLangs={["en", "fr", "zh-TW"]}
         customMeta={{
           title:
             lang === "zh-TW"
@@ -595,6 +588,11 @@ export default function Guide({ initialLang }: GuideProps) {
             />
           </div>
 
+          {isEnglishFallback && (
+            <p lang="en" className="mb-6 rounded-lg border border-border bg-card p-4 text-sm">
+              This guide is currently available in English, French and Traditional Chinese. You are reading the English version. <a className="underline" href="/guide">Open the English guide</a>.
+            </p>
+          )}
           <article
             className={`prose ${theme === "dark" ? "prose-invert" : ""} max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-relaxed prose-a:text-[oklch(var(--accent))] prose-a:underline hover:prose-a:underline prose-strong:text-foreground`}
           >
