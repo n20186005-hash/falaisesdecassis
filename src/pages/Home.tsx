@@ -14,6 +14,16 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import heroImg from "@/assets/hero_google.jpg";
+import review01 from "@/assets/reviews/review_01.jpg";
+import review02 from "@/assets/reviews/review_02.jpg";
+import review03 from "@/assets/reviews/review_03.jpg";
+import review04 from "@/assets/reviews/review_04.jpg";
+import review05 from "@/assets/reviews/review_05.jpg";
+import review06 from "@/assets/reviews/review_06.jpg";
+import review07 from "@/assets/reviews/review_07.jpg";
+import review08 from "@/assets/reviews/review_08.jpg";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,6 +37,17 @@ import { Recommendations } from "@/components/Recommendations";
 import translations from "@/assets/translations.json";
 import { posts } from "@/data/posts";
 
+
+const galleryImages = [review01, review02, review03, review04, review05, review06, review07, review08];
+const photoLabels = {
+  en: { title: "Photo gallery", photo: "Photo", note: "Photographer, original source and location of these existing photos have not been verified." },
+  fr: { title: "Galerie photos", photo: "Photo", note: "Le photographe, la source originale et le lieu de ces photos existantes ne sont pas vérifiés." },
+  ja: { title: "写真ギャラリー", photo: "写真", note: "これらの既存写真の撮影者、元の出典、撮影場所は未確認です。" },
+  es: { title: "Galería de fotos", photo: "Foto", note: "No se han verificado el fotógrafo, la fuente original ni la ubicación de estas fotos existentes." },
+  de: { title: "Fotogalerie", photo: "Foto", note: "Fotograf, ursprüngliche Quelle und Aufnahmeort dieser vorhandenen Fotos sind nicht verifiziert." },
+  "zh-TW": { title: "照片相簿", photo: "照片", note: "這些既有照片的攝影者、原始來源與拍攝地點尚未核實。" },
+  ko: { title: "사진 갤러리", photo: "사진", note: "기존 사진의 촬영자, 원본 출처와 촬영 장소는 확인되지 않았습니다." },
+};
 
 interface HomeProps {
   targetSection?: string;
@@ -71,6 +92,8 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
   const [lang, setLang] = useLanguage(initialLang);
 
   const t = translations[lang];
+  const photos = photoLabels[lang];
+  const [lightbox, setLightbox] = useState<number | null>(null);
 
 
 
@@ -181,6 +204,7 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
+          <img src={heroImg} alt={`${photos.photo} — ${photos.note}`} className="h-full w-full object-cover opacity-90" />
           <div className="absolute inset-0 bg-[linear-gradient(120deg,oklch(0.12_0.03_240)_10%,transparent_55%),linear-gradient(0deg,oklch(0.12_0.03_240)_0%,transparent_55%)]" />
           <div className="absolute inset-0 grain" />
         </div>
@@ -244,6 +268,7 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
               ))}
             </div>
           </motion.div>
+          <p className="mt-6 w-fit rounded-lg bg-background/85 px-3 py-2 text-xs text-foreground">{photos.note}</p>
         </div>
       </section>
 
@@ -417,13 +442,23 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
         </div>
       </section>
 
-      {/* Link to reviews at their source; no third-party photos or review text are reproduced. */}
+      {/* Keep reviews at their source and display the existing photos separately. */}
       <section id="reviews" className="bg-background">
         <div className="mx-auto max-w-6xl px-4 py-10">
           <h2 className="text-3xl font-bold tracking-tight">{t.reviews.title}</h2>
           <a className="mt-4 inline-block underline underline-offset-4" href="https://maps.app.goo.gl/Bm9hr7qFrNnZHEva8" target="_blank" rel="noopener noreferrer">
             {t.reviews.view_source.replace("{name}", "Google Maps").replace("{place}", "Falaises de Cassis")}
           </a>
+          <h3 className="mt-10 text-2xl font-bold">{photos.title}</h3>
+          <p className="mt-2 text-sm text-muted-foreground">{photos.note}</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+            {galleryImages.map((src, index) => (
+              <button key={src} type="button" aria-label={`${photos.title}: ${photos.photo} ${index + 1}`} className="group overflow-hidden rounded-2xl border border-border/70 bg-muted/30 text-left" onClick={() => setLightbox(index)}>
+                <img src={src} alt={`${photos.photo} ${index + 1}`} className="h-44 w-full object-cover transition duration-500 group-hover:scale-[1.05]" loading="lazy" />
+                <span className="block px-3 py-2 text-xs text-muted-foreground">{photos.photo} {index + 1} · {photos.title}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -553,6 +588,16 @@ export default function Home({ targetSection, initialLang }: HomeProps) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+
+      <Dialog open={lightbox !== null} onOpenChange={(open) => { if (!open) setLightbox(null); }}>
+        <DialogContent className="sm:max-w-4xl border-border/70 bg-background text-foreground">
+          <DialogHeader>
+            <DialogTitle>{photos.photo} {lightbox === null ? "" : lightbox + 1}</DialogTitle>
+            <DialogDescription>{photos.note}</DialogDescription>
+          </DialogHeader>
+          {lightbox !== null && <img src={galleryImages[lightbox]} alt={`${photos.photo} ${lightbox + 1}`} className="max-h-[65vh] w-full rounded-xl object-contain" />}
+        </DialogContent>
+      </Dialog>
 
       {/* Cookie Notice Banner */}
       {showCookieNotice && (
